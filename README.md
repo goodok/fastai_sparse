@@ -32,8 +32,7 @@ fast.ai train/inference loop concept (Model + DataBunch --> Learner)
 # Quick start guide
 
 
-- [ ] 3D scene semantic segmentation (ScanNet) notebook
-- [x] Detailed 3D scene segmentation (ScanNet) notebook 
+- [x] ScanNet 3D scene segmentation [detailed notebook](https://github.com/goodok/fastai_sparse/blob/master/examples/scannet/unet_24_detailed.ipynb)
 - [ ] ShapeNet 3D semantic segmentation
 
 # TODO
