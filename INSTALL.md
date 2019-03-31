@@ -1,25 +1,20 @@
 # fastai_sparse
 
-[Logo/Demo image]
-
 # Installation
-<font color="red">TBD</font>
 
 **fastai_sparse** is compatible with: Python 3.6, PyTorch 1.0+
 
 **Some key dependences:**  
-- **[Fast.ai](https://github.com/fastai/fastai#installation)**  
-- PyTorch sparse convolution models: **SparseConvNet** (https://github.com/facebookresearch/SparseConvNet )  
-- PLY file reader and 3D geometry mesh transforms are implemented by **trimesh** (https://github.com/mikedh/trimesh)  
-- For interactive visualisation in jupyter notebooks examples **ipyvolume** (http://ipyvolume.readthedocs.io/).
+- [Fast.ai](https://github.com/fastai/fastai#installation)  
+- PyTorch sparse convolution models: [SparseConvNet](https://github.com/facebookresearch/SparseConvNet). 
+- PLY file reader and 3D geometry mesh transforms are implemented by [trimesh](https://github.com/mikedh/trimesh).    
+- [ipyvolume](http://ipyvolume.readthedocs.io/) is used for interactive visualisation in jupyter notebooks examples.
 
 ### Install dependences
 
 ####  Ubuntu 18.04
 
-
-Normal install, go further to the next section "Pre instalation"
-
+Normal install, go further to the next section "Pre installation"
 
 #### Ubuntu 16.04
 
@@ -46,7 +41,7 @@ If python 3.6 and python 3.7 are not installed then install python 3.6 manually,
     sudo apt-get install python3.6-tk
 ```
 
-if instalation in virtual environment then
+if installation in virtual environment then
 
 ```bash
 mkvirtualenv -p python3.6 <environmentname>
@@ -68,9 +63,9 @@ workon <environmentname>
 
 
 
-### Pre instalation
+### Pre installation
 
-It would be nice if ~/.cache/pip is cleared if any problems encounters during instalation .
+It would be nice if ~/.cache/pip is cleared if any problems encounters during installation .
 
 ```bash
 mv ~/.cache/pip ~/.cache/pip.bak
@@ -127,7 +122,7 @@ git clone https://github.com/fastai/fastai/
 cd fastai
 ```
 
-View and choos releases
+View and choose releases
 
 ```bash
 git branch -r
@@ -198,45 +193,5 @@ jupyter nbextensions_configurator enable --user
 Check panel "Configurable nbextensions"
 
 http://127.0.0.1:<port>/tree#nbextensions_configurator
-
-
-# Features:
-* fast.ai train/inference loop concept (Model + DataBunch --> Learner) 
-* model training best practices provided by fast.ai (Learning Rate Finder, One Cycle policy) 
-* 3D transforms for data preprocessing and augmentation: 
-  - mesh-level transforms and features extraction (surface normals, triangle area,...)      
-  - points-level spatial transforms (affine, elastic,...)
-  - points-level features (color, brightness)  
-  - mesh to points
-  - points to sparse voxels
-* metrics (IoU, avgIoU, ) calculation and tracking 
-* visualisation utils (batch generator output)  
-
-# Quick start guide
-
-
-* 3D scene semantic segmentation (ScanNet) notebook
-* Detailed 3D scene segmentation (ScanNet) notebook 
-* ShapeNet 3D semantic segmentation
-
-# TODO
-
-## Priority 1:
-- [ ] ShapeNet example (with surface normals)
-- [ ] ScanNet advanced example (large model with tweaks)
-- [ ] Prediction pipeline
-- [ ] TTA
-- [ ] Classification/regression examples
-- [ ] spatial targets (bounding box, key points, axes)
-
-
-## Priority 2:
-- [ ] 3D advansed augmentation library with key points, spatial targets
-- [ ] multi-GPU
-- [ ] PointNet-like feature extraction layer ("VoxelNet" architecture)
-- [ ] confidence / heatmap / kernels visualization 
-
-## Priority 3 (2020)
-- 3D GAN, sparse pattern generative layer
 
 
