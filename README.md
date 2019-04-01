@@ -1,6 +1,7 @@
 # fastai_sparse
 
-This is [fast.ai](https://github.com/fastai/fastai) library extension for training Sparse Convolution Networks applicable to 2D/3D sparse data like 3D geometry mesh or points cloud in euclidian space.  
+This is an extension of the [fast.ai](https://github.com/fastai/fastai) library to train Sparse Convolution Networks networks that apply to 2D/3D sparse data, such as 3D geometric meshes or point clouds in euclidian space
+
 Currently, this library has [SparseConvNet](https://github.com/facebookresearch/SparseConvNet) under the hood which is the best in 3D (ScanNet benchmark, ShapeNet workshop) so far.
 
 
