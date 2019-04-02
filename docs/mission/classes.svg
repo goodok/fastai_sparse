@@ -1,0 +1,316 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="1614px" preserveAspectRatio="none" style="width:1902px;height:1614px;" version="1.1" viewBox="0 0 1902 1614" width="1902px" zoomAndPan="magnify">
+  <defs>
+    <filter height="300%" id="f50xbmmd63b8o" width="300%" x="-1" y="-1">
+      <feGaussianBlur result="blurOut" stdDeviation="2.0"/>
+      <feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/>
+      <feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/>
+      <feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/>
+    </filter>
+  </defs>
+  <g>
+    <!--cluster Data source-->
+    <polygon fill="#DDDDDD" filter="url(#f50xbmmd63b8o)" points="1709.5,787.574,1719.5,777.574,1880.5,777.574,1880.5,1206.574,1870.5,1216.574,1709.5,1216.574,1709.5,787.574" style="stroke: #000000; stroke-width: 1.5;"/>
+    <line style="stroke: #000000; stroke-width: 1.5;" x1="1870.5" x2="1879.5" y1="787.574" y2="778.574"/>
+    <line style="stroke: #000000; stroke-width: 1.5;" x1="1709.5" x2="1870.5" y1="787.574" y2="787.574"/>
+    <line style="stroke: #000000; stroke-width: 1.5;" x1="1870.5" x2="1870.5" y1="787.574" y2="1216.574"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="95" x="1743.5" y="803.5691">Data source</text>
+    <!--cluster Meshes-->
+    <path d="M1764.8893,1016.2273 C1770.2794,1008.3538 1775.6395,1008.3161 1780.558,1016.6823 C1784.0883,1009.4174 1790.422,1008.9701 1795.5117,1014.9172 C1800.7552,1006.6357 1808.5272,1008.4048 1812.2853,1016.4438 C1816.1587,1010.1578 1821.6139,1009.7317 1826.2417,1015.5759 C1832.4907,1018.6914 1833.9527,1023.5686 1828.179,1028.488 C1833.0271,1031.3055 1834.1136,1034.8207 1829.3981,1038.7718 C1835.5911,1041.7862 1834.9788,1046.4089 1830.2336,1050.2215 C1835.7031,1052.527 1836.3365,1056.6517 1831.3264,1060.1148 C1838.001,1062.7159 1837.1271,1067.9118 1832.6091,1071.7471 C1839.1523,1073.7528 1840.3759,1078.7886 1834.935,1083.2231 C1839.3811,1085.6839 1840.2123,1090.2412 1835.6896,1093.369 C1841.3233,1097.5633 1841.2441,1101.6075 1834.8456,1104.9229 C1839.5324,1108.4124 1839.3645,1113.6097 1833.4409,1115.7186 C1838.2318,1119.9057 1837.6572,1124.2574 1831.3388,1126.2209 C1836.2515,1129.9567 1834.4528,1134.0169 1829.7033,1136.1633 C1834.482,1139.9513 1835.5198,1143.953 1829.62,1147.6636 C1833.347,1152.1783 1834.28,1155.8423 1827.6734,1158.5008 C1832.6842,1162.8006 1831.5239,1167.6621 1825.8871,1170.3578 C1821.7592,1176.3511 1816.7235,1177.9294 1811.9773,1171.0246 C1807.5916,1177.9174 1801.2393,1178.7464 1795.8932,1172.1716 C1790.2004,1178.6462 1785.6298,1179.2308 1781.0106,1171.0791 C1775.8256,1179.3999 1769.6734,1177.6044 1765.0943,1170.4558 C1759.0482,1166.3032 1760.0245,1161.2121 1765.9525,1157.8765 C1758.487,1154.1361 1759.2879,1149.2897 1764.6728,1144.335 C1757.5494,1140.5899 1756.8439,1136.7195 1763.2748,1131.4982 C1758.0983,1127.7947 1757.5893,1122.0464 1763.4516,1118.4929 C1756.9644,1114.1155 1757.3832,1109.6262 1763.0238,1104.868 C1757.584,1101.4403 1757.9432,1097.869 1762.8286,1094.2514 C1756.4457,1089.6949 1754.8453,1084.7241 1762.4685,1079.8181 C1756.5659,1076.0825 1756.9765,1070.8276 1762.6112,1067.2227 C1758.4036,1063.4527 1758.6248,1058.0628 1764.3526,1055.8086 C1757.6459,1051.677 1757.8357,1045.2607 1764.2914,1041.0744 C1759.3104,1037.2062 1759.5449,1033.3079 1765.2952,1030.4539 C1758.8945,1025.8377 1757.9216,1021.2248 1764.8893,1016.2273 " fill="#DDDDDD" style="stroke: #000000; stroke-width: 1.5;"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="61" x="1764.5" y="1033.5691">Meshes</text>
+    <!--cluster Points-->
+    <path d="M1771.9484,851.2391 C1774.5624,845.3545 1779.5804,843.5735 1784.2565,848.994 C1786.2634,842.0265 1792.5228,841.5171 1797.1645,846.032 C1801.9615,840.985 1807.6155,841.6302 1809.307,849.0553 C1813.277,842.8847 1818.8157,842.5707 1822.1626,849.6595 C1828.3563,854.5655 1828.5992,858.8967 1821.1755,862.7781 C1827.8782,866.0225 1827.9201,870.7592 1822.2284,875.0657 C1827.0776,878.8032 1826.7768,883.0461 1821.8361,886.4462 C1826.8614,888.4511 1828.4726,892.9263 1823.9829,896.8876 C1830.1778,900.5743 1829.2286,906.2351 1823.1296,909.0601 C1827.8772,912.7616 1829.2878,918.1163 1822.5236,921.2453 C1827.4182,925.0483 1827.5444,929.6462 1821.6937,932.6687 C1828.1125,935.6418 1828.8924,939.4773 1823.1832,944.0392 C1829.5644,947.6566 1827.9895,953.9842 1822.3979,956.8688 C1827.8925,961.2569 1826.5255,965.0017 1821.0543,968.0751 C1819.3653,973.7083 1814.128,975.3067 1809.651,971.4119 C1806.79,978.2335 1802.1701,979.0609 1796.5401,974.6416 C1791.9396,978.6108 1786.3705,978.1828 1785.1633,971.137 C1780.3992,976.3946 1774.4718,976.8793 1771.6182,969.1452 C1765.3134,965.4304 1764.4832,960.0345 1771.4198,956.118 C1766.4897,954.2467 1765.0529,949.3191 1769.9864,946.0443 C1762.646,942.2464 1761.6346,937.9779 1768.0358,932.2385 C1762.8752,929.6242 1763.5004,925.5919 1767.5545,922.5212 C1762.1867,919.2572 1761.0335,914.5579 1766.7815,910.5746 C1761.1571,906.6265 1761.6018,901.9768 1767.3702,898.5882 C1762.1347,893.6975 1762.1972,889.7725 1768.792,886.2445 C1763.2618,881.6642 1764.2085,877.2376 1769.6798,873.4187 C1765.7247,869.1942 1766.1638,865.9013 1771.2412,863.0351 C1765.3273,858.6701 1765.8874,854.8862 1771.9484,851.2391 " fill="#DDDDDD" style="stroke: #000000; stroke-width: 1.5;"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="49" x="1771" y="867.5691">Points</text>
+    <!--cluster fast_sparse-->
+    <polygon fill="#FFFFFF" filter="url(#f50xbmmd63b8o)" points="258,546.57,355,546.57,362,568.8669,1157.5,568.8669,1157.5,1505.5739,258,1505.5739,258,546.57" style="stroke: #000000; stroke-width: 1.5;"/>
+    <line style="stroke: #000000; stroke-width: 1.5;" x1="258" x2="362" y1="568.8669" y2="568.8669"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="91" x="262" y="561.5651">fast_sparse</text>
+    <!--cluster augmentation-->
+    <rect fill="#FFFFFF" filter="url(#f50xbmmd63b8o)" height="200.9999" style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" width="405" x="326.5" y="1280.574"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="108" x="475" y="1295.5691">augmentation</text>
+    <!--cluster transforms-->
+    <polygon fill="#FFFFFF" filter="url(#f50xbmmd63b8o)" points="350.5,1323.574,443.5,1323.574,450.5,1345.8709,707.5,1345.8709,707.5,1457.574,350.5,1457.574,350.5,1323.574" style="stroke: #000000; stroke-width: 1.5;"/>
+    <line style="stroke: #000000; stroke-width: 1.5;" x1="350.5" x2="450.5" y1="1345.8709" y2="1345.8709"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="87" x="354.5" y="1338.5691">transforms</text>
+    <!--cluster data -->
+    <rect fill="#FFFFFF" filter="url(#f50xbmmd63b8o)" height="667" style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" width="851.5" x="282" y="589.574"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="34" x="688.25" y="604.5691">data</text>
+    <!--cluster datasets-->
+    <polygon fill="#FFFFFF" filter="url(#f50xbmmd63b8o)" points="560.5,640.574,634.5,640.574,641.5,662.8709,932.5,662.8709,932.5,846.574,560.5,846.574,560.5,640.574" style="stroke: #000000; stroke-width: 1.5;"/>
+    <line style="stroke: #000000; stroke-width: 1.5;" x1="560.5" x2="641.5" y1="662.8709" y2="662.8709"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="68" x="564.5" y="655.5691">datasets</text>
+    <!--cluster data_items-->
+    <polygon fill="#FFFFFF" filter="url(#f50xbmmd63b8o)" points="780.5,878.574,870.5,878.574,877.5,900.8709,1109.5,900.8709,1109.5,1232.574,780.5,1232.574,780.5,878.574" style="stroke: #000000; stroke-width: 1.5;"/>
+    <line style="stroke: #000000; stroke-width: 1.5;" x1="780.5" x2="877.5" y1="900.8709" y2="900.8709"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="84" x="784.5" y="893.5691">data_items</text>
+    <!--cluster data-->
+    <polygon fill="#FFFFFF" filter="url(#f50xbmmd63b8o)" points="306,632.574,346,632.574,353,654.8709,516,654.8709,516,821.574,306,821.574,306,632.574" style="stroke: #000000; stroke-width: 1.5;"/>
+    <line style="stroke: #000000; stroke-width: 1.5;" x1="306" x2="353" y1="654.8709" y2="654.8709"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="34" x="310" y="647.5691">data</text>
+    <!--cluster fast.ai-->
+    <g>
+      <polygon fill="#DDDDDD" filter="url(#f50xbmmd63b8o)" points="54,55.57,108,55.57,115,77.8669,217,77.8669,217,490.57,54,490.57,54,55.57" style="stroke: #000000; stroke-width: 1.5;"/>
+      <line style="stroke: #000000; stroke-width: 1.5;" x1="54" x2="115" y1="77.8669" y2="77.8669"/>
+      <a href="https://docs.fast.ai/index.html" target="_blank" xlink:actuate="onRequest" xlink:show="new" xlink:title="https://docs.fast.ai/index.html" xlink:type="simple">
+        <text fill="#0000a0" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="48" x="58" y="70.5651">fast.ai</text>
+      </a>
+    </g>
+    <!--cluster torch-->
+    <g>
+      <polygon fill="#DDDDDD" filter="url(#f50xbmmd63b8o)" points="334.5,273.57,382.5,273.57,389.5,295.8669,487.5,295.8669,487.5,490.57,334.5,490.57,334.5,273.57" style="stroke: #000000; stroke-width: 1.5;"/>
+      <line style="stroke: #000000; stroke-width: 1.5;" x1="334.5" x2="389.5" y1="295.8669" y2="295.8669"/>
+      <a href="https://pytorch.org/docs/stable/index.html" target="_blank" xlink:actuate="onRequest" xlink:show="new" xlink:title="https://pytorch.org/docs/stable/index.html" xlink:type="simple">
+        <text fill="#0000a0" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="42" x="338.5" y="288.5651">torch</text>
+      </a>
+    </g>
+    <!--cluster trimesh-->
+    <g>
+      <polygon fill="#DDDDDD" filter="url(#f50xbmmd63b8o)" points="1443.5,1109.574,1509.5,1109.574,1516.5,1131.8709,1556.5,1131.8709,1556.5,1208.574,1443.5,1208.574,1443.5,1109.574" style="stroke: #000000; stroke-width: 1.5;"/>
+      <line style="stroke: #000000; stroke-width: 1.5;" x1="1443.5" x2="1516.5" y1="1131.8709" y2="1131.8709"/>
+      <a href="https://github.com/mikedh/trimesh" target="_blank" xlink:actuate="onRequest" xlink:show="new" xlink:title="https://github.com/mikedh/trimesh" xlink:type="simple">
+        <text fill="#0000a0" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="60" x="1447.5" y="1124.5691">trimesh</text>
+      </a>
+    </g>
+    <!--class ply-->
+    <rect fill="#FEFECE" filter="url(#f50xbmmd63b8o)" height="23.9688" id="ply" style="stroke: #A80036; stroke-width: 1.5;" width="23" x="1783.5" y="1050.574"/>
+    <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="17" x="1786.5" y="1066.7127">ply</text>
+    <!--class stl-->
+    <rect fill="#FEFECE" filter="url(#f50xbmmd63b8o)" height="23.9688" id="stl" style="stroke: #A80036; stroke-width: 1.5;" width="21" x="1784.5" y="1109.574"/>
+    <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="15" x="1787.5" y="1125.7127">stl</text>
+    <!--class pts-->
+    <rect fill="#FEFECE" filter="url(#f50xbmmd63b8o)" height="23.9688" id="pts" style="stroke: #A80036; stroke-width: 1.5;" width="26" x="1782" y="876.574"/>
+    <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="20" x="1785" y="892.7127">pts</text>
+    <!--class npy-->
+    <rect fill="#FEFECE" filter="url(#f50xbmmd63b8o)" height="23.9688" id="npy" style="stroke: #A80036; stroke-width: 1.5;" width="28" x="1781" y="935.574"/>
+    <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="22" x="1784" y="951.7127">npy</text>
+    <!--class ExtractPoints-->
+    <rect fill="#FEFECE" filter="url(#f50xbmmd63b8o)" height="23.9688" id="ExtractPoints" style="stroke: #A80036; stroke-width: 1.5;" width="89" x="366.5" y="1417.574"/>
+    <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="83" x="369.5" y="1433.7127">ExtractPoints</text>
+    <!--class TfmAffine-->
+    <rect fill="#FEFECE" filter="url(#f50xbmmd63b8o)" height="23.9688" id="TfmAffine" style="stroke: #A80036; stroke-width: 1.5;" width="63" x="379.5" y="1358.574"/>
+    <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="57" x="382.5" y="1374.7127">TfmAffine</text>
+    <!--class RandTransform-->
+    <rect fill="#FEFECE" filter="url(#f50xbmmd63b8o)" height="23.9688" id="RandTransform" style="stroke: #A80036; stroke-width: 1.5;" width="101" x="590.5" y="1417.574"/>
+    <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="95" x="593.5" y="1433.7127">RandTransform</text>
+    <!--class BaseDataset-->
+    <rect fill="#FEFECE" filter="url(#f50xbmmd63b8o)" height="73.6094" id="BaseDataset" style="stroke: #A80036; stroke-width: 1.5;" width="113" x="584.5" y="702.574"/>
+    <ellipse cx="599.5" cy="718.574" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/>
+    <path d="M602.4688,724.2146 Q601.8906,724.5115 601.25,724.6599 Q600.6094,724.8084 599.9063,724.8084 Q597.4063,724.8084 596.0859,723.1599 Q594.7656,721.5115 594.7656,718.3865 Q594.7656,715.2615 596.0859,713.6053 Q597.4063,711.949 599.9063,711.949 Q600.6094,711.949 601.2578,712.1053 Q601.9063,712.2615 602.4688,712.5584 L602.4688,715.2771 Q601.8438,714.699 601.25,714.4256 Q600.6563,714.1521 600.0313,714.1521 Q598.6875,714.1521 598,715.2224 Q597.3125,716.2928 597.3125,718.3865 Q597.3125,720.4803 598,721.5506 Q598.6875,722.6209 600.0313,722.6209 Q600.6563,722.6209 601.25,722.3474 Q601.8438,722.074 602.4688,721.4959 L602.4688,724.2146 Z "/>
+    <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="81" x="613.5" y="722.7283">BaseDataset</text>
+    <line style="stroke: #A80036; stroke-width: 1.5;" x1="585.5" x2="696.5" y1="734.574" y2="734.574"/>
+    <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="81" x="590.5" y="748.7844">df: DataFrame</text>
+    <line style="stroke: #A80036; stroke-width: 1.5;" x1="585.5" x2="696.5" y1="755.3787" y2="755.3787"/>
+    <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="65" x="590.5" y="769.5891">transform()</text>
+    <!--class PointsDataset-->
+    <rect fill="#FEFECE" filter="url(#f50xbmmd63b8o)" height="48" id="PointsDataset" style="stroke: #A80036; stroke-width: 1.5;" width="121" x="783" y="691.574"/>
+    <ellipse cx="798" cy="707.574" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/>
+    <path d="M800.9688,713.2146 Q800.3906,713.5115 799.75,713.6599 Q799.1094,713.8084 798.4063,713.8084 Q795.9063,713.8084 794.5859,712.1599 Q793.2656,710.5115 793.2656,707.3865 Q793.2656,704.2615 794.5859,702.6053 Q795.9063,700.949 798.4063,700.949 Q799.1094,700.949 799.7578,701.1053 Q800.4063,701.2615 800.9688,701.5584 L800.9688,704.2771 Q800.3438,703.699 799.75,703.4256 Q799.1563,703.1521 798.5313,703.1521 Q797.1875,703.1521 796.5,704.2224 Q795.8125,705.2928 795.8125,707.3865 Q795.8125,709.4803 796.5,710.5506 Q797.1875,711.6209 798.5313,711.6209 Q799.1563,711.6209 799.75,711.3474 Q800.3438,711.074 800.9688,710.4959 L800.9688,713.2146 Z "/>
+    <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="89" x="812" y="711.7283">PointsDataset</text>
+    <line style="stroke: #A80036; stroke-width: 1.5;" x1="784" x2="903" y1="723.574" y2="723.574"/>
+    <line style="stroke: #A80036; stroke-width: 1.5;" x1="784" x2="903" y1="731.574" y2="731.574"/>
+    <!--class MeshesDataset-->
+    <rect fill="#FEFECE" filter="url(#f50xbmmd63b8o)" height="48" id="MeshesDataset" style="stroke: #A80036; stroke-width: 1.5;" width="130" x="778.5" y="774.574"/>
+    <ellipse cx="793.5" cy="790.574" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/>
+    <path d="M796.4688,796.2146 Q795.8906,796.5115 795.25,796.6599 Q794.6094,796.8084 793.9063,796.8084 Q791.4063,796.8084 790.0859,795.1599 Q788.7656,793.5115 788.7656,790.3865 Q788.7656,787.2615 790.0859,785.6053 Q791.4063,783.949 793.9063,783.949 Q794.6094,783.949 795.2578,784.1053 Q795.9063,784.2615 796.4688,784.5584 L796.4688,787.2771 Q795.8438,786.699 795.25,786.4256 Q794.6563,786.1521 794.0313,786.1521 Q792.6875,786.1521 792,787.2224 Q791.3125,788.2928 791.3125,790.3865 Q791.3125,792.4803 792,793.5506 Q792.6875,794.6209 794.0313,794.6209 Q794.6563,794.6209 795.25,794.3474 Q795.8438,794.074 796.4688,793.4959 L796.4688,796.2146 Z "/>
+    <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="98" x="807.5" y="794.7283">MeshesDataset</text>
+    <line style="stroke: #A80036; stroke-width: 1.5;" x1="779.5" x2="907.5" y1="806.574" y2="806.574"/>
+    <line style="stroke: #A80036; stroke-width: 1.5;" x1="779.5" x2="907.5" y1="814.574" y2="814.574"/>
+    <!--class ItemBase -->
+    <rect fill="#FEFECE" filter="url(#f50xbmmd63b8o)" height="60.8047" id="ItemBase " style="stroke: #A80036; stroke-width: 1.5;" width="94" x="796.5" y="1146.074"/>
+    <ellipse cx="811.5" cy="1162.074" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/>
+    <path d="M814.4688,1167.7146 Q813.8906,1168.0115 813.25,1168.1599 Q812.6094,1168.3084 811.9063,1168.3084 Q809.4063,1168.3084 808.0859,1166.6599 Q806.7656,1165.0115 806.7656,1161.8865 Q806.7656,1158.7615 808.0859,1157.1053 Q809.4063,1155.449 811.9063,1155.449 Q812.6094,1155.449 813.2578,1155.6053 Q813.9063,1155.7615 814.4688,1156.0584 L814.4688,1158.7771 Q813.8438,1158.199 813.25,1157.9256 Q812.6563,1157.6521 812.0313,1157.6521 Q810.6875,1157.6521 810,1158.7224 Q809.3125,1159.7928 809.3125,1161.8865 Q809.3125,1163.9803 810,1165.0506 Q810.6875,1166.1209 812.0313,1166.1209 Q812.6563,1166.1209 813.25,1165.8474 Q813.8438,1165.574 814.4688,1164.9959 L814.4688,1167.7146 Z "/>
+    <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="58" x="825.5" y="1166.2283">ItemBase</text>
+    <line style="stroke: #A80036; stroke-width: 1.5;" x1="797.5" x2="889.5" y1="1178.074" y2="1178.074"/>
+    <line style="stroke: #A80036; stroke-width: 1.5;" x1="797.5" x2="889.5" y1="1186.074" y2="1186.074"/>
+    <text fill="#000000" font-family="sans-serif" font-size="11" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="70" x="802.5" y="1200.2844">apply_tfms()</text>
+    <!--class MeshItem-->
+    <rect fill="#FEFECE" filter="url(#f50xbmmd63b8o)" height="124.8281" id="MeshItem" style="stroke: #A80036; stroke-width: 1.5;" width="92" x="998.5" y="1091.074"/>
+    <ellipse cx="1013.5" cy="1107.074" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/>
+    <path d="M1016.4688,1112.7146 Q1015.8906,1113.0115 1015.25,1113.1599 Q1014.6094,1113.3084 1013.9063,1113.3084 Q1011.4063,1113.3084 1010.0859,1111.6599 Q1008.7656,1110.0115 1008.7656,1106.8865 Q1008.7656,1103.7615 1010.0859,1102.1053 Q1011.4063,1100.449 1013.9063,1100.449 Q1014.6094,1100.449 1015.2578,1100.6053 Q1015.9063,1100.7615 1016.4688,1101.0584 L1016.4688,1103.7771 Q1015.8438,1103.199 1015.25,1102.9256 Q1014.6563,1102.6521 1014.0313,1102.6521 Q1012.6875,1102.6521 1012,1103.7224 Q1011.3125,1104.7928 1011.3125,1106.8865 Q1011.3125,1108.9803 1012,1110.0506 Q1012.6875,1111.1209 1014.0313,1111.1209 Q1014.6563,1111.1209 1015.25,1110.8474 Q1015.8438,1110.574 1016.4688,1109.9959 L1016.4688,1112.7146 Z "/>
+    <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="60" x="1027.5" y="1111.2283">MeshItem</text>
+    <line style="stroke: #A80036; stroke-width: 1.5;" x1="999.5" x2="1089.5" y1="1123.074" y2="1123.074"/>
+    <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="45" x="1004.5" y="1137.2844">vertices</text>
+    <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="31" x="1004.5" y="1150.0891">faces</text>
+    <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="35" x="1004.5" y="1162.8938">colors</text>
+    <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="34" x="1004.5" y="1175.6985">labels</text>
+    <line style="stroke: #A80036; stroke-width: 1.5;" x1="999.5" x2="1089.5" y1="1182.2928" y2="1182.2928"/>
+    <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="57" x="1004.5" y="1196.5032">describe()</text>
+    <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="38" x="1004.5" y="1209.3079">show()</text>
+    <!--class PointsItem-->
+    <rect fill="#FEFECE" filter="url(#f50xbmmd63b8o)" height="141.6328" id="PointsItem" style="stroke: #A80036; stroke-width: 1.5;" width="98" x="995.5" y="913.574"/>
+    <ellipse cx="1010.5" cy="929.574" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/>
+    <path d="M1013.4688,935.2146 Q1012.8906,935.5115 1012.25,935.6599 Q1011.6094,935.8084 1010.9063,935.8084 Q1008.4063,935.8084 1007.0859,934.1599 Q1005.7656,932.5115 1005.7656,929.3865 Q1005.7656,926.2615 1007.0859,924.6053 Q1008.4063,922.949 1010.9063,922.949 Q1011.6094,922.949 1012.2578,923.1053 Q1012.9063,923.2615 1013.4688,923.5584 L1013.4688,926.2771 Q1012.8438,925.699 1012.25,925.4256 Q1011.6563,925.1521 1011.0313,925.1521 Q1009.6875,925.1521 1009,926.2224 Q1008.3125,927.2928 1008.3125,929.3865 Q1008.3125,931.4803 1009,932.5506 Q1009.6875,933.6209 1011.0313,933.6209 Q1011.6563,933.6209 1012.25,933.3474 Q1012.8438,933.074 1013.4688,932.4959 L1013.4688,935.2146 Z "/>
+    <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="66" x="1024.5" y="933.7283">PointsItem</text>
+    <line style="stroke: #A80036; stroke-width: 1.5;" x1="996.5" x2="1092.5" y1="945.574" y2="945.574"/>
+    <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="35" x="1001.5" y="959.7844">points</text>
+    <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="35" x="1001.5" y="972.5891">colors</text>
+    <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="34" x="1001.5" y="985.3938">labels</text>
+    <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="47" x="1001.5" y="1015.0032">normals</text>
+    <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 1.0,2.0;" x1="996.5" x2="1021" y1="998.3904" y2="998.3904"/>
+    <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="47" x="1021" y="1001.6985">Optional</text>
+    <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 1.0,2.0;" x1="1068" x2="1092.5" y1="998.3904" y2="998.3904"/>
+    <line style="stroke: #A80036; stroke-width: 1.5;" x1="996.5" x2="1092.5" y1="1021.5974" y2="1021.5974"/>
+    <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="57" x="1001.5" y="1035.8079">describe()</text>
+    <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="38" x="1001.5" y="1048.6126">show()</text>
+    <!--class SparseDataBunch-->
+    <rect fill="#FEFECE" filter="url(#f50xbmmd63b8o)" height="137.6328" id="SparseDataBunch" style="stroke: #A80036; stroke-width: 1.5;" width="178" x="322" y="667.574"/>
+    <ellipse cx="351.85" cy="683.574" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/>
+    <path d="M354.8188,689.2146 Q354.2406,689.5115 353.6,689.6599 Q352.9594,689.8084 352.2563,689.8084 Q349.7563,689.8084 348.4359,688.1599 Q347.1156,686.5115 347.1156,683.3865 Q347.1156,680.2615 348.4359,678.6053 Q349.7563,676.949 352.2563,676.949 Q352.9594,676.949 353.6078,677.1053 Q354.2563,677.2615 354.8188,677.5584 L354.8188,680.2771 Q354.1938,679.699 353.6,679.4256 Q353.0063,679.1521 352.3813,679.1521 Q351.0375,679.1521 350.35,680.2224 Q349.6625,681.2928 349.6625,683.3865 Q349.6625,685.4803 350.35,686.5506 Q351.0375,687.6209 352.3813,687.6209 Q353.0063,687.6209 353.6,687.3474 Q354.1938,687.074 354.8188,686.4959 L354.8188,689.2146 Z "/>
+    <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="113" x="369.15" y="687.7283">SparseDataBunch</text>
+    <line style="stroke: #A80036; stroke-width: 1.5;" x1="323" x2="499" y1="699.574" y2="699.574"/>
+    <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="131" x="328" y="713.7844">train_ds : BaseDataset</text>
+    <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="42" x="328" y="726.5891">train_dl</text>
+    <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="131" x="328" y="739.3938">valid_ds : BaseDataset</text>
+    <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="42" x="328" y="752.1985">valid_dl</text>
+    <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="0" x="332" y="765.0032"/>
+    <text fill="#808080" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="166" x="328" y="777.8079">Support batch examples with</text>
+    <text fill="#808080" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="147" x="332" y="790.6126">variable number of points</text>
+    <line style="stroke: #A80036; stroke-width: 1.5;" x1="323" x2="499" y1="797.2068" y2="797.2068"/>
+    <!--class Learner-->
+    <g>
+      <rect fill="#FEFECE" filter="url(#f50xbmmd63b8o)" height="48" id="Learner" style="stroke: #A80036; stroke-width: 1.5;" width="80" x="95.5" y="117.57"/>
+      <ellipse cx="110.5" cy="133.57" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/>
+      <path d="M113.4688,139.2106 Q112.8906,139.5075 112.25,139.6559 Q111.6094,139.8044 110.9063,139.8044 Q108.4063,139.8044 107.0859,138.1559 Q105.7656,136.5075 105.7656,133.3825 Q105.7656,130.2575 107.0859,128.6012 Q108.4063,126.945 110.9063,126.945 Q111.6094,126.945 112.2578,127.1012 Q112.9063,127.2575 113.4688,127.5544 L113.4688,130.2731 Q112.8438,129.695 112.25,129.4216 Q111.6563,129.1481 111.0313,129.1481 Q109.6875,129.1481 109,130.2184 Q108.3125,131.2887 108.3125,133.3825 Q108.3125,135.4762 109,136.5466 Q109.6875,137.6169 111.0313,137.6169 Q111.6563,137.6169 112.25,137.3434 Q112.8438,137.07 113.4688,136.4919 L113.4688,139.2106 Z "/>
+      <line style="stroke: #A80036; stroke-width: 1.5;" x1="96.5" x2="174.5" y1="149.57" y2="149.57"/>
+      <line style="stroke: #A80036; stroke-width: 1.5;" x1="96.5" x2="174.5" y1="157.57" y2="157.57"/>
+      <a href="https://docs.fast.ai/basic_train.html#Learner" target="_blank" xlink:actuate="onRequest" xlink:show="new" xlink:title="https://docs.fast.ai/basic_train.html#Learner" xlink:type="simple">
+        <text fill="#0000a0" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="48" x="124.5" y="137.7243">Learner</text>
+      </a>
+    </g>
+    <!--class ItemBase-->
+    <g>
+      <rect fill="#FEFECE" filter="url(#f50xbmmd63b8o)" height="48" id="ItemBase" style="stroke: #A80036; stroke-width: 1.5;" width="90" x="90.5" y="418.57"/>
+      <ellipse cx="105.5" cy="434.57" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/>
+      <path d="M108.4688,440.2106 Q107.8906,440.5075 107.25,440.6559 Q106.6094,440.8044 105.9063,440.8044 Q103.4063,440.8044 102.0859,439.1559 Q100.7656,437.5075 100.7656,434.3825 Q100.7656,431.2575 102.0859,429.6012 Q103.4063,427.945 105.9063,427.945 Q106.6094,427.945 107.2578,428.1012 Q107.9063,428.2575 108.4688,428.5544 L108.4688,431.2731 Q107.8438,430.695 107.25,430.4216 Q106.6563,430.1481 106.0313,430.1481 Q104.6875,430.1481 104,431.2184 Q103.3125,432.2887 103.3125,434.3825 Q103.3125,436.4762 104,437.5466 Q104.6875,438.6169 106.0313,438.6169 Q106.6563,438.6169 107.25,438.3434 Q107.8438,438.07 108.4688,437.4919 L108.4688,440.2106 Z "/>
+      <line style="stroke: #A80036; stroke-width: 1.5;" x1="91.5" x2="179.5" y1="450.57" y2="450.57"/>
+      <line style="stroke: #A80036; stroke-width: 1.5;" x1="91.5" x2="179.5" y1="458.57" y2="458.57"/>
+      <a href="https://docs.fast.ai/core.html#ItemBase" target="_blank" xlink:actuate="onRequest" xlink:show="new" xlink:title="https://docs.fast.ai/core.html#ItemBase" xlink:type="simple">
+        <text fill="#0000a0" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="58" x="119.5" y="438.7243">ItemBase</text>
+      </a>
+    </g>
+    <!--class ItemList-->
+    <g>
+      <rect fill="#FEFECE" filter="url(#f50xbmmd63b8o)" height="48" id="ItemList" style="stroke: #A80036; stroke-width: 1.5;" width="80" x="95.5" y="200.57"/>
+      <ellipse cx="110.5" cy="216.57" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/>
+      <path d="M113.4688,222.2106 Q112.8906,222.5075 112.25,222.6559 Q111.6094,222.8044 110.9063,222.8044 Q108.4063,222.8044 107.0859,221.1559 Q105.7656,219.5075 105.7656,216.3825 Q105.7656,213.2575 107.0859,211.6012 Q108.4063,209.945 110.9063,209.945 Q111.6094,209.945 112.2578,210.1012 Q112.9063,210.2575 113.4688,210.5544 L113.4688,213.2731 Q112.8438,212.695 112.25,212.4216 Q111.6563,212.1481 111.0313,212.1481 Q109.6875,212.1481 109,213.2184 Q108.3125,214.2887 108.3125,216.3825 Q108.3125,218.4762 109,219.5466 Q109.6875,220.6169 111.0313,220.6169 Q111.6563,220.6169 112.25,220.3434 Q112.8438,220.07 113.4688,219.4919 L113.4688,222.2106 Z "/>
+      <line style="stroke: #A80036; stroke-width: 1.5;" x1="96.5" x2="174.5" y1="232.57" y2="232.57"/>
+      <line style="stroke: #A80036; stroke-width: 1.5;" x1="96.5" x2="174.5" y1="240.57" y2="240.57"/>
+      <a href="https://docs.fast.ai/data_block.html#ItemList" target="_blank" xlink:actuate="onRequest" xlink:show="new" xlink:title="https://docs.fast.ai/data_block.html#ItemList" xlink:type="simple">
+        <text fill="#0000a0" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="48" x="124.5" y="220.7243">ItemList</text>
+      </a>
+    </g>
+    <!--class DataBunch-->
+    <g>
+      <rect fill="#FEFECE" filter="url(#f50xbmmd63b8o)" height="99.2188" id="DataBunch" style="stroke: #A80036; stroke-width: 1.5;" width="115" x="78" y="284.07"/>
+      <ellipse cx="99.3" cy="300.07" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/>
+      <path d="M102.2688,305.7106 Q101.6906,306.0075 101.05,306.1559 Q100.4094,306.3044 99.7063,306.3044 Q97.2063,306.3044 95.8859,304.6559 Q94.5656,303.0075 94.5656,299.8825 Q94.5656,296.7575 95.8859,295.1012 Q97.2063,293.445 99.7063,293.445 Q100.4094,293.445 101.0578,293.6012 Q101.7063,293.7575 102.2688,294.0544 L102.2688,296.7731 Q101.6438,296.195 101.05,295.9216 Q100.4563,295.6481 99.8313,295.6481 Q98.4875,295.6481 97.8,296.7184 Q97.1125,297.7887 97.1125,299.8825 Q97.1125,301.9762 97.8,303.0466 Q98.4875,304.1169 99.8313,304.1169 Q100.4563,304.1169 101.05,303.8434 Q101.6438,303.57 102.2688,302.9919 L102.2688,305.7106 Z "/>
+      <line style="stroke: #A80036; stroke-width: 1.5;" x1="79" x2="192" y1="316.07" y2="316.07"/>
+      <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="103" x="84" y="330.2804">train_ds : ItemList</text>
+      <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="42" x="84" y="343.0851">train_dl</text>
+      <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="103" x="84" y="355.8898">valid_ds : ItemList</text>
+      <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="42" x="84" y="368.6945">valid_dl</text>
+      <line style="stroke: #A80036; stroke-width: 1.5;" x1="79" x2="192" y1="375.2887" y2="375.2887"/>
+      <a href="https://docs.fast.ai/basic_data.html#DataBunch" target="_blank" xlink:actuate="onRequest" xlink:show="new" xlink:title="https://docs.fast.ai/basic_data.html#DataBunch" xlink:type="simple">
+        <text fill="#0000a0" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="69" x="114.7" y="304.2243">DataBunch</text>
+      </a>
+    </g>
+    <!--class Dataset-->
+    <g>
+      <rect fill="#FEFECE" filter="url(#f50xbmmd63b8o)" height="48" id="Dataset" style="stroke: #A80036; stroke-width: 1.5;" width="82" x="370" y="316.57"/>
+      <ellipse cx="385" cy="332.57" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/>
+      <path d="M387.9688,338.2106 Q387.3906,338.5075 386.75,338.6559 Q386.1094,338.8044 385.4063,338.8044 Q382.9063,338.8044 381.5859,337.1559 Q380.2656,335.5075 380.2656,332.3825 Q380.2656,329.2575 381.5859,327.6012 Q382.9063,325.945 385.4063,325.945 Q386.1094,325.945 386.7578,326.1012 Q387.4063,326.2575 387.9688,326.5544 L387.9688,329.2731 Q387.3438,328.695 386.75,328.4216 Q386.1563,328.1481 385.5313,328.1481 Q384.1875,328.1481 383.5,329.2184 Q382.8125,330.2887 382.8125,332.3825 Q382.8125,334.4762 383.5,335.5466 Q384.1875,336.6169 385.5313,336.6169 Q386.1563,336.6169 386.75,336.3434 Q387.3438,336.07 387.9688,335.4919 L387.9688,338.2106 Z "/>
+      <line style="stroke: #A80036; stroke-width: 1.5;" x1="371" x2="451" y1="348.57" y2="348.57"/>
+      <line style="stroke: #A80036; stroke-width: 1.5;" x1="371" x2="451" y1="356.57" y2="356.57"/>
+      <a href="https://pytorch.org/docs/stable/data.html#torch.utils.data.Dataset" target="_blank" xlink:actuate="onRequest" xlink:show="new" xlink:title="https://pytorch.org/docs/stable/data.html#torch.utils.data.Dataset" xlink:type="simple">
+        <text fill="#0000a0" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="50" x="399" y="336.7243">Dataset</text>
+      </a>
+    </g>
+    <!--class DataLoader-->
+    <g>
+      <rect fill="#FEFECE" filter="url(#f50xbmmd63b8o)" height="48" id="DataLoader" style="stroke: #A80036; stroke-width: 1.5;" width="105" x="358.5" y="399.57"/>
+      <ellipse cx="373.5" cy="415.57" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/>
+      <path d="M376.4688,421.2106 Q375.8906,421.5075 375.25,421.6559 Q374.6094,421.8044 373.9063,421.8044 Q371.4063,421.8044 370.0859,420.1559 Q368.7656,418.5075 368.7656,415.3825 Q368.7656,412.2575 370.0859,410.6012 Q371.4063,408.945 373.9063,408.945 Q374.6094,408.945 375.2578,409.1012 Q375.9063,409.2575 376.4688,409.5544 L376.4688,412.2731 Q375.8438,411.695 375.25,411.4216 Q374.6563,411.1481 374.0313,411.1481 Q372.6875,411.1481 372,412.2184 Q371.3125,413.2887 371.3125,415.3825 Q371.3125,417.4762 372,418.5466 Q372.6875,419.6169 374.0313,419.6169 Q374.6563,419.6169 375.25,419.3434 Q375.8438,419.07 376.4688,418.4919 L376.4688,421.2106 Z "/>
+      <line style="stroke: #A80036; stroke-width: 1.5;" x1="359.5" x2="462.5" y1="431.57" y2="431.57"/>
+      <line style="stroke: #A80036; stroke-width: 1.5;" x1="359.5" x2="462.5" y1="439.57" y2="439.57"/>
+      <a href="https://pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader" target="_blank" xlink:actuate="onRequest" xlink:show="new" xlink:title="https://pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader" xlink:type="simple">
+        <text fill="#0000a0" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="73" x="387.5" y="419.7243">DataLoader</text>
+      </a>
+    </g>
+    <!--class Trimesh-->
+    <g>
+      <rect fill="#FEFECE" filter="url(#f50xbmmd63b8o)" height="48" id="Trimesh" style="stroke: #A80036; stroke-width: 1.5;" width="81" x="1459.5" y="1144.574"/>
+      <ellipse cx="1474.5" cy="1160.574" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/>
+      <path d="M1477.4688,1166.2146 Q1476.8906,1166.5115 1476.25,1166.6599 Q1475.6094,1166.8084 1474.9063,1166.8084 Q1472.4063,1166.8084 1471.0859,1165.1599 Q1469.7656,1163.5115 1469.7656,1160.3865 Q1469.7656,1157.2615 1471.0859,1155.6053 Q1472.4063,1153.949 1474.9063,1153.949 Q1475.6094,1153.949 1476.2578,1154.1053 Q1476.9063,1154.2615 1477.4688,1154.5584 L1477.4688,1157.2771 Q1476.8438,1156.699 1476.25,1156.4256 Q1475.6563,1156.1521 1475.0313,1156.1521 Q1473.6875,1156.1521 1473,1157.2224 Q1472.3125,1158.2928 1472.3125,1160.3865 Q1472.3125,1162.4803 1473,1163.5506 Q1473.6875,1164.6209 1475.0313,1164.6209 Q1475.6563,1164.6209 1476.25,1164.3474 Q1476.8438,1164.074 1477.4688,1163.4959 L1477.4688,1166.2146 Z "/>
+      <line style="stroke: #A80036; stroke-width: 1.5;" x1="1460.5" x2="1539.5" y1="1176.574" y2="1176.574"/>
+      <line style="stroke: #A80036; stroke-width: 1.5;" x1="1460.5" x2="1539.5" y1="1184.574" y2="1184.574"/>
+      <a href="https://trimsh.org/trimesh.html#trimesh.base.Trimesh" target="_blank" xlink:actuate="onRequest" xlink:show="new" xlink:title="https://trimsh.org/trimesh.html#trimesh.base.Trimesh" xlink:type="simple">
+        <text fill="#0000a0" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="49" x="1488.5" y="1164.7283">Trimesh</text>
+      </a>
+    </g>
+    <a href="https://ipyvolume.readthedocs.io/en/latest/#" target="_top" xlink:actuate="onRequest" xlink:show="new" xlink:title="https://ipyvolume.readthedocs.io/en/latest/#" xlink:type="simple">
+      <polygon fill="#DDDDDD" filter="url(#f50xbmmd63b8o)" points="1450,1228.074,1536,1228.074,1543,1250.3709,1550,1250.3709,1550,1280.6678,1450,1280.6678,1450,1228.074" style="stroke: #000000; stroke-width: 1.5;"/>
+      <line style="stroke: #000000; stroke-width: 1.5;" x1="1450" x2="1543" y1="1250.3709" y2="1250.3709"/>
+      <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="80" x="1454" y="1243.0691">ipyvolume</text>
+    </a>
+    <!--link BaseDataset to PointsDataset-->
+    <path d="M717.648,730.519 C739.242,727.934 762.46,725.155 782.946,722.703 " fill="none" id="BaseDataset-PointsDataset" style="stroke: #A80036; stroke-width: 1.0;"/>
+    <polygon fill="none" points="718.274,737.494,697.584,732.92,716.61,723.593,718.274,737.494" style="stroke: #A80036; stroke-width: 1.0;"/>
+    <!--link BaseDataset to MeshesDataset-->
+    <path d="M716.789,761.582 C737.011,767.532 758.713,773.918 778.298,779.681 " fill="none" id="BaseDataset-MeshesDataset" style="stroke: #A80036; stroke-width: 1.0;"/>
+    <polygon fill="none" points="714.795,768.292,697.584,755.93,718.747,754.861,714.795,768.292" style="stroke: #A80036; stroke-width: 1.0;"/>
+    <!--link ItemBase  to MeshItem-->
+    <path d="M910.69,1168.924 C939.445,1165.6 972.395,1161.792 998.282,1158.8 " fill="none" id="ItemBase -MeshItem" style="stroke: #A80036; stroke-width: 1.0;"/>
+    <polygon fill="none" points="911.326,1175.897,890.655,1171.239,909.719,1161.989,911.326,1175.897" style="stroke: #A80036; stroke-width: 1.0;"/>
+    <!--link ItemBase  to PointsItem-->
+    <path d="M890.974,1131.735 C922.309,1101.502 963.557,1061.705 995.256,1031.121 " fill="none" id="ItemBase -PointsItem" style="stroke: #A80036; stroke-width: 1.0;"/>
+    <polygon fill="none" points="895.726,1136.877,876.473,1145.726,886.005,1126.801,895.726,1136.877" style="stroke: #A80036; stroke-width: 1.0;"/>
+    <!--link PointsDataset to PointsItem-->
+    <path d="M916.014,735.619 C927.885,741.296 939.304,748.492 948.5,757.574 C991.209,799.75 1015.65,864.007 1029.02,913.403 " fill="none" id="PointsDataset-PointsItem" style="stroke: #A80036; stroke-width: 1.0;"/>
+    <polygon fill="#A80036" points="904.058,730.434,907.9716,736.4907,915.0677,735.2076,911.154,729.1509,904.058,730.434" style="stroke: #A80036; stroke-width: 1.0;"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="36" x="989.5641" y="902.3827">many</text>
+    <!--link MeshesDataset to MeshItem-->
+    <path d="M889.265,830.944 C910.282,848.403 933.872,871.67 948.5,897.574 C987.895,967.339 955.241,1000.236 987.5,1073.574 C990.572,1080.557 994.294,1087.557 998.343,1094.353 " fill="none" id="MeshesDataset-MeshItem" style="stroke: #A80036; stroke-width: 1.0;"/>
+    <polygon fill="#A80036" points="878.888,822.608,881.0604,829.4841,888.2431,830.1235,886.0707,823.2474,878.888,822.608" style="stroke: #A80036; stroke-width: 1.0;"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="36" x="954.5239" y="1100.135">many</text>
+    <!--link SparseDataBunch to BaseDataset-->
+    <path d="M513.224,737.906 C537.662,738.227 562.894,738.559 584.35,738.842 " fill="none" id="SparseDataBunch-BaseDataset" style="stroke: #A80036; stroke-width: 1.0;"/>
+    <polygon fill="#A80036" points="500.151,737.734,506.0977,741.8128,512.15,737.8922,506.2032,733.8135,500.151,737.734" style="stroke: #A80036; stroke-width: 1.0;"/>
+    <!--link ItemBase to ItemBase -->
+    <path d="M138.049,486.9 C145.033,673.906 176.499,1391.833 250,1457.574 C412.158,1602.6093 561.147,1582.1559 739.5,1457.574 C822.349,1399.703 838.763,1267.563 841.867,1207.414 " fill="none" id="ItemBase-ItemBase " style="stroke: #A80036; stroke-width: 1.0;"/>
+    <polygon fill="none" points="131.05,487.05,137.318,466.8,145.041,486.54,131.05,487.05" style="stroke: #A80036; stroke-width: 1.0;"/>
+    <!--link ItemList to BaseDataset-->
+    <path d="M195.495,216.17 C282.735,207.45 444.727,206.2 527.5,300.57 C549.08,325.18 534.979,414.88 536.5,447.57 C537.149,461.51 536.639,687.048 544.5,698.574 C553.904,712.362 568.981,721.539 584.402,727.637 " fill="none" id="ItemList-BaseDataset" style="stroke: #A80036; stroke-width: 1.0;"/>
+    <polygon fill="none" points="196.187,223.13,175.527,218.43,194.613,209.22,196.187,223.13" style="stroke: #A80036; stroke-width: 1.0;"/>
+    <!--link Dataset to BaseDataset-->
+    <path d="M471.674,347.99 C492.628,353.72 514.23,363.81 527.5,381.57 C569.722,438.09 504.12,640.728 544.5,698.574 C554.002,712.185 569.008,721.309 584.335,727.412 " fill="none" id="Dataset-BaseDataset" style="stroke: #A80036; stroke-width: 1.0;"/>
+    <polygon fill="none" points="470.133,354.82,452.077,343.73,473.107,341.14,470.133,354.82" style="stroke: #A80036; stroke-width: 1.0;"/>
+    <!--link Trimesh to Meshes-->
+    <path d="M1540.52,1168.574 C1579.88,1168.574 1641.9,1168.574 1694.7388,1168.574 C1707.9484,1168.574 1720.5843,1168.574 1732.1488,1168.574 C1737.9311,1168.574 1743.4455,1168.574 1748.6299,1168.574 C1751.2221,1168.574 1753.7318,1168.574 1756.1512,1168.574 " fill="none" id="Trimesh-Meshes" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="84" x="1597.5" y="1164.6409">read meshes</text>
+    <!--link MeshItem to Trimesh-->
+    <path d="M1103.8,1155.502 C1197.47,1158.6 1379.07,1164.607 1459.28,1167.26 " fill="none" id="MeshItem-Trimesh" style="stroke: #A80036; stroke-width: 1.0;"/>
+    <polygon fill="#A80036" points="1090.64,1155.067,1096.5049,1159.2626,1102.6335,1155.4626,1096.7686,1151.267,1090.64,1155.067" style="stroke: #A80036; stroke-width: 1.0;"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="137" x="1220" y="1138.6409">used for files reading,</text>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="224" x="1178.5" y="1153.7737">calc the normals, some transforms</text>
+    <!--link ItemBase  to ipyvolume-->
+    <path d="M902.63,1204.933 C928.065,1215.965 958.636,1227.417 987.5,1233.574 C1153.95,1269.081 1357.6,1263.217 1449.65,1258.008 " fill="none" id="ItemBase -ipyvolume" style="stroke: #A80036; stroke-width: 1.0;"/>
+    <polygon fill="#A80036" points="890.587,1199.575,894.4435,1205.6682,901.5513,1204.4518,897.6948,1198.3586,890.587,1199.575" style="stroke: #A80036; stroke-width: 1.0;"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="110" x="1331.9134" y="1270.8977">used for 3D show</text>
+    <!--link PointsItem to pts-->
+    <path d="M1093.75,978.386 C1244.57,959.042 1701.88,900.389 1781.97,890.117 " fill="none" id="PointsItem-pts" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;"/>
+    <!--link datasets to Data source-->
+    <path d="M798.9052,640.5091 C799.2637,640.4795 799.6221,640.4502 799.9806,640.4211 C802.8484,640.1889 805.7158,639.9757 808.5792,639.7832 C820.0328,639.0131 831.421,638.574 842.5,638.574 C842.5,638.574 842.5,638.574 1501,638.574 C1575.21,638.574 1647.3475,679.9985 1701.4763,722.0703 C1715.0084,732.5882 1727.4151,743.1466 1738.4472,753.1083 C1743.9632,758.0891 1749.1356,762.9208 1753.9333,767.5237 C1756.3321,769.8251 1758.6372,772.0693 1760.8448,774.2464 C1761.9485,775.3349 1763.0279,776.4067 1764.0824,777.4604 " fill="none" id="datasets-Data source" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="60" x="1014.5" y="595.6409">Load files</text>
+    <path d="M992.5,604.7068 L992.5,629.7068 L1092.5,629.7068 L1092.5,614.7068 L1082.5,604.7068 L992.5,604.7068 " fill="#FBFB77" filter="url(#f50xbmmd63b8o)" style="stroke: #A80036; stroke-width: 1.0;"/>
+    <path d="M1082.5,604.7068 L1082.5,614.7068 L1092.5,614.7068 L1082.5,604.7068 " fill="#FBFB77" style="stroke: #A80036; stroke-width: 1.0;"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="79" x="998.5" y="621.7737">Loading files</text>
+    <!--link DataBunch to SparseDataBunch-->
+    <path d="M209.466,374.34 C218.509,382.03 226.753,390.78 233,400.57 C238.944,409.89 245.882,488.32 250,498.57 C274.72,560.14 317.055,622.096 351.969,667.355 " fill="none" id="DataBunch-SparseDataBunch" style="stroke: #A80036; stroke-width: 1.0;"/>
+    <polygon fill="none" points="204.903,379.67,193.152,362.03,213.334,368.49,204.903,379.67" style="stroke: #A80036; stroke-width: 1.0;"/>
+    <!--link SparseDataBunch to DataLoader-->
+    <path d="M317.996,658.06 C270.316,607.967 225.32,539.42 241.5,469.07 C252.154,422.75 312.766,415.99 358.492,417.77 " fill="none" id="SparseDataBunch-DataLoader" style="stroke: #A80036; stroke-width: 1.0;"/>
+    <polygon fill="#A80036" points="327.233,667.51,325.9002,660.4231,318.8459,658.9277,320.1787,666.0146,327.233,667.51" style="stroke: #A80036; stroke-width: 1.0;"/>
+    <!--link fast.ai to torch-->
+    <!--link ExtractPoints to TfmAffine-->
+    <!--link ExtractPoints to RandTransform-->
+  </g>
+</svg>

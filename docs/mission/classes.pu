@@ -1,0 +1,192 @@
+` http://plantuml.com/en/class-diagram
+
+@startuml
+
+!define COMMENT(x) <color:grey>x</color>
+
+left to right direction
+'top to bottom direction  'default
+
+package "Data source" <<Node>> #DDDDDD { 
+
+    package "Meshes" <<Cloud>> {
+      class ".ply"
+      hide ".ply" members
+      hide ".ply" circle
+
+      class ".stl"
+      hide ".stl" members
+      hide ".stl" circle
+
+    }
+
+    package "Points" <<Cloud>> {
+      class ".pts"
+      hide ".pts" members
+      hide ".pts" circle
+
+      class ".npy"
+      hide ".npy" members
+      hide ".npy" circle
+
+
+    }
+}
+
+
+package "fast_sparse" {
+
+
+    rectangle "augmentation" { 
+
+        package "transforms" {
+
+            class ExtractPoints
+            hide ExtractPoints members
+            hide ExtractPoints circle
+
+            class TfmAffine
+            hide TfmAffine members
+            hide TfmAffine circle
+
+            class RandTransform
+            hide RandTransform members
+            hide RandTransform circle
+        }
+    '        note "transformations and augmentation" as N
+    }
+
+    rectangle "data " { 
+
+        package "datasets" {
+
+            class "BaseDataset" {
+                df: DataFrame
+                transform()
+            }
+
+'            note right of BaseDataset::df
+'              DataFrame that defines file list.
+'            end note
+
+            class PointsDataset
+            class MeshesDataset
+
+            BaseDataset <|-- PointsDataset
+            BaseDataset <|-- MeshesDataset
+
+        }
+
+        package "data_items" {
+            class "ItemBase " {
+                {abstract} apply_tfms()
+            }
+
+            class "MeshItem" {
+                vertices
+                faces
+                colors
+                labels
+                describe()
+                show()
+                }
+
+            class "PointsItem"
+            {
+                points
+                colors
+                labels
+                .. Optional ..
+                normals
+                __
+                describe()
+                show()
+                }
+
+            "ItemBase " <|-- MeshItem 
+            "ItemBase " <|-- PointsItem 
+
+        }
+
+
+        package "data" {
+            class SparseDataBunch {
+               train_ds : BaseDataset
+               train_dl
+               valid_ds : BaseDataset
+               valid_dl
+
+               <color:grey>Support batch examples with</color>
+               <color:grey> variable number of points</color>
+            }
+
+        }
+
+        PointsDataset *-- "many" PointsItem
+        MeshesDataset *-- "many" MeshItem
+
+        SparseDataBunch *-- BaseDataset
+
+    }
+}
+
+together {
+
+    package "fast.ai" [[https://docs.fast.ai/index.html]] #DDDDDD {
+
+        class "Learner"  [[https://docs.fast.ai/basic_train.html#Learner]]
+        class "ItemBase" [[https://docs.fast.ai/core.html#ItemBase]]
+        class "ItemList" [[https://docs.fast.ai/data_block.html#ItemList]]
+        class DataBunch [[https://docs.fast.ai/basic_data.html#DataBunch]] {
+           train_ds : ItemList
+           train_dl
+           valid_ds : ItemList
+           valid_dl
+        }
+    }
+
+    package "torch" [[https://pytorch.org/docs/stable/index.html]] #DDDDDD {
+        class "Dataset"    [[https://pytorch.org/docs/stable/data.html#torch.utils.data.Dataset]]
+        class "DataLoader" [[https://pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader]]
+    }
+}
+
+together {
+    package "trimesh" [[https://github.com/mikedh/trimesh]] #DDDDDD {
+      class "Trimesh" [[https://trimsh.org/trimesh.html#trimesh.base.Trimesh]] {
+      }
+    }
+
+    package "ipyvolume" [[https://ipyvolume.readthedocs.io/en/latest/#]] #DDDDDD {
+    }
+}
+
+ItemBase <|-- "ItemBase "
+
+ItemList <|-- BaseDataset
+Dataset <|-- BaseDataset
+
+Trimesh .. "Meshes" : read meshes
+MeshItem *-- Trimesh : "used for files reading,\n calc the normals, some transforms"
+
+"ItemBase " *-- "used for 3D show" ipyvolume
+
+PointsItem .. ".pts"
+
+datasets  .. "Data source" : Load files
+note on link
+    Loading files
+end note
+
+DataBunch  <|-- SparseDataBunch
+
+SparseDataBunch *-- DataLoader
+
+skinparam rectangle {
+'   BorderStyle dotted
+   BorderStyle dashed
+}
+
+"fast.ai" -[hidden]- "torch"
+
+@enduml
