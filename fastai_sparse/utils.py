@@ -25,7 +25,6 @@ import humanize
 from string import Template
 from matplotlib import pyplot as plt
 import requests
-import bs4
 
 
 def save_array(fname, arr):

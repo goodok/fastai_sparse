@@ -7,6 +7,7 @@ from pathlib import Path
 from os.path import splitext
 import warnings
 from dataclasses import dataclass
+from abc import abstractmethod
 
 
 from fastai.core import (Collection, TfmList, listify)
@@ -95,53 +96,30 @@ class ItemBase(ItemBase_fastai):
             self._affine_mat = None
         return self
 
+
+    @abstractmethod
     def aplly_affine(self, affine_mat):
         "Apply affine (and others) transformations that have been sent to and store in the `ItemBase`."
         # https://en.wikipedia.org/wiki/Transformation_matrix#Affine_transformations
         # https://pages.mtu.edu/~shene/COURSES/cs3621/NOTES/geometry/geo-tran.html
         # http://qaru.site/questions/144684/difference-between-numpy-dot-and-python-35-matrix-multiplication
 
-        # 3x3 for rotation, reflection, scale, shear
-        m = affine_mat[:3, :3]
-        # column 3x1 for transpose  (shifting)
-        v = affine_mat[:3, 3]
-
-        d = self.data
-
-        # if not isinstance(self, PointsItem):
-        # for develop autoreload
-        if self.__class__.__name__ != 'PointsItem':
-            # TODO: implement this
-            raise NotImplementedError(
-                'Affine_transformation is implemented only for PointsItem yet  ')
-
-        points = d['points']
-        normals = d.get('normals', None)
-
-        points = np.matmul(points, m.T)   # = (m @ points.T).T
-        points += v
-
-        # incorrect, correct only for rotation
-        if normals is not None:
-            warnings.warn(
-                'Item has normals, but normals affine transformation is not full implemented (only rotation, flip and transpose)')
-            normals = np.dot(normals, m)
-
-        d['points'] = points
-
-        if normals is not None:
-            d['normals'] = normals
-
-        # TODO:
-        # in common case, the normals are not transforms similar like points and vectors
-        # normals is valid for rotation and flippings, but not for (not simmetric) scaling
-        # https://paroj.github.io/gltut/Illumination/Tut09%20Normal%20Transformation.html
-        # https://www.scratchapixel.com/lessons/mathematics-physics-for-computer-graphics/geometry/transforming-normals
-        # In fact, the solution to transforming normals, is not to multiply them by the same matrix used for transforming points and vectors,
-        # but to multiply them by the transpose of the inverse of that matrix
-
 
 class MeshItem(ItemBase):
+
+    def __init__(self, *args, **kwargs):
+        self.labels = None
+        self.colors = None
+        self.is_labels_from_vertices = True
+        self.is_colors_from_vertices = True
+        super().__init__(*args, **kwargs)
+
+    def copy(self):
+        d = self.data.copy()
+        o = MeshItem(d)
+        for k in ['is_labels_from_vertices', 'is_colors_from_vertices', 'labels', 'colors']:
+            setattr(o, k, getattr(self, k))
+        return o
 
     def __str__(self):
         # return str(self.obj)
@@ -249,7 +227,7 @@ class MeshItem(ItemBase):
             if len(self.color_keys(vertex_data)) or len(self.color_keys(face_data)):
                 if colors_from_vertices:
                     warn_always(
-                        'Try read colors from vertites but there are colors in faces only. Set `colors_from_vertices` = False to load them')
+                        'Try read colors from vertices but there are colors in faces only. Set `colors_from_vertices` = False to load them')
                 else:
                     warn_always(
                         'Try read colors from faces but there are colors in vertices only. Set `colors_from_vertices` = True to load them')
@@ -274,7 +252,7 @@ class MeshItem(ItemBase):
         fields = raw_data.dtype.fields
         return [i for i in ['red', 'green', 'blue', 'alpha'] if i in fields]
 
-    def show(self, method=None, labels=None, point_size_value=1., **kwargs):
+    def show(self, method=None, labels=None, point_size_value=1., with_normals=False, **kwargs):
         """
         Show mesh.
 
@@ -317,13 +295,28 @@ class MeshItem(ItemBase):
             if self.is_colors_from_vertices:
                 vertex_colors = getattr(self, 'colors', None)
 
+            vertex_normals = None
+            if with_normals:
+                # TODO: case of `face_normals`
+                vertex_normals = d.vertex_normals
+
             f = visualize.show_mesh(v, d.faces,
                                     vertex_colors=vertex_colors, vertex_labels=vertex_labels,
                                     face_labels=face_labels, face_colors=face_colors,
+                                    point_size_value=point_size_value,
+                                    vertex_normals=vertex_normals,
                                     **kwargs)
             return f
         else:
             return d.show()
+
+    def aplly_affine(self, affine_mat):
+        "Apply affine (and others) transformations that have been sent to and store in the `ItemBase`."
+        # https://en.wikipedia.org/wiki/Transformation_matrix#Affine_transformations
+        # https://pages.mtu.edu/~shene/COURSES/cs3621/NOTES/geometry/geo-tran.html
+        # http://qaru.site/questions/144684/difference-between-numpy-dot-and-python-35-matrix-multiplication
+
+        self.data.apply_transform(affine_mat)
 
 
 class PointsItem(ItemBase):
@@ -333,6 +326,11 @@ class PointsItem(ItemBase):
         _size = self.data['points'].shape
 
         return f"('{_id}', n: {_size[0]})"
+
+    def copy(self):
+        d = self.data.copy()
+        o = PointsItem(d)
+        return o
 
     def describe(self):
         d = self.data
@@ -345,7 +343,7 @@ class PointsItem(ItemBase):
             if v is not None:
                 log(k, v)
 
-    def show(self, labels=None, point_size_value=1., colors=None, **kwargs):
+    def show(self, labels=None, colors=None, with_normals=False, point_size_value=1., normals_size_value=1., **kwargs):
         """Show"""
         d = self.data
         if labels is None:
@@ -353,9 +351,51 @@ class PointsItem(ItemBase):
         points = d['points']
         points = np.array(points, dtype=np.float64)
 
-        colors = d.get('colors', colors)
-        return visualize.scatter(points, labels=labels, colors=colors, point_size_value=point_size_value, **kwargs)
+        normals = None
+        if with_normals:
+            normals = d.get('normals', None)
 
+        colors = d.get('colors', colors)
+        return visualize.scatter(points, labels=labels, colors=colors, normals=normals, point_size_value=point_size_value, vector_size_value=normals_size_value, **kwargs)
+
+
+    def aplly_affine(self, affine_mat):
+        "Apply affine (and others) transformations that have been sent to and store in the `ItemBase`."
+        # https://en.wikipedia.org/wiki/Transformation_matrix#Affine_transformations
+        # https://pages.mtu.edu/~shene/COURSES/cs3621/NOTES/geometry/geo-tran.html
+        # http://qaru.site/questions/144684/difference-between-numpy-dot-and-python-35-matrix-multiplication
+
+        # 3x3 for rotation, reflection, scale, shear
+        m = affine_mat[:3, :3]
+        # column 3x1 for transpose  (shifting)
+        v = affine_mat[:3, 3]
+
+        d = self.data
+
+        points = d['points']
+        normals = d.get('normals', None)
+
+        points = np.matmul(points, m.T)   # = (m @ points.T).T
+        points += v
+
+        # incorrect, correct only for rotation
+        if normals is not None:
+            warnings.warn(
+                'Item has normals, but normals affine transformation is not full implemented (only rotation, flip and transpose)')
+            normals = np.dot(normals, m)
+
+        d['points'] = points
+
+        if normals is not None:
+            d['normals'] = normals
+
+        # TODO:
+        # in common case, the normals are not transforms similar like points and vectors
+        # normals is valid for rotation and flippings, but not for (not simmetric) scaling
+        # https://paroj.github.io/gltut/Illumination/Tut09%20Normal%20Transformation.html
+        # https://www.scratchapixel.com/lessons/mathematics-physics-for-computer-graphics/geometry/transforming-normals
+        # In fact, the solution to transforming normals, is not to multiply them by the same matrix used for transforming points and vectors,
+        # but to multiply them by the transpose of the inverse of that matrix
 
 class SparseItem(ItemBase):
     def __str__(self):
@@ -377,7 +417,7 @@ class SparseItem(ItemBase):
 
         n_voxels = self.num_voxels()
         n_points = len(coords)
-        print('points:', n_points)
+        #print('points:', n_points)
         print('voxels:', n_voxels)
         print('points / voxels:', n_points / n_voxels)
 
@@ -397,25 +437,6 @@ class SparseItem(ItemBase):
         points = np.array(points, dtype=np.float64)
 
         return visualize.scatter(points, labels=labels, point_size_value=point_size_value, **kwargs)
-
-
-#    # TODO: move to transforms
-#    @staticmethod
-#    def create_features(n_points, normals=None):
-#        features = np.ones((n_points, 1)).astype(np.float32)
-#        if normals is not None:
-#            assert len(normals) == n_points
-#            assert normals.dtype == np.float32
-
-#            features = np.hstack([features, normals])
-#        return features
-
-#    # TODO: move to transforms
-#    @staticmethod
-#    def sparse_points(points, resolution):
-#        # shift to 2
-#        coords = np.floor(resolution * (2 + points)).astype(np.int64)
-        return coords
 
     def apply_tfms(self, tfms: Collection, **kwargs):
         "Subclass this method if you want to apply data augmentation with `tfms` to this `SparseItem`."

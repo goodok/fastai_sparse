@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="791px" preserveAspectRatio="none" style="width:1138px;height:791px;" version="1.1" viewBox="0 0 1138 791" width="1138px" zoomAndPan="magnify">
+  <defs>
+    <filter height="300%" id="fjcgpl6823luo" width="300%" x="-1" y="-1">
+      <feGaussianBlur result="blurOut" stdDeviation="2.0"/>
+      <feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/>
+      <feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/>
+      <feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/>
+    </filter>
+  </defs>
+  <g>
+    <!--cluster 3D augmentation-->
+    <rect fill="#FFFFFF" filter="url(#fjcgpl6823luo)" height="756" style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" width="1105" x="22" y="24"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="134" x="507.5" y="38.9951">3D augmentation</text>
+    <!--cluster data_items-->
+    <polygon fill="#FFFFFF" filter="url(#fjcgpl6823luo)" points="504,67,594,67,601,89.2969,676,89.2969,676,172,504,172,504,67" style="stroke: #000000; stroke-width: 1.5;"/>
+    <line style="stroke: #000000; stroke-width: 1.5;" x1="504" x2="601" y1="89.2969" y2="89.2969"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="84" x="508" y="81.9951">data_items</text>
+    <!--cluster transforms-->
+    <polygon fill="#FFFFFF" filter="url(#fjcgpl6823luo)" points="46,196,139,196,146,218.2969,1103,218.2969,1103,756,46,756,46,196" style="stroke: #000000; stroke-width: 1.5;"/>
+    <line style="stroke: #000000; stroke-width: 1.5;" x1="46" x2="146" y1="218.2969" y2="218.2969"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="87" x="50" y="210.9951">transforms</text>
+    <!--class ItemBase-->
+    <rect fill="#FEFECE" filter="url(#fjcgpl6823luo)" height="52.7734" id="ItemBase" style="stroke: #A80036; stroke-width: 1.5;" width="140" x="520" y="102.5"/>
+    <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="58" x="561" y="118.6387">ItemBase</text>
+    <line style="stroke: #A80036; stroke-width: 1.5;" x1="521" x2="659" y1="126.4688" y2="126.4688"/>
+    <line style="stroke: #A80036; stroke-width: 1.5;" x1="521" x2="659" y1="134.4688" y2="134.4688"/>
+    <polygon fill="#FFFF44" points="531,141.3711,535,145.3711,531,149.3711,527,145.3711" style="stroke: #B38D22; stroke-width: 1.0;"/>
+    <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="114" x="540" y="148.6792">affine(affine_matrix)</text>
+    <!--class TfmConvertItem-->
+    <rect fill="#FEFECE" filter="url(#fjcgpl6823luo)" height="95.9922" id="TfmConvertItem" style="stroke: #A80036; stroke-width: 1.5;" width="462" x="359" y="443"/>
+    <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="97" x="541.5" y="459.1387">TfmConvertItem</text>
+    <line style="stroke: #A80036; stroke-width: 1.5;" x1="360" x2="820" y1="466.9688" y2="466.9688"/>
+    <ellipse cx="370" cy="478.8711" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+    <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="436" x="379" y="481.1792">to_points_cloud(x: MeshItem, method='centres', normals=False): PointsItem</text>
+    <text fill="#808080" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="194" x="387" y="493.9839">Convert a mesh to the point cloud</text>
+    <text fill="#808080" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="152" x="387" y="506.7886">calculate normals optionlly</text>
+    <ellipse cx="370" cy="517.2852" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+    <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="255" x="379" y="519.5933">to_sparse_voxels(x: PointsItem): SparseItem</text>
+    <ellipse cx="370" cy="530.0898" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+    <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="338" x="379" y="532.3979">merge_features(ones=True, normals=False, colors=False)</text>
+    <!--class TfmSpatial-->
+    <rect fill="#FEFECE" filter="url(#fjcgpl6823luo)" height="83.1875" id="TfmSpatial" style="stroke: #A80036; stroke-width: 1.5;" width="293" x="443.5" y="324.5"/>
+    <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="65" x="557.5" y="340.6387">TfmSpatial</text>
+    <line style="stroke: #A80036; stroke-width: 1.5;" x1="444.5" x2="735.5" y1="348.4688" y2="348.4688"/>
+    <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="239" x="449.5" y="362.6792">normalize_spatial(mean=True, std=False)</text>
+    <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="153" x="449.5" y="375.4839">fit_to_sphere(center=True)</text>
+    <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="281" x="449.5" y="388.2886">crop_points(low=0, high=1, return_indices=True)</text>
+    <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="104" x="449.5" y="401.0933">elastic(gran, mag)</text>
+    <!--class TfmAffine-->
+    <rect fill="#FEFECE" filter="url(#fjcgpl6823luo)" height="180.8203" id="TfmAffine" style="stroke: #A80036; stroke-width: 1.5;" width="206" x="881" y="253.5"/>
+    <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="57" x="955.5" y="269.6387">TfmAffine</text>
+    <line style="stroke: #A80036; stroke-width: 1.5;" x1="882" x2="1086" y1="277.4688" y2="277.4688"/>
+    <polygon fill="none" points="892,284.3711,896,288.3711,892,292.3711,888,288.3711" style="stroke: #B38D22; stroke-width: 1.0;"/>
+    <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="126" x="901" y="291.6792">wrap_function='affine'</text>
+    <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="37" x="887" y="321.2886">flip_x()</text>
+    <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="101" x="887" y="334.0933">scale(scale: float)</text>
+    <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="92" x="887" y="346.8979">translate(offset)</text>
+    <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 1.0,2.0;" x1="882" x2="946.5" y1="304.6758" y2="304.6758"/>
+    <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="75" x="946.5" y="307.9839">Deterministic</text>
+    <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 1.0,2.0;" x1="1021.5" x2="1086" y1="304.6758" y2="304.6758"/>
+    <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="42" x="887" y="376.5073">rotate()</text>
+    <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="62" x="887" y="389.312">rotate_XY()</text>
+    <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="174" x="887" y="402.1167">rand_scale(scale: np.uniform),</text>
+    <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="194" x="887" y="414.9214">rand_translate(offset: np.uniform)</text>
+    <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="189" x="887" y="427.7261">noise_affine(amplitude:float=0.1)</text>
+    <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 1.0,2.0;" x1="882" x2="961" y1="359.8945" y2="359.8945"/>
+    <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="46" x="961" y="363.2026">Random</text>
+    <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 1.0,2.0;" x1="1007" x2="1086" y1="359.8945" y2="359.8945"/>
+    <!--class TfmColors-->
+    <rect fill="#FEFECE" filter="url(#fjcgpl6823luo)" height="57.5781" id="TfmColors" style="stroke: #A80036; stroke-width: 1.5;" width="283" x="448.5" y="231"/>
+    <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="61" x="559.5" y="247.1387">TfmColors</text>
+    <line style="stroke: #A80036; stroke-width: 1.5;" x1="449.5" x2="730.5" y1="254.9688" y2="254.9688"/>
+    <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="271" x="454.5" y="269.1792">colors_normalize(center=127.5, scale=1/127.5)</text>
+    <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="192" x="454.5" y="281.9839">colors_noise(amplitude:float=0.1)</text>
+    <!--class Transform-->
+    <rect fill="#FEFECE" filter="url(#fjcgpl6823luo)" height="52.7734" id="Transform" style="stroke: #A80036; stroke-width: 1.5;" width="213" x="86" y="574.5"/>
+    <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="63" x="161" y="590.6387">Transform</text>
+    <line style="stroke: #A80036; stroke-width: 1.5;" x1="87" x2="298" y1="598.4688" y2="598.4688"/>
+    <line style="stroke: #A80036; stroke-width: 1.5;" x1="87" x2="298" y1="606.4688" y2="606.4688"/>
+    <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="201" x="92" y="620.6792">sample_points(num_points=50000)</text>
+    <!--class RandTransform-->
+    <rect fill="#FEFECE" filter="url(#fjcgpl6823luo)" height="142.4063" id="RandTransform" style="stroke: #A80036; stroke-width: 1.5;" width="205" x="487.5" y="574"/>
+    <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="95" x="542.5" y="590.1387">RandTransform</text>
+    <line style="stroke: #A80036; stroke-width: 1.5;" x1="488.5" x2="691.5" y1="597.9688" y2="597.9688"/>
+    <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="87" x="493.5" y="612.1792">tfm: Transform</text>
+    <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="69" x="493.5" y="624.9839">kwargs: dict</text>
+    <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="75" x="493.5" y="637.7886">p: float = 1.0</text>
+    <text fill="#808080" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="185" x="501.5" y="650.5933">Probability of the transformation</text>
+    <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="77" x="493.5" y="663.3979">resolved: dict</text>
+    <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="114" x="493.5" y="676.2026">do_run: bool = True</text>
+    <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="135" x="493.5" y="689.0073">is_random: bool = True</text>
+    <line style="stroke: #A80036; stroke-width: 1.5;" x1="488.5" x2="691.5" y1="695.6016" y2="695.6016"/>
+    <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="50" x="493.5" y="709.812">resolve()</text>
+    <!--link Transform to RandTransform-->
+    <path d="M299.227,612.762 C357.576,619.254 429.683,627.276 487.369,633.693 " fill="none" id="Transform-RandTransform" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;"/>
+    <!--link Transform to TfmConvertItem-->
+    <path d="M308.364,569.053 C342.111,559.667 379.79,549.187 416.31,539.03 " fill="none" id="Transform-TfmConvertItem" style="stroke: #A80036; stroke-width: 1.0;"/>
+    <polygon fill="none" points="310.132,575.827,288.987,574.442,306.38,562.339,310.132,575.827" style="stroke: #A80036; stroke-width: 1.0;"/>
+    <!--link Transform to TfmSpatial-->
+    <path d="M222.595,558.207 C252.26,517.866 301.936,458.713 359,425 C384.643,409.85 414.132,398.552 443.253,390.139 " fill="none" id="Transform-TfmSpatial" style="stroke: #A80036; stroke-width: 1.0;"/>
+    <polygon fill="none" points="228.289,562.279,210.962,574.476,216.901,554.135,228.289,562.279" style="stroke: #A80036; stroke-width: 1.0;"/>
+    <!--link TfmSpatial to TfmAffine-->
+    <path d="M756.835,356.693 C798.923,354.331 842.913,351.862 880.788,349.736 " fill="none" id="TfmSpatial-TfmAffine" style="stroke: #A80036; stroke-width: 1.0;"/>
+    <polygon fill="none" points="757.049,363.692,736.688,357.824,756.264,349.714,757.049,363.692" style="stroke: #A80036; stroke-width: 1.0;"/>
+    <!--link Transform to TfmColors-->
+    <path d="M206.064,555.089 C226.581,489.244 273.789,369.106 359,307 C384.937,288.096 416.681,276.375 448.205,269.206 " fill="none" id="Transform-TfmColors" style="stroke: #A80036; stroke-width: 1.0;"/>
+    <polygon fill="none" points="212.729,557.236,200.327,574.417,199.308,553.252,212.729,557.236" style="stroke: #A80036; stroke-width: 1.0;"/>
+    <!--link ItemBase to TfmAffine-->
+    <path d="M660.175,148.578 C707.197,163.373 769.897,186.069 821,215 C841.336,226.513 861.789,240.496 880.989,254.953 " fill="none" id="ItemBase-TfmAffine" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;"/>
+  </g>
+</svg>

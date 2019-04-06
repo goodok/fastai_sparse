@@ -51,7 +51,7 @@ To run examples of SparseConvNet and if SparseConvNet is needed to compile, add
 
     export PYTHON_INCLUDE_PATH="/usr/include/python3.6m"
 
-to ~/.virtualenvs/<environmentname>/bin/postactivate
+to ~/.virtualenvs/`<environmentname>`/bin/postactivate
 
 then 
 
@@ -70,17 +70,6 @@ It would be nice if ~/.cache/pip is cleared if any problems encounters during in
 ```bash
 mv ~/.cache/pip ~/.cache/pip.bak
 ```
-
-Also  backup ~/.jupyter  directory.
-
-```bash
-cp -r ~/.jupyter ~/.jupyter.before.bak
-```
-
-And if any problems clear it too.
-
-```bash
-mv ~/.jupyter ~/.jupyter.current.bak
 ```
 
 
@@ -104,13 +93,8 @@ cd ../
 
 ### fastai
 
-
 ```bash
-git clone https://github.com/fastai/fastai/
-cd fastai
-git checkout 33aae8f7b4b7d323d943c178d9ba58afcf8f19b8
-python setup.py install
-cd ../
+pip install fastai==1.0.48
 ```
 
 ##### Details
@@ -185,9 +169,9 @@ https://github.com/ipython-contrib/jupyter_contrib_nbextensions
 
 
 ```bash
-jupyter contrib nbextension install --user
+jupyter contrib nbextension install --sys-prefix
 
-jupyter nbextensions_configurator enable --user
+jupyter nbextensions_configurator enable --sys-prefix
 ```
 
 Check panel "Configurable nbextensions"
