@@ -37,24 +37,14 @@ package "Data source" <<Node>> #DDDDDD {
 package "fast_sparse" {
 
 
-    rectangle "augmentation" { 
+    rectangle "3D augmentation" [[augmentation.svg]] { 
 
-        package "transforms" {
+!include classes_transforms.pu
 
-            class ExtractPoints
-            hide ExtractPoints members
-            hide ExtractPoints circle
 
-            class TfmAffine
-            hide TfmAffine members
-            hide TfmAffine circle
-
-            class RandTransform
-            hide RandTransform members
-            hide RandTransform circle
-        }
-    '        note "transformations and augmentation" as N
     }
+
+
 
     rectangle "data " { 
 
@@ -108,25 +98,22 @@ package "fast_sparse" {
 
         }
 
-
         package "data" {
             class SparseDataBunch {
                train_ds : BaseDataset
-               train_dl
+               train_dl : DataLoader
                valid_ds : BaseDataset
-               valid_dl
+               valid_dl : DataLoader
 
-               <color:grey>Support batch examples with</color>
-               <color:grey> variable number of points</color>
+               COMMENT(Support batch examples with)
+               COMMENT(variable number of points)
             }
 
         }
 
         PointsDataset *-- "many" PointsItem
         MeshesDataset *-- "many" MeshItem
-
         SparseDataBunch *-- BaseDataset
-
     }
 }
 
@@ -139,9 +126,9 @@ together {
         class "ItemList" [[https://docs.fast.ai/data_block.html#ItemList]]
         class DataBunch [[https://docs.fast.ai/basic_data.html#DataBunch]] {
            train_ds : ItemList
-           train_dl
+           train_dl : DataLoader
            valid_ds : ItemList
-           valid_dl
+           valid_dl : DataLoader
         }
     }
 
@@ -155,9 +142,18 @@ together {
     package "trimesh" [[https://github.com/mikedh/trimesh]] #DDDDDD {
       class "Trimesh" [[https://trimsh.org/trimesh.html#trimesh.base.Trimesh]] {
       }
-    }
+      hide "Trimesh" members
+      hide "Trimesh" circle
 
+    }
     package "ipyvolume" [[https://ipyvolume.readthedocs.io/en/latest/#]] #DDDDDD {
+      class Mesh
+      class Scatter
+      hide "Mesh" members
+      hide "Mesh" circle
+      hide "Scatter" members
+      hide "Scatter" circle
+
     }
 }
 
@@ -167,15 +163,16 @@ ItemList <|-- BaseDataset
 Dataset <|-- BaseDataset
 
 Trimesh .. "Meshes" : read meshes
-MeshItem *-- Trimesh : "used for files reading,\n calc the normals, some transforms"
+MeshItem *-- Trimesh : "used for files reading,\n calc the normals,\nsome transforms"
 
 "ItemBase " *-- "used for 3D show" ipyvolume
 
 PointsItem .. ".pts"
 
-datasets  .. "Data source" : Load files
+datasets  .. "Data source"
 note on link
-    Loading files
+    datasets loading
+    files from source
 end note
 
 DataBunch  <|-- SparseDataBunch
@@ -183,10 +180,33 @@ DataBunch  <|-- SparseDataBunch
 SparseDataBunch *-- DataLoader
 
 skinparam rectangle {
-'   BorderStyle dotted
    BorderStyle dashed
 }
 
 "fast.ai" -[hidden]- "torch"
+
+''' Transformations '''
+
+hide TfmConvertItem members
+hide TfmConvertItem circle
+
+hide TfmAffine members
+hide TfmAffine circle
+
+hide TfmColors members
+hide TfmColors circle
+
+hide TfmSpatial members
+hide TfmSpatial circle
+
+hide RandTransform members
+hide RandTransform circle
+
+hide Unclassified_Yet members
+hide Unclassified_Yet circle
+
+remove Unclassified_Yet
+
+hide class circle
 
 @enduml

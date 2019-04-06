@@ -9,8 +9,12 @@ parser.add_argument('input', metavar='input_file', type=str,
 parser.add_argument('-o', '--output', dest='output', type=str, default=None,
                     help='Output SVG file')
 
-parser.add_argument('--color_hrefs', default=None, type=str,
-                    help='Colorize link')
+parser.add_argument('--links_color', default=None, type=str,
+                    help='Colorize link by color')
+
+parser.add_argument('--ignore_links', default=None, type=str,
+                    help='List of packages and class to be ignored from rearranging. Separated with comas.')
+
 
 args = parser.parse_args()
 
@@ -20,8 +24,14 @@ fn_output = args.output
 if fn_output is None:
     fn_output = fn_input
 
-#color_hrefs = 'blue'
-color_hrefs = args.color_hrefs
+#links_color = 'blue'
+links_color = args.links_color
+
+ignore_links = args.ignore_links
+if ignore_links is not None:
+    ignore_links = ignore_links.split(',')
+else:
+    ignore_links = []
 
 def Main():
 
@@ -73,31 +83,32 @@ def rearange_links(root):
         comment = a.getprevious()
         if isinstance(comment, lxml.etree._Comment):
             if comment.text.startswith('cluster '):
-               
-                g = etree.Element('g')
-                a.addprevious(g)
-                for c in a.getchildren():
-                    if c.tag != "{"+ ns_svg +"}text":
-                        g.append(c)
-                    elif color_hrefs is not None:
-                        c.attrib['fill'] = color_hrefs
+                claster_name = ''.join(comment.text.split('cluster ')[1:])
+                if claster_name not in ignore_links:
+                    g = etree.Element('g')
+                    a.addprevious(g)
+                    for c in a.getchildren():
+                        if c.tag != "{"+ ns_svg +"}text":
+                            g.append(c)
+                        elif links_color is not None:
+                            c.attrib['fill'] = links_color
 
-                a.attrib['target'] = '_blank'
-                g.append(a)
+                    a.attrib['target'] = '_blank'
+                    g.append(a)
             elif comment.text.startswith('class '):
                 class_name = ''.join(comment.text.split('class ')[1:])
+                if class_name not in ignore_links:
+                    g = etree.Element('g')
+                    a.addprevious(g)
+                    for c in a.getchildren():
+                        if c.tag != "{"+ ns_svg +"}text":
+                            g.append(c)
+                        elif c.text != class_name:
+                            g.append(c)
+                        elif links_color is not None:
+                            c.attrib['fill'] = links_color
 
-                g = etree.Element('g')
-                a.addprevious(g)
-                for c in a.getchildren():
-                    if c.tag != "{"+ ns_svg +"}text":
-                        g.append(c)
-                    elif c.text != class_name:
-                        g.append(c)
-                    elif color_hrefs is not None:
-                        c.attrib['fill'] = color_hrefs
-
-                a.attrib['target'] = '_blank'
-                g.append(a)
+                    a.attrib['target'] = '_blank'
+                    g.append(a)
 
 Main()

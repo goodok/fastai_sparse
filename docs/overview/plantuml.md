@@ -1,11 +1,12 @@
 
-Examples
+# Examples
 https://github.com/plantuml/plantuml
 http://plantuml.com
 
 
 
-install
+# Install instructions
+
 https://www.hiroom2.com/2018/07/02/ubuntu-1804-plantuml-en/
 
 
@@ -25,3 +26,9 @@ https://www.hiroom2.com/2018/07/02/ubuntu-1804-plantuml-en/
     java -jar /opt/plantuml/plantuml.jar "\$@"
     EOF
     sudo chmod a+x /usr/local/bin/plantuml
+
+
+
+# What is UML
+- https://en.wikipedia.org/wiki/Unified_Modeling_Language
+- http://michaelhannan.co/uml-function-diagram/
