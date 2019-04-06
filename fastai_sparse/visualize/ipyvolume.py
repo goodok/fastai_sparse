@@ -10,8 +10,8 @@ from pathlib import Path
 from dataclasses import dataclass
 
 import ipyvolume as ipv
-from ipywidgets import FloatSlider, VBox, jslink, Label, RadioButtons, Image
-from IPython.display import FileLink, display
+from ipywidgets import FloatSlider, VBox, jslink, Label, RadioButtons
+from IPython.display import FileLink, display, Image
 
 from . import utils
 # from ..utils import warn_always
@@ -48,8 +48,8 @@ def display_widgets(widget_list, filename=None, ):
         # except Exception as e:
         #     utils.warn_always('For rendering run command in terminal:\n\n    chromium-browser --remote-debugging-port=9222\n')
         #     raise(e)
-        #img = Image(d)
-        img = Image(value=d, format='png')
+        img = Image(d)
+        #   img = Image(value=d, format='png')
 
         if options.save_images:
             if filename is None:
