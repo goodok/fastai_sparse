@@ -33,7 +33,7 @@ from torch.utils.data import Dataset
 
 from . import utils
 from .data_items import MeshItem, PointsItem, SparseItem
-from . import transform
+from . import transforms
 
 # TODO:  use @dataclass
 
@@ -343,19 +343,6 @@ class PointsDataset(BaseDataset):
                     t.close()
                     raise e
 
-    def get_default_transforms(self, flip_x=True, center_points_with_aspect_ratio=False, xtra_tfms: Optional[Collection[transform.Transform]] = None) -> Collection[transform.Transform]:
-        """
-        Get default transforms, based on from config description.
-        """
-        sc = self.source_config
-        r = [
-            transform.normalize(
-                center_points_with_aspect_ratio=center_points_with_aspect_ratio),
-            transform.rotate(flip_x=flip_x),
-            transform.sparse(resolution=sc.resolution),
-        ]
-        return r + listify(xtra_tfms)
-
 
 class MeshesDataset(BaseDataset):
     # _bunch = SparseDataBunch
@@ -418,50 +405,6 @@ class MeshesDataset(BaseDataset):
                                        )
 
         return mesh_item
-
-    def load_mesh(self, i):
-        fn = self.get_filename(i)
-        mesh = trimesh.load_mesh(str(fn), file_type='ply', process=False)
-        return mesh
-
-    def get_mesh_data(self, mesh):
-        # TODO: params 'r', 'g', 'b' and other
-        # TODO: Move to MeshItem?
-        # TODO: labels: from faces or vertices
-        assert mesh.metadata.get(
-            'processed', False) is False, "Mesh must be loaded with , process=False"
-        faces_features_dict = mesh.metadata['ply_raw']['face']['data']
-
-        ply_label_name = self.source_config.ply_label_name
-
-        if ply_label_name not in faces_features_dict.dtype.fields:
-            raise KeyError(f'"{ply_label_name}" is not in the *.ply data. Check *.ply has label field attached to faces group')
-
-        labels = faces_features_dict[ply_label_name]
-
-        faces = faces_features_dict['vertex_indices']['f1']  # or vertex_index
-        # faces, it is == mesh.faces if process==False
-        assert len(faces) == len(mesh.faces)
-
-        vertices_features = np.column_stack([mesh.metadata['ply_raw']['vertex']['data'][i] for i in [
-                                            'x', 'y', 'z', 'red', 'green', 'blue']])
-        return {'faces': faces, 'vertices_features': vertices_features, 'labels': labels}
-
-    def get_default_transforms(self, method='centres', flip_x=True, center_points_with_aspect_ratio=False, xtra_tfms: Optional[Collection[transform.Transform]] = None) -> Collection[transform.Transform]:
-        """
-        Get default transforms, based on from config description.
-        """
-        sc = self.source_config
-        r = [
-            transform.extract_points(method=method),
-            transform.sample_points(num_points=sc.num_sample_points),
-            transform.normalize(
-                center_points_with_aspect_ratio=center_points_with_aspect_ratio),
-            transform.rotate(flip_x=flip_x),
-            transform.sparse(resolution=sc.resolution),
-        ]
-
-        return r + listify(xtra_tfms)
 
 
 class SparseDataBunch(DataBunch):

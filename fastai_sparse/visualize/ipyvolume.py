@@ -10,8 +10,8 @@ from pathlib import Path
 from dataclasses import dataclass
 
 import ipyvolume as ipv
-from ipywidgets import FloatSlider, VBox, jslink, Label, RadioButtons
-from IPython.display import Image, FileLink, display
+from ipywidgets import FloatSlider, VBox, jslink, Label, RadioButtons, Image
+from IPython.display import FileLink, display
 
 from . import utils
 # from ..utils import warn_always
@@ -48,7 +48,8 @@ def display_widgets(widget_list, filename=None, ):
         # except Exception as e:
         #     utils.warn_always('For rendering run command in terminal:\n\n    chromium-browser --remote-debugging-port=9222\n')
         #     raise(e)
-        img = Image(d)
+        #img = Image(d)
+        img = Image(value=d, format='png')
 
         if options.save_images:
             if filename is None:
@@ -207,10 +208,15 @@ def draw_error_points(points, labels, labels_gt):
     return sc2, point_size2
 
 
-def scatter(points, labels=None, labels_gt=None, colors=None,
-            width=800, height=600, cmap=cm.RdBu, reorder_colors=True,
+def scatter(points, labels=None, labels_gt=None,
+            colors=None, cmap=cm.RdBu, reorder_colors=True,
+            normals=None,
+            width=800, height=600, 
             axeslim='auto', aspect_ratio_preserve=True,
-            point_size_value=0.5, title=None):
+            point_size_value=0.5, vector_size_value=0.5, title=None):
+
+    if normals is not None:
+        assert len(points) == len(normals), "Length incorrect. These are not normals of points, may be."
 
     points = points.astype(np.float32)
 
@@ -256,6 +262,21 @@ def scatter(points, labels=None, labels_gt=None, colors=None,
     if w_switch_colors is not None:
         widget_list.append(w_switch_colors)
 
+
+    # vertex normals
+    if normals is not None:
+        u = normals[:, 0]
+        v = normals[:, 1]
+        w = normals[:, 2]
+
+        quiver = ipv.quiver(
+            x, y, z, u, v, w, size=vector_size_value, marker="arrow", color='green')
+
+        vector_size = FloatSlider(
+            min=0, max=5, step=0.1, description='Nomals size')
+        jslink((quiver, 'size'), (vector_size, 'value'))
+        widget_list.append(vector_size)
+
     if title is not None:
         widget_list = [Label(title)] + widget_list
 
@@ -263,20 +284,19 @@ def scatter(points, labels=None, labels_gt=None, colors=None,
 
 
 def show_mesh(verts, triangles,
-              verts_normals=None,
               face_colors=None, face_labels=None, face_cmap=cm.RdBu, face_reorder_colors=True,
               vertex_colors=None, vertex_labels=None, vertex_cmap=cm.RdBu, vertex_reorder_colors=True,
+              vertex_normals=None,
               point_size_value=0.5,
               vector_size_value=0.5,
               width=800, height=600, axeslim='auto', aspect_ratio_preserve=True,
               verbose=0):
     """
-    verts_normals - normals of vertices.
+    vertex_normals - normals of vertices.
     """
 
-    if verts_normals is not None:
-        assert len(verts) == len(
-            verts_normals), "Length incorrect. These are not normals of points, may be."
+    if vertex_normals is not None:
+        assert len(verts) == len(vertex_normals), "Length incorrect. These are not normals of points, may be."
 
     x = verts[:, 0]
     y = verts[:, 1]
@@ -323,20 +343,19 @@ def show_mesh(verts, triangles,
     w_switch_vertex_colors = get_color_switch_widget(
         vertex_colors_by_labels, vertex_colors_rgb, sc)
 
+    widget_list = [ipv.gcc(), point_size]
+
     # vertex normals
-    if verts_normals is not None:
-        u = verts_normals[:, 0]
-        v = verts_normals[:, 1]
-        w = verts_normals[:, 2]
+    if vertex_normals is not None:
+        u = vertex_normals[:, 0]
+        v = vertex_normals[:, 1]
+        w = vertex_normals[:, 2]
 
         quiver = ipv.quiver(
             x, y, z, u, v, w, size=vector_size_value, marker="arrow", color='green')
 
-    widget_list = [ipv.gcc(), point_size]
-
-    if verts_normals is not None:
         vector_size = FloatSlider(
-            min=0, max=5, step=0.1, description='Vector size')
+            min=0, max=5, step=0.1, description='Nomals size')
         jslink((quiver, 'size'), (vector_size, 'value'))
         widget_list.append(vector_size)
 
