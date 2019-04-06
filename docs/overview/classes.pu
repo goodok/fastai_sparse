@@ -1,0 +1,212 @@
+` http://plantuml.com/en/class-diagram
+
+@startuml
+
+!define COMMENT(x) <color:grey>x</color>
+
+left to right direction
+'top to bottom direction  'default
+
+package "Data source" <<Node>> #DDDDDD { 
+
+    package "Meshes" <<Cloud>> {
+      class ".ply"
+      hide ".ply" members
+      hide ".ply" circle
+
+      class ".stl"
+      hide ".stl" members
+      hide ".stl" circle
+
+    }
+
+    package "Points" <<Cloud>> {
+      class ".pts"
+      hide ".pts" members
+      hide ".pts" circle
+
+      class ".npy"
+      hide ".npy" members
+      hide ".npy" circle
+
+
+    }
+}
+
+
+package "fast_sparse" {
+
+
+    rectangle "3D augmentation" [[augmentation.svg]] { 
+
+!include classes_transforms.pu
+
+
+    }
+
+
+
+    rectangle "data " { 
+
+        package "datasets" {
+
+            class "BaseDataset" {
+                df: DataFrame
+                transform()
+            }
+
+'            note right of BaseDataset::df
+'              DataFrame that defines file list.
+'            end note
+
+            class PointsDataset
+            class MeshesDataset
+
+            BaseDataset <|-- PointsDataset
+            BaseDataset <|-- MeshesDataset
+
+        }
+
+        package "data_items" {
+            class "ItemBase " {
+                {abstract} apply_tfms()
+            }
+
+            class "MeshItem" {
+                vertices
+                faces
+                colors
+                labels
+                describe()
+                show()
+                }
+
+            class "PointsItem"
+            {
+                points
+                colors
+                labels
+                .. Optional ..
+                normals
+                __
+                describe()
+                show()
+                }
+
+            "ItemBase " <|-- MeshItem 
+            "ItemBase " <|-- PointsItem 
+
+        }
+
+        package "data" {
+            class SparseDataBunch {
+               train_ds : BaseDataset
+               train_dl : DataLoader
+               valid_ds : BaseDataset
+               valid_dl : DataLoader
+
+               COMMENT(Support batch examples with)
+               COMMENT(variable number of points)
+            }
+
+        }
+
+        PointsDataset *-- "many" PointsItem
+        MeshesDataset *-- "many" MeshItem
+        SparseDataBunch *-- BaseDataset
+    }
+}
+
+together {
+
+    package "fast.ai" [[https://docs.fast.ai/index.html]] #DDDDDD {
+
+        class "Learner"  [[https://docs.fast.ai/basic_train.html#Learner]]
+        class "ItemBase" [[https://docs.fast.ai/core.html#ItemBase]]
+        class "ItemList" [[https://docs.fast.ai/data_block.html#ItemList]]
+        class DataBunch [[https://docs.fast.ai/basic_data.html#DataBunch]] {
+           train_ds : ItemList
+           train_dl : DataLoader
+           valid_ds : ItemList
+           valid_dl : DataLoader
+        }
+    }
+
+    package "torch" [[https://pytorch.org/docs/stable/index.html]] #DDDDDD {
+        class "Dataset"    [[https://pytorch.org/docs/stable/data.html#torch.utils.data.Dataset]]
+        class "DataLoader" [[https://pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader]]
+    }
+}
+
+together {
+    package "trimesh" [[https://github.com/mikedh/trimesh]] #DDDDDD {
+      class "Trimesh" [[https://trimsh.org/trimesh.html#trimesh.base.Trimesh]] {
+      }
+      hide "Trimesh" members
+      hide "Trimesh" circle
+
+    }
+    package "ipyvolume" [[https://ipyvolume.readthedocs.io/en/latest/#]] #DDDDDD {
+      class Mesh
+      class Scatter
+      hide "Mesh" members
+      hide "Mesh" circle
+      hide "Scatter" members
+      hide "Scatter" circle
+
+    }
+}
+
+ItemBase <|-- "ItemBase "
+
+ItemList <|-- BaseDataset
+Dataset <|-- BaseDataset
+
+Trimesh .. "Meshes" : read meshes
+MeshItem *-- Trimesh : "used for files reading,\n calc the normals,\nsome transforms"
+
+"ItemBase " *-- "used for 3D show" ipyvolume
+
+PointsItem .. ".pts"
+
+datasets  .. "Data source"
+note on link
+    datasets loading
+    files from source
+end note
+
+DataBunch  <|-- SparseDataBunch
+
+SparseDataBunch *-- DataLoader
+
+skinparam rectangle {
+   BorderStyle dashed
+}
+
+"fast.ai" -[hidden]- "torch"
+
+''' Transformations '''
+
+hide TfmConvertItem members
+hide TfmConvertItem circle
+
+hide TfmAffine members
+hide TfmAffine circle
+
+hide TfmColors members
+hide TfmColors circle
+
+hide TfmSpatial members
+hide TfmSpatial circle
+
+hide RandTransform members
+hide RandTransform circle
+
+hide Unclassified_Yet members
+hide Unclassified_Yet circle
+
+remove Unclassified_Yet
+
+hide class circle
+
+@enduml

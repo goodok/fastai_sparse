@@ -1,0 +1,21 @@
+@startuml
+
+rectangle "Data source" { 
+
+  folder "Meshes" {
+    [*.ply]
+  }
+
+  folder "Points" {
+    [*.pts]
+  }
+}
+
+
+package "Fast.ai" {
+
+
+}
+
+
+@enduml

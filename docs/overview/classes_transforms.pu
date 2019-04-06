@@ -1,0 +1,76 @@
+@startuml
+
+package "transforms" {
+
+    together {
+    class Transform {
+      sample_points(num_points=50000)
+    }
+
+    class RandTransform {
+        tfm: Transform
+        kwargs: dict
+        p: float = 1.0
+          COMMENT(Probability of the transformation)
+        resolved: dict
+        do_run: bool = True
+        is_random: bool = True
+        resolve()
+    }
+    }
+
+    class TfmConvertItem {
+        +to_points_cloud(x: MeshItem, method='centres', normals=False): PointsItem
+        {method} COMMENT(Convert a mesh to the point cloud)
+        {method} COMMENT(calculate normals optionlly)
+        +to_sparse_voxels(x: PointsItem): SparseItem
+        +merge_features(ones=True, normals=False, colors=False)
+    }
+    hide TfmConvertItem fields
+
+
+    class TfmSpatial {
+        normalize_spatial(mean=True, std=False)
+        fit_to_sphere(center=True)
+        crop_points(low=0, high=1, return_indices=True)
+        elastic(gran, mag)
+    }
+
+    hide TfmSpatial fields
+
+    class TfmAffine {
+      #wrap_function='affine'
+      .. Deterministic ..
+            flip_x()
+            scale(scale: float)
+            translate(offset)
+      .. Random ..
+            rotate()
+            rotate_XY()
+            rand_scale(scale: np.uniform),
+            rand_translate(offset: np.uniform)
+            noise_affine(amplitude:float=0.1)
+    }
+
+
+    class TfmColors {
+        colors_normalize(center=127.5, scale=1/127.5)
+        colors_noise(amplitude:float=0.1)
+    }
+    hide TfmColors fields
+
+    class Unclassified_Yet<? where to> {
+    }
+    remove Unclassified_Yet
+    
+
+    Transform .. RandTransform
+    Transform  <|-- TfmConvertItem
+    Transform  <|-- TfmSpatial
+    TfmSpatial  <|-- TfmAffine
+    Transform  <|-- TfmColors
+
+}
+
+
+@enduml

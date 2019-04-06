@@ -1,0 +1,38 @@
+` http://plantuml.com/en/class-diagram
+
+@startuml
+
+!define COMMENT(x) <color:grey>  x</color>
+
+
+
+left to right direction
+'top to bottom direction
+
+rectangle "3D augmentation" { 
+
+    package "data_items" {
+
+        class ItemBase {
+            #affine(affine_matrix)
+        }
+    }
+
+
+!include classes_transforms.pu
+
+'    note "transformations and augmentation" as N
+
+ItemBase .. TfmAffine
+
+}
+
+
+hide class circle
+
+skinparam rectangle {
+   BorderStyle dashed
+}
+
+
+@enduml
