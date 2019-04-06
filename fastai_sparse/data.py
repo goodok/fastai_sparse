@@ -498,7 +498,7 @@ class SparseDataBunch(DataBunch):
                 else:
                     ir_fn = None
                 dl = DataLoader(d, b, shuffle=s, drop_last=s,
-                                num_workers=nw, worker_init_fn=ir_fn)
+                                num_workers=nw, worker_init_fn=ir_fn, pin_memory=False)
                 dls.append(dl)
 
         # dls = [DataLoader(d, b, shuffle=s, drop_last=s, num_workers=nw, worker_init_fn=worker_init_fn) for d, b, s, nw in
