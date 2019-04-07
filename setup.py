@@ -50,7 +50,7 @@ dev_requirements = { 'dev' : to_list("""
     wheel>=0.30.0
 """) }
 
-requirements = ['torch>=1.0.0', 'trimesh', 'humanize', 'ipyvolume', 'joblib', 'autopep8', 'jupyter', 'jupyter_contrib_nbextensions', 'PyChromeDevTools',
+requirements = ['torch>=1.0.0', 'trimesh', 'humanize', 'ipyvolume', 'pythreejs', 'joblib', 'autopep8', 'jupyter', 'jupyter_contrib_nbextensions', 'PyChromeDevTools',
                 'matplotlib', 'pandas', 'tqdm', 'dataclasses']
 
 
@@ -66,5 +66,3 @@ setup(
     install_requires = requirements,
     extras_require   = dev_requirements,
 )
-
-

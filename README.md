@@ -19,7 +19,8 @@ See details in [INSTALL.md](INSTALL.md)
 
 
 # Features:
-fast.ai train/inference loop concept (Model + DataBunch --> Learner) 
+* fast.ai train/inference loop concept (Model + DataBunch --> Learner)
+<a href="https://goodok.github.io/fastai_sparse/docs/overview/classes.svg">Classes overview</a>  
 * model training best practices provided by fast.ai (Learning Rate Finder, One Cycle policy)  
 * 3D transforms for data preprocessing and augmentation:  
   - mesh-level transforms and features extraction (surface normals, triangle area,...)  
@@ -28,30 +29,26 @@ fast.ai train/inference loop concept (Model + DataBunch --> Learner)
   - mesh to points
   - points to sparse voxels
 * metrics (IoU, avgIoU, ) calculation and tracking
-* visualisation utils (batch generator output)  
+* visualization utils (batch generator output)  
 
-<a href="https://goodok.github.io/fastai_sparse/docs/overview/classes.svg">![classes overview](https://goodok.github.io/fastai_sparse/docs/overview/classes.svg)</a>
-
-
-# Quick start guide
-
-
-- [x] ScanNet 3D scene segmentation [detailed notebook](https://github.com/goodok/fastai_sparse/blob/master/examples/scannet/unet_24_detailed.ipynb)
+# Notebooks with examples
+- [x] 3D Transformation examples [notebook](https://nbviewer.jupyter.org/github/goodok/fastai_sparse/blob/master/notebooks/transforms/transforms.ipynb)
+- [x] ScanNet 3D indoor scene semantic segmentation [detailed notebook](https://nbviewer.jupyter.org/github/goodok/fastai_sparse/blob/master/examples/scannet/unet_24_detailed.ipynb)
 - [ ] ShapeNet 3D semantic segmentation
-- [x] 3D Transformation examples [notebook](https://github.com/goodok/fastai_sparse/blob/master/notebooks/transforms/transforms.ipynb)
+
 # TODO
 
 ## Priority 1:
 - [ ] ShapeNet example (with surface normals)
-- [ ] ScanNet advanced example (large model with tweaks)
+- [ ] Separate 3D augmentation library with key points, spatial targets
 - [ ] Prediction pipeline
-- [ ] TTA
 - [ ] Classification/regression examples
-- [ ] spatial targets (bounding box, key points, axes)
+- [ ] Spatial targets (bounding box, key points, axes)
 
 
 ## Priority 2:
-- [ ] 3D advansed augmentation library with key points, spatial targets
-- [ ] multi-GPU
+
+- [ ] TTA
+- [ ] Multi-GPU
 - [ ] PointNet-like feature extraction layer ("VoxelNet" architecture)
-- [ ] confidence / heatmap / kernels visualization 
+- [ ] Confidence / heatmap / kernels visualization 
