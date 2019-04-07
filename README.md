@@ -30,7 +30,7 @@ fast.ai train/inference loop concept (Model + DataBunch --> Learner)
 * metrics (IoU, avgIoU, ) calculation and tracking
 * visualisation utils (batch generator output)  
 
-![](https://goodok.github.io/fastai_sparse/docs/overview/classes.svg)
+<a href="https://goodok.github.io/fastai_sparse/docs/overview/classes.svg">![classes overview](https://goodok.github.io/fastai_sparse/docs/overview/classes.svg)</a>
 
 
 # Quick start guide
