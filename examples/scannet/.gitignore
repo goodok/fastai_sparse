@@ -2,3 +2,4 @@
 results/
 #images/
 *.ply
+clean.sh
