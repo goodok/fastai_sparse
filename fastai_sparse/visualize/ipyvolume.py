@@ -211,7 +211,7 @@ def draw_error_points(points, labels, labels_gt):
 def scatter(points, labels=None, labels_gt=None,
             colors=None, cmap=cm.RdBu, reorder_colors=True,
             normals=None,
-            width=800, height=600, 
+            width=800, height=600,
             axeslim='auto', aspect_ratio_preserve=True,
             point_size_value=0.5, vector_size_value=0.5, title=None):
 
@@ -261,7 +261,6 @@ def scatter(points, labels=None, labels_gt=None,
 
     if w_switch_colors is not None:
         widget_list.append(w_switch_colors)
-
 
     # vertex normals
     if normals is not None:

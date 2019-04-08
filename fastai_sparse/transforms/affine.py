@@ -5,15 +5,15 @@
 import numpy as np
 
 from .main import Transform
-from ..data_items import ItemBase, PointsItem, MeshItem
 from ..core import is_listy
 
 __all__ = ['TfmAffine',
            'rotate', 'rotate_XY', 'flip_x',
            'scale', 'rand_scale',
-           'translate', 'rand_translate', 
+           'translate', 'rand_translate',
            'noise_affine',
            ]
+
 
 class TfmAffine(Transform):
     "Decorator for affine tfm funcs."

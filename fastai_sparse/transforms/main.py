@@ -156,7 +156,6 @@ def log_transforms(tfms):
     return df
 
 
-
 def _sample_points(x: PointsItem, num_points=50000):
 
     d = x.data
@@ -175,6 +174,3 @@ def _sample_points(x: PointsItem, num_points=50000):
 
 
 sample_points = Transform(_sample_points)
-
-
-
