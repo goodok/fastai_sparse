@@ -68,7 +68,7 @@ package "fast_sparse" {
         }
 
         package "data_items" {
-            class "ItemBase " {
+            class "ItemBase" {
                 {abstract} apply_tfms()
             }
 
@@ -93,8 +93,8 @@ package "fast_sparse" {
                 show()
                 }
 
-            "ItemBase " <|-- MeshItem 
-            "ItemBase " <|-- PointsItem 
+            "ItemBase" <|-- MeshItem 
+            "ItemBase" <|-- PointsItem 
 
         }
 
@@ -122,7 +122,6 @@ together {
     package "fast.ai" [[https://docs.fast.ai/index.html]] #DDDDDD {
 
         class "Learner"  [[https://docs.fast.ai/basic_train.html#Learner]]
-        class "ItemBase" [[https://docs.fast.ai/core.html#ItemBase]]
         class "ItemList" [[https://docs.fast.ai/data_block.html#ItemList]]
         class DataBunch [[https://docs.fast.ai/basic_data.html#DataBunch]] {
            train_ds : ItemList
@@ -157,7 +156,6 @@ together {
     }
 }
 
-ItemBase <|-- "ItemBase "
 
 ItemList <|-- BaseDataset
 Dataset <|-- BaseDataset
@@ -165,7 +163,7 @@ Dataset <|-- BaseDataset
 Trimesh .. "Meshes" : read meshes
 MeshItem *-- Trimesh : "used for files reading,\n calc the normals,\nsome transforms"
 
-"ItemBase " *-- "used for 3D show" ipyvolume
+"ItemBase" *-- "used for 3D show" ipyvolume
 
 PointsItem .. ".pts"
 

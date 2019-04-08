@@ -9,19 +9,21 @@ import warnings
 from dataclasses import dataclass
 from abc import abstractmethod
 
-
-from fastai.core import (Collection, TfmList, listify)
-from fastai.core import ItemBase as ItemBase_fastai
+from typing import Any, Collection, Optional
 
 from . import visualize
 from .utils import log, print_random_states, warn_always
 
 
-class ItemBase(ItemBase_fastai):
-    def __init__(self, *args, **kwargs):
+class ItemBase():
+    def __init__(self, data, *args, **kwargs):
+        self.data = data
         self._affine_mat = None
         self.verbose = 0
         super().__init__(*args, **kwargs)
+
+    def __repr__(self):
+        return f'{self.__class__.__name__} {str(self)}'
 
     def apply_tfms(self, tfms: Collection, do_resolve: bool = True, verbose=0, refresh_always=False, **kwargs):
         "Apply data augmentation with `tfms` to this `ItemBase`."
@@ -96,13 +98,16 @@ class ItemBase(ItemBase_fastai):
             self._affine_mat = None
         return self
 
-
     @abstractmethod
     def aplly_affine(self, affine_mat):
         "Apply affine (and others) transformations that have been sent to and store in the `ItemBase`."
         # https://en.wikipedia.org/wiki/Transformation_matrix#Affine_transformations
         # https://pages.mtu.edu/~shene/COURSES/cs3621/NOTES/geometry/geo-tran.html
         # http://qaru.site/questions/144684/difference-between-numpy-dot-and-python-35-matrix-multiplication
+
+    @abstractmethod
+    def show(self, **kwargs):
+        pass
 
 
 class MeshItem(ItemBase):
@@ -358,7 +363,6 @@ class PointsItem(ItemBase):
         colors = d.get('colors', colors)
         return visualize.scatter(points, labels=labels, colors=colors, normals=normals, point_size_value=point_size_value, vector_size_value=normals_size_value, **kwargs)
 
-
     def aplly_affine(self, affine_mat):
         "Apply affine (and others) transformations that have been sent to and store in the `ItemBase`."
         # https://en.wikipedia.org/wiki/Transformation_matrix#Affine_transformations
@@ -397,6 +401,7 @@ class PointsItem(ItemBase):
         # In fact, the solution to transforming normals, is not to multiply them by the same matrix used for transforming points and vectors,
         # but to multiply them by the transpose of the inverse of that matrix
 
+
 class SparseItem(ItemBase):
     def __str__(self):
         # return str(self.obj)
@@ -417,7 +422,7 @@ class SparseItem(ItemBase):
 
         n_voxels = self.num_voxels()
         n_points = len(coords)
-        #print('points:', n_points)
+        # print('points:', n_points)
         print('voxels:', n_voxels)
         print('points / voxels:', n_points / n_voxels)
 

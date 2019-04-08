@@ -4,10 +4,9 @@
 
 import numpy as np
 
-from fastai.core import Callable, listify, is_listy
-
 from .main import Transform
 from ..data_items import ItemBase, PointsItem, MeshItem
+from ..core import is_listy
 
 __all__ = ['TfmAffine',
            'rotate', 'rotate_XY', 'flip_x',
