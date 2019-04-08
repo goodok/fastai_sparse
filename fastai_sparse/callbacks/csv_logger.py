@@ -1,15 +1,16 @@
 "A `Callback` that saves tracked metrics into a persistent file."
 # Contribution from devforfu: https://nbviewer.jupyter.org/gist/devforfu/ea0b3fcfe194dad323c3762492b05cae
 
+import numpy as np
+import pandas as pd
+from time import time
+
+from torch import Tensor
 from fastprogress.fastprogress import format_time
 
-from fastai.torch_core import *
-from fastai.basic_data import DataBunch
-from fastai.callback import *
 from fastai.basic_train import Learner, LearnerCallback
 
-
-from time import time
+from ..core import Any, MetricsList, ifnone
 
 __all__ = ['CSVLogger', 'CSVLoggerIouByCategory']
 

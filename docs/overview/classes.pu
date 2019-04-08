@@ -157,7 +157,6 @@ together {
 }
 
 
-ItemList <|-- BaseDataset
 Dataset <|-- BaseDataset
 
 Trimesh .. "Meshes" : read meshes

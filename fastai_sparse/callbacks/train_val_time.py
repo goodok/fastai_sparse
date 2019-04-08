@@ -2,9 +2,6 @@
 from typing import Any
 from time import time
 
-from fastprogress.fastprogress import format_time
-
-from fastai.callback import Callback
 from fastai.basic_train import LearnerCallback, Learner
 from fastai.torch_core import add_metrics, MetricsList
 

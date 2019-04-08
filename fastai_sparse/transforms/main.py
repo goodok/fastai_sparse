@@ -1,17 +1,14 @@
 # -*- coding: utf-8 -*-
 
 import numpy as np
-import warnings
 import functools
-from functools import partial
-from typing import List, Collection, Optional, Callable
+from typing import List, Optional
 from dataclasses import dataclass, field
 from copy import copy
-import trimesh
 
-from ..data_items import MeshItem, SparseItem, PointsItem, ItemBase
+
+from ..data_items import PointsItem
 from ..core import listify, _get_default_args
-from .. import utils
 
 __all__ = ['TRANSFER_KEYS', 'transfer_keys', 'Transform', 'RandTransform', 'log_transforms',
            'sample_points',

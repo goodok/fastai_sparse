@@ -1,14 +1,13 @@
 "A `Callback` that track train and valid time duration."
-from typing import Any
-from time import time
+
+from warnings import warn
+
 import torch
 
-from fastprogress.fastprogress import format_time
-
-from fastai.callback import Callback
 from fastai.callbacks import TrackerCallback
-from fastai.basic_train import LearnerCallback, Learner
-from fastai.torch_core import add_metrics, MetricsList
+from fastai.basic_train import Learner
+
+from ..core import Any
 
 __all__ = ['SaveModelCallback']
 

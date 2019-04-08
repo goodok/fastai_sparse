@@ -11,20 +11,12 @@ import pandas as pd
 import re
 import contextlib
 
-from IPython.lib import kernel
 import json
 import os
-import IPython
-from IPython.display import display, HTML, FileLink
-from os.path import join, exists, basename
+from IPython.display import display, HTML
 import warnings
 from collections import OrderedDict
 import platform
-import subprocess
-import humanize
-from string import Template
-from matplotlib import pyplot as plt
-import requests
 
 
 def save_array(fname, arr):
@@ -67,7 +59,8 @@ def wide_notebook(percents=70):
 
 
 # TODO: refactor: arguments - just list
-def watermark(python=True, virtualenv=True, keras=False, tensorflow=False, nvidia=True, cudnn=True, hostname=False, torch=True, fastai=True, fastai_sparse=True, **kwargs):
+def watermark(python=True, virtualenv=True, keras=False, tensorflow=False, nvidia=True, cudnn=True,
+              hostname=False, torch=True, fastai=True, fastai_sparse=True, **kwargs):
     lines = OrderedDict()
     if virtualenv:
         r = None

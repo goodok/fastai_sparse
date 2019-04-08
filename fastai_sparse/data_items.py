@@ -6,13 +6,11 @@ import trimesh
 from pathlib import Path
 from os.path import splitext
 import warnings
-from dataclasses import dataclass
 from abc import abstractmethod
 
-from typing import Any, Collection, Optional
-
 from . import visualize
-from .utils import log, print_random_states, warn_always
+from .utils import log, warn_always
+from .core import is_listy, Collection
 
 
 class ItemBase():
@@ -131,7 +129,7 @@ class MeshItem(ItemBase):
         d = self.data
         fn = d.metadata['file_name']
         num_v = d.vertices.shape[0]
-        num_f = d.faces.shape[0]
+        # num_f = d.faces.shape[0]
         return f"({fn}, vertices:{num_v})"
 
     def describe(self):
@@ -361,7 +359,11 @@ class PointsItem(ItemBase):
             normals = d.get('normals', None)
 
         colors = d.get('colors', colors)
-        return visualize.scatter(points, labels=labels, colors=colors, normals=normals, point_size_value=point_size_value, vector_size_value=normals_size_value, **kwargs)
+        return visualize.scatter(points,
+                                 labels=labels, colors=colors, normals=normals,
+                                 point_size_value=point_size_value,
+                                 vector_size_value=normals_size_value,
+                                 **kwargs)
 
     def aplly_affine(self, affine_mat):
         "Apply affine (and others) transformations that have been sent to and store in the `ItemBase`."
@@ -448,3 +450,10 @@ class SparseItem(ItemBase):
         if tfms:
             raise NotImplementedError(f" Transformation for {self.__class__.__name__} is not implemented.")
         return self
+
+
+def extract_data(b: Collection):
+    "Recursively map lists of items in `b ` to their wrapped data."
+    if is_listy(b):
+        return [extract_data(o) for o in b]
+    return b.data if isinstance(b, ItemBase) else b

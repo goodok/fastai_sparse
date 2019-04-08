@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="1185px" preserveAspectRatio="none" style="width:1669px;height:1185px;" version="1.1" viewBox="0 0 1669 1185" width="1669px" zoomAndPan="magnify">
   <defs>
-    <filter height="300%" id="fhhin1x4481k0" width="300%" x="-1" y="-1">
+    <filter height="300%" id="f1qk6ogz65xl6j" width="300%" x="-1" y="-1">
       <feGaussianBlur result="blurOut" stdDeviation="2.0"/>
       <feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/>
       <feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/>
@@ -9,7 +9,7 @@
   </defs>
   <g>
     <!--cluster Data source-->
-    <polygon fill="#DDDDDD" filter="url(#fhhin1x4481k0)" points="1476.5,665,1486.5,655,1647.5,655,1647.5,1084,1637.5,1094,1476.5,1094,1476.5,665" style="stroke: #000000; stroke-width: 1.5;"/>
+    <polygon fill="#DDDDDD" filter="url(#f1qk6ogz65xl6j)" points="1476.5,665,1486.5,655,1647.5,655,1647.5,1084,1637.5,1094,1476.5,1094,1476.5,665" style="stroke: #000000; stroke-width: 1.5;"/>
     <line style="stroke: #000000; stroke-width: 1.5;" x1="1637.5" x2="1646.5" y1="665" y2="656"/>
     <line style="stroke: #000000; stroke-width: 1.5;" x1="1476.5" x2="1637.5" y1="665" y2="665"/>
     <line style="stroke: #000000; stroke-width: 1.5;" x1="1637.5" x2="1637.5" y1="665" y2="1094"/>
@@ -21,36 +21,36 @@
     <path d="M1538.9484,720.6651 C1541.5624,714.7805 1546.5804,712.9995 1551.2565,718.42 C1553.2634,711.4525 1559.5228,710.9431 1564.1645,715.458 C1568.9615,710.411 1574.6155,711.0562 1576.307,718.4813 C1580.277,712.3107 1585.8157,711.9967 1589.1626,719.0855 C1595.3563,723.9915 1595.5992,728.3227 1588.1755,732.2041 C1594.8782,735.4485 1594.9201,740.1852 1589.2284,744.4917 C1594.0776,748.2292 1593.7768,752.4721 1588.8361,755.8722 C1593.8614,757.8771 1595.4726,762.3523 1590.9829,766.3136 C1597.1778,770.0003 1596.2286,775.6611 1590.1296,778.4861 C1594.8772,782.1876 1596.2878,787.5423 1589.5236,790.6713 C1594.4182,794.4743 1594.5444,799.0722 1588.6937,802.0947 C1595.1125,805.0678 1595.8924,808.9033 1590.1832,813.4652 C1596.5644,817.0826 1594.9895,823.4102 1589.3979,826.2948 C1594.8925,830.6829 1593.5255,834.4277 1588.0543,837.5011 C1586.3653,843.1343 1581.128,844.7327 1576.651,840.8379 C1573.79,847.6595 1569.1701,848.4869 1563.5401,844.0676 C1558.9396,848.0368 1553.3705,847.6088 1552.1633,840.563 C1547.3992,845.8206 1541.4718,846.3053 1538.6182,838.5712 C1532.3134,834.8564 1531.4832,829.4605 1538.4198,825.544 C1533.4897,823.6727 1532.0529,818.7451 1536.9864,815.4703 C1529.646,811.6724 1528.6346,807.4039 1535.0358,801.6645 C1529.8752,799.0502 1530.5004,795.0179 1534.5545,791.9472 C1529.1867,788.6832 1528.0335,783.9839 1533.7815,780.0006 C1528.1571,776.0525 1528.6018,771.4028 1534.3702,768.0142 C1529.1347,763.1235 1529.1972,759.1985 1535.792,755.6705 C1530.2618,751.0902 1531.2085,746.6636 1536.6798,742.8447 C1532.7247,738.6202 1533.1638,735.3273 1538.2412,732.4611 C1532.3273,728.0961 1532.8874,724.3122 1538.9484,720.6651 " fill="#DDDDDD" style="stroke: #000000; stroke-width: 1.5;"/>
     <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="49" x="1538" y="736.9951">Points</text>
     <!--cluster fast_sparse-->
-    <polygon fill="#FFFFFF" filter="url(#fhhin1x4481k0)" points="218,340,315,340,322,362.2969,1012.5,362.2969,1012.5,1173,218,1173,218,340" style="stroke: #000000; stroke-width: 1.5;"/>
+    <polygon fill="#FFFFFF" filter="url(#f1qk6ogz65xl6j)" points="218,340,315,340,322,362.2969,1012.5,362.2969,1012.5,1173,218,1173,218,340" style="stroke: #000000; stroke-width: 1.5;"/>
     <line style="stroke: #000000; stroke-width: 1.5;" x1="218" x2="322" y1="362.2969" y2="362.2969"/>
     <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="91" x="222" y="354.9951">fast_sparse</text>
     <!--cluster 3D augmentation-->
     <a href="augmentation.svg" target="_top" xlink:actuate="onRequest" xlink:show="new" xlink:title="augmentation.svg" xlink:type="simple">
-      <rect fill="#FFFFFF" filter="url(#fhhin1x4481k0)" height="343" style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" width="539.5" x="243" y="383"/>
+      <rect fill="#FFFFFF" filter="url(#f1qk6ogz65xl6j)" height="343" style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" width="539.5" x="243" y="383"/>
       <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="134" x="445.75" y="397.9951">3D augmentation</text>
     </a>
     <!--cluster transforms-->
-    <polygon fill="#FFFFFF" filter="url(#fhhin1x4481k0)" points="267,426,360,426,367,448.2969,758.5,448.2969,758.5,702,267,702,267,426" style="stroke: #000000; stroke-width: 1.5;"/>
+    <polygon fill="#FFFFFF" filter="url(#f1qk6ogz65xl6j)" points="267,426,360,426,367,448.2969,758.5,448.2969,758.5,702,267,702,267,426" style="stroke: #000000; stroke-width: 1.5;"/>
     <line style="stroke: #000000; stroke-width: 1.5;" x1="267" x2="367" y1="448.2969" y2="448.2969"/>
     <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="87" x="271" y="440.9951">transforms</text>
     <!--cluster data -->
-    <rect fill="#FFFFFF" filter="url(#fhhin1x4481k0)" height="399" style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" width="746.5" x="242" y="750"/>
+    <rect fill="#FFFFFF" filter="url(#f1qk6ogz65xl6j)" height="399" style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" width="746.5" x="242" y="750"/>
     <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="34" x="595.75" y="764.9951">data</text>
     <!--cluster datasets-->
-    <polygon fill="#FFFFFF" filter="url(#fhhin1x4481k0)" points="478,959,552,959,559,981.2969,787,981.2969,787,1117,478,1117,478,959" style="stroke: #000000; stroke-width: 1.5;"/>
+    <polygon fill="#FFFFFF" filter="url(#f1qk6ogz65xl6j)" points="478,959,552,959,559,981.2969,787,981.2969,787,1117,478,1117,478,959" style="stroke: #000000; stroke-width: 1.5;"/>
     <line style="stroke: #000000; stroke-width: 1.5;" x1="478" x2="559" y1="981.2969" y2="981.2969"/>
     <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="68" x="482" y="973.9951">datasets</text>
     <!--cluster data_items-->
-    <polygon fill="#FFFFFF" filter="url(#fhhin1x4481k0)" points="663,793,753,793,760,815.2969,964.5,815.2969,964.5,927,663,927,663,793" style="stroke: #000000; stroke-width: 1.5;"/>
+    <polygon fill="#FFFFFF" filter="url(#f1qk6ogz65xl6j)" points="663,793,753,793,760,815.2969,964.5,815.2969,964.5,927,663,927,663,793" style="stroke: #000000; stroke-width: 1.5;"/>
     <line style="stroke: #000000; stroke-width: 1.5;" x1="663" x2="760" y1="815.2969" y2="815.2969"/>
     <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="84" x="667" y="807.9951">data_items</text>
     <!--cluster data-->
-    <polygon fill="#FFFFFF" filter="url(#fhhin1x4481k0)" points="266,793,306,793,313,815.2969,417,815.2969,417,868,266,868,266,793" style="stroke: #000000; stroke-width: 1.5;"/>
+    <polygon fill="#FFFFFF" filter="url(#f1qk6ogz65xl6j)" points="266,793,306,793,313,815.2969,417,815.2969,417,868,266,868,266,793" style="stroke: #000000; stroke-width: 1.5;"/>
     <line style="stroke: #000000; stroke-width: 1.5;" x1="266" x2="313" y1="815.2969" y2="815.2969"/>
     <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="34" x="270" y="807.9951">data</text>
     <!--cluster fast.ai-->
     <g>
-      <polygon fill="#DDDDDD" filter="url(#fhhin1x4481k0)" points="54,56,108,56,115,78.2969,177,78.2969,177,284,54,284,54,56" style="stroke: #000000; stroke-width: 1.5;"/>
+      <polygon fill="#DDDDDD" filter="url(#f1qk6ogz65xl6j)" points="54,56,108,56,115,78.2969,177,78.2969,177,284,54,284,54,56" style="stroke: #000000; stroke-width: 1.5;"/>
       <line style="stroke: #000000; stroke-width: 1.5;" x1="54" x2="115" y1="78.2969" y2="78.2969"/>
       <a href="https://docs.fast.ai/index.html" target="_blank" xlink:actuate="onRequest" xlink:show="new" xlink:title="https://docs.fast.ai/index.html" xlink:type="simple">
         <text fill="#0000f0" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="48" x="58" y="70.9951">fast.ai</text>
@@ -58,7 +58,7 @@
     </g>
     <!--cluster torch-->
     <g>
-      <polygon fill="#DDDDDD" filter="url(#fhhin1x4481k0)" points="278,115,326,115,333,137.2969,405,137.2969,405,284,278,284,278,115" style="stroke: #000000; stroke-width: 1.5;"/>
+      <polygon fill="#DDDDDD" filter="url(#f1qk6ogz65xl6j)" points="278,115,326,115,333,137.2969,405,137.2969,405,284,278,284,278,115" style="stroke: #000000; stroke-width: 1.5;"/>
       <line style="stroke: #000000; stroke-width: 1.5;" x1="278" x2="333" y1="137.2969" y2="137.2969"/>
       <a href="https://pytorch.org/docs/stable/index.html" target="_blank" xlink:actuate="onRequest" xlink:show="new" xlink:title="https://pytorch.org/docs/stable/index.html" xlink:type="simple">
         <text fill="#0000f0" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="42" x="282" y="129.9951">torch</text>
@@ -66,7 +66,7 @@
     </g>
     <!--cluster trimesh-->
     <g>
-      <polygon fill="#DDDDDD" filter="url(#fhhin1x4481k0)" points="1222,816,1288,816,1295,838.2969,1309,838.2969,1309,891,1222,891,1222,816" style="stroke: #000000; stroke-width: 1.5;"/>
+      <polygon fill="#DDDDDD" filter="url(#f1qk6ogz65xl6j)" points="1222,816,1288,816,1295,838.2969,1309,838.2969,1309,891,1222,891,1222,816" style="stroke: #000000; stroke-width: 1.5;"/>
       <line style="stroke: #000000; stroke-width: 1.5;" x1="1222" x2="1295" y1="838.2969" y2="838.2969"/>
       <a href="https://github.com/mikedh/trimesh" target="_blank" xlink:actuate="onRequest" xlink:show="new" xlink:title="https://github.com/mikedh/trimesh" xlink:type="simple">
         <text fill="#0000f0" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="60" x="1226" y="830.9951">trimesh</text>
@@ -74,110 +74,110 @@
     </g>
     <!--cluster ipyvolume-->
     <g>
-      <polygon fill="#DDDDDD" filter="url(#fhhin1x4481k0)" points="1215.5,923,1301.5,923,1308.5,945.2969,1315.5,945.2969,1315.5,1092,1215.5,1092,1215.5,923" style="stroke: #000000; stroke-width: 1.5;"/>
+      <polygon fill="#DDDDDD" filter="url(#f1qk6ogz65xl6j)" points="1215.5,923,1301.5,923,1308.5,945.2969,1315.5,945.2969,1315.5,1092,1215.5,1092,1215.5,923" style="stroke: #000000; stroke-width: 1.5;"/>
       <line style="stroke: #000000; stroke-width: 1.5;" x1="1215.5" x2="1308.5" y1="945.2969" y2="945.2969"/>
       <a href="https://ipyvolume.readthedocs.io/en/latest/#" target="_blank" xlink:actuate="onRequest" xlink:show="new" xlink:title="https://ipyvolume.readthedocs.io/en/latest/#" xlink:type="simple">
         <text fill="#0000f0" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="80" x="1219.5" y="937.9951">ipyvolume</text>
       </a>
     </g>
     <!--class ply-->
-    <rect fill="#FEFECE" filter="url(#fhhin1x4481k0)" height="23.9688" id="ply" style="stroke: #A80036; stroke-width: 1.5;" width="23" x="1550.5" y="920"/>
+    <rect fill="#FEFECE" filter="url(#f1qk6ogz65xl6j)" height="23.9688" id="ply" style="stroke: #A80036; stroke-width: 1.5;" width="23" x="1550.5" y="920"/>
     <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="17" x="1553.5" y="936.1387">ply</text>
     <!--class stl-->
-    <rect fill="#FEFECE" filter="url(#fhhin1x4481k0)" height="23.9688" id="stl" style="stroke: #A80036; stroke-width: 1.5;" width="21" x="1551.5" y="979"/>
+    <rect fill="#FEFECE" filter="url(#f1qk6ogz65xl6j)" height="23.9688" id="stl" style="stroke: #A80036; stroke-width: 1.5;" width="21" x="1551.5" y="979"/>
     <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="15" x="1554.5" y="995.1387">stl</text>
     <!--class pts-->
-    <rect fill="#FEFECE" filter="url(#fhhin1x4481k0)" height="23.9688" id="pts" style="stroke: #A80036; stroke-width: 1.5;" width="26" x="1549" y="746"/>
+    <rect fill="#FEFECE" filter="url(#f1qk6ogz65xl6j)" height="23.9688" id="pts" style="stroke: #A80036; stroke-width: 1.5;" width="26" x="1549" y="746"/>
     <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="20" x="1552" y="762.1387">pts</text>
     <!--class npy-->
-    <rect fill="#FEFECE" filter="url(#fhhin1x4481k0)" height="23.9688" id="npy" style="stroke: #A80036; stroke-width: 1.5;" width="28" x="1548" y="805"/>
+    <rect fill="#FEFECE" filter="url(#f1qk6ogz65xl6j)" height="23.9688" id="npy" style="stroke: #A80036; stroke-width: 1.5;" width="28" x="1548" y="805"/>
     <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="22" x="1551" y="821.1387">npy</text>
     <!--class TfmConvertItem-->
-    <rect fill="#FEFECE" filter="url(#fhhin1x4481k0)" height="23.9688" id="TfmConvertItem" style="stroke: #A80036; stroke-width: 1.5;" width="103" x="494" y="579"/>
+    <rect fill="#FEFECE" filter="url(#f1qk6ogz65xl6j)" height="23.9688" id="TfmConvertItem" style="stroke: #A80036; stroke-width: 1.5;" width="103" x="494" y="579"/>
     <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="97" x="497" y="595.1387">TfmConvertItem</text>
     <!--class TfmSpatial-->
-    <rect fill="#FEFECE" filter="url(#fhhin1x4481k0)" height="23.9688" id="TfmSpatial" style="stroke: #A80036; stroke-width: 1.5;" width="71" x="510" y="520"/>
+    <rect fill="#FEFECE" filter="url(#f1qk6ogz65xl6j)" height="23.9688" id="TfmSpatial" style="stroke: #A80036; stroke-width: 1.5;" width="71" x="510" y="520"/>
     <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="65" x="513" y="536.1387">TfmSpatial</text>
     <!--class TfmAffine-->
-    <rect fill="#FEFECE" filter="url(#fhhin1x4481k0)" height="23.9688" id="TfmAffine" style="stroke: #A80036; stroke-width: 1.5;" width="63" x="679.5" y="520"/>
+    <rect fill="#FEFECE" filter="url(#f1qk6ogz65xl6j)" height="23.9688" id="TfmAffine" style="stroke: #A80036; stroke-width: 1.5;" width="63" x="679.5" y="520"/>
     <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="57" x="682.5" y="536.1387">TfmAffine</text>
     <!--class TfmColors-->
-    <rect fill="#FEFECE" filter="url(#fhhin1x4481k0)" height="23.9688" id="TfmColors" style="stroke: #A80036; stroke-width: 1.5;" width="67" x="512" y="461"/>
+    <rect fill="#FEFECE" filter="url(#f1qk6ogz65xl6j)" height="23.9688" id="TfmColors" style="stroke: #A80036; stroke-width: 1.5;" width="67" x="512" y="461"/>
     <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="61" x="515" y="477.1387">TfmColors</text>
     <!--class Transform-->
-    <rect fill="#FEFECE" filter="url(#fhhin1x4481k0)" height="23.9688" id="Transform" style="stroke: #A80036; stroke-width: 1.5;" width="69" x="307" y="638"/>
+    <rect fill="#FEFECE" filter="url(#f1qk6ogz65xl6j)" height="23.9688" id="Transform" style="stroke: #A80036; stroke-width: 1.5;" width="69" x="307" y="638"/>
     <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="63" x="310" y="654.1387">Transform</text>
     <!--class RandTransform-->
-    <rect fill="#FEFECE" filter="url(#fhhin1x4481k0)" height="23.9688" id="RandTransform" style="stroke: #A80036; stroke-width: 1.5;" width="101" x="495" y="638"/>
+    <rect fill="#FEFECE" filter="url(#f1qk6ogz65xl6j)" height="23.9688" id="RandTransform" style="stroke: #A80036; stroke-width: 1.5;" width="101" x="495" y="638"/>
     <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="95" x="498" y="654.1387">RandTransform</text>
     <!--class BaseDataset-->
-    <rect fill="#FEFECE" filter="url(#fhhin1x4481k0)" height="23.9688" id="BaseDataset" style="stroke: #A80036; stroke-width: 1.5;" width="87" x="502" y="1002"/>
+    <rect fill="#FEFECE" filter="url(#f1qk6ogz65xl6j)" height="23.9688" id="BaseDataset" style="stroke: #A80036; stroke-width: 1.5;" width="87" x="502" y="1002"/>
     <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="81" x="505" y="1018.1387">BaseDataset</text>
     <!--class PointsDataset-->
-    <rect fill="#FEFECE" filter="url(#fhhin1x4481k0)" height="23.9688" id="PointsDataset" style="stroke: #A80036; stroke-width: 1.5;" width="95" x="663.5" y="1002"/>
+    <rect fill="#FEFECE" filter="url(#f1qk6ogz65xl6j)" height="23.9688" id="PointsDataset" style="stroke: #A80036; stroke-width: 1.5;" width="95" x="663.5" y="1002"/>
     <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="89" x="666.5" y="1018.1387">PointsDataset</text>
     <!--class MeshesDataset-->
-    <rect fill="#FEFECE" filter="url(#fhhin1x4481k0)" height="23.9688" id="MeshesDataset" style="stroke: #A80036; stroke-width: 1.5;" width="104" x="659" y="1061"/>
+    <rect fill="#FEFECE" filter="url(#f1qk6ogz65xl6j)" height="23.9688" id="MeshesDataset" style="stroke: #A80036; stroke-width: 1.5;" width="104" x="659" y="1061"/>
     <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="98" x="662" y="1077.1387">MeshesDataset</text>
     <!--class ItemBase-->
-    <rect fill="#FEFECE" filter="url(#fhhin1x4481k0)" height="23.9688" id="ItemBase" style="stroke: #A80036; stroke-width: 1.5;" width="64" x="679" y="887"/>
+    <rect fill="#FEFECE" filter="url(#f1qk6ogz65xl6j)" height="23.9688" id="ItemBase" style="stroke: #A80036; stroke-width: 1.5;" width="64" x="679" y="887"/>
     <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="58" x="682" y="903.1387">ItemBase</text>
     <!--class MeshItem-->
-    <rect fill="#FEFECE" filter="url(#fhhin1x4481k0)" height="23.9688" id="MeshItem" style="stroke: #A80036; stroke-width: 1.5;" width="66" x="879.5" y="887"/>
+    <rect fill="#FEFECE" filter="url(#f1qk6ogz65xl6j)" height="23.9688" id="MeshItem" style="stroke: #A80036; stroke-width: 1.5;" width="66" x="879.5" y="887"/>
     <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="60" x="882.5" y="903.1387">MeshItem</text>
     <!--class PointsItem-->
-    <rect fill="#FEFECE" filter="url(#fhhin1x4481k0)" height="23.9688" id="PointsItem" style="stroke: #A80036; stroke-width: 1.5;" width="72" x="876.5" y="828"/>
+    <rect fill="#FEFECE" filter="url(#f1qk6ogz65xl6j)" height="23.9688" id="PointsItem" style="stroke: #A80036; stroke-width: 1.5;" width="72" x="876.5" y="828"/>
     <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="66" x="879.5" y="844.1387">PointsItem</text>
     <!--class SparseDataBunch-->
-    <rect fill="#FEFECE" filter="url(#fhhin1x4481k0)" height="23.9688" id="SparseDataBunch" style="stroke: #A80036; stroke-width: 1.5;" width="119" x="282" y="828"/>
+    <rect fill="#FEFECE" filter="url(#f1qk6ogz65xl6j)" height="23.9688" id="SparseDataBunch" style="stroke: #A80036; stroke-width: 1.5;" width="119" x="282" y="828"/>
     <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="113" x="285" y="844.1387">SparseDataBunch</text>
     <!--class Learner-->
     <g>
-      <rect fill="#FEFECE" filter="url(#fhhin1x4481k0)" height="23.9688" id="Learner" style="stroke: #A80036; stroke-width: 1.5;" width="54" x="88.5" y="118"/>
+      <rect fill="#FEFECE" filter="url(#f1qk6ogz65xl6j)" height="23.9688" id="Learner" style="stroke: #A80036; stroke-width: 1.5;" width="54" x="88.5" y="118"/>
       <a href="https://docs.fast.ai/basic_train.html#Learner" target="_blank" xlink:actuate="onRequest" xlink:show="new" xlink:title="https://docs.fast.ai/basic_train.html#Learner" xlink:type="simple">
         <text fill="#0000f0" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="48" x="91.5" y="134.1387">Learner</text>
       </a>
     </g>
     <!--class ItemList-->
     <g>
-      <rect fill="#FEFECE" filter="url(#fhhin1x4481k0)" height="23.9688" id="ItemList" style="stroke: #A80036; stroke-width: 1.5;" width="54" x="88.5" y="236"/>
+      <rect fill="#FEFECE" filter="url(#f1qk6ogz65xl6j)" height="23.9688" id="ItemList" style="stroke: #A80036; stroke-width: 1.5;" width="54" x="88.5" y="177"/>
       <a href="https://docs.fast.ai/data_block.html#ItemList" target="_blank" xlink:actuate="onRequest" xlink:show="new" xlink:title="https://docs.fast.ai/data_block.html#ItemList" xlink:type="simple">
-        <text fill="#0000f0" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="48" x="91.5" y="252.1387">ItemList</text>
+        <text fill="#0000f0" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="48" x="91.5" y="193.1387">ItemList</text>
       </a>
     </g>
     <!--class DataBunch-->
     <g>
-      <rect fill="#FEFECE" filter="url(#fhhin1x4481k0)" height="23.9688" id="DataBunch" style="stroke: #A80036; stroke-width: 1.5;" width="75" x="78" y="177"/>
+      <rect fill="#FEFECE" filter="url(#f1qk6ogz65xl6j)" height="23.9688" id="DataBunch" style="stroke: #A80036; stroke-width: 1.5;" width="75" x="78" y="236"/>
       <a href="https://docs.fast.ai/basic_data.html#DataBunch" target="_blank" xlink:actuate="onRequest" xlink:show="new" xlink:title="https://docs.fast.ai/basic_data.html#DataBunch" xlink:type="simple">
-        <text fill="#0000f0" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="69" x="81" y="193.1387">DataBunch</text>
+        <text fill="#0000f0" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="69" x="81" y="252.1387">DataBunch</text>
       </a>
     </g>
     <!--class Dataset-->
     <g>
-      <rect fill="#FEFECE" filter="url(#fhhin1x4481k0)" height="23.9688" id="Dataset" style="stroke: #A80036; stroke-width: 1.5;" width="56" x="313.5" y="158"/>
+      <rect fill="#FEFECE" filter="url(#f1qk6ogz65xl6j)" height="23.9688" id="Dataset" style="stroke: #A80036; stroke-width: 1.5;" width="56" x="313.5" y="158"/>
       <a href="https://pytorch.org/docs/stable/data.html#torch.utils.data.Dataset" target="_blank" xlink:actuate="onRequest" xlink:show="new" xlink:title="https://pytorch.org/docs/stable/data.html#torch.utils.data.Dataset" xlink:type="simple">
         <text fill="#0000f0" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="50" x="316.5" y="174.1387">Dataset</text>
       </a>
     </g>
     <!--class DataLoader-->
     <g>
-      <rect fill="#FEFECE" filter="url(#fhhin1x4481k0)" height="23.9688" id="DataLoader" style="stroke: #A80036; stroke-width: 1.5;" width="79" x="302" y="217"/>
+      <rect fill="#FEFECE" filter="url(#f1qk6ogz65xl6j)" height="23.9688" id="DataLoader" style="stroke: #A80036; stroke-width: 1.5;" width="79" x="302" y="217"/>
       <a href="https://pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader" target="_blank" xlink:actuate="onRequest" xlink:show="new" xlink:title="https://pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader" xlink:type="simple">
         <text fill="#0000f0" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="73" x="305" y="233.1387">DataLoader</text>
       </a>
     </g>
     <!--class Trimesh-->
     <g>
-      <rect fill="#FEFECE" filter="url(#fhhin1x4481k0)" height="23.9688" id="Trimesh" style="stroke: #A80036; stroke-width: 1.5;" width="55" x="1238" y="851"/>
+      <rect fill="#FEFECE" filter="url(#f1qk6ogz65xl6j)" height="23.9688" id="Trimesh" style="stroke: #A80036; stroke-width: 1.5;" width="55" x="1238" y="851"/>
       <a href="https://trimsh.org/trimesh.html#trimesh.base.Trimesh" target="_blank" xlink:actuate="onRequest" xlink:show="new" xlink:title="https://trimsh.org/trimesh.html#trimesh.base.Trimesh" xlink:type="simple">
         <text fill="#0000f0" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="49" x="1241" y="867.1387">Trimesh</text>
       </a>
     </g>
     <!--class Mesh-->
-    <rect fill="#FEFECE" filter="url(#fhhin1x4481k0)" height="23.9688" id="Mesh" style="stroke: #A80036; stroke-width: 1.5;" width="39" x="1246" y="966"/>
+    <rect fill="#FEFECE" filter="url(#f1qk6ogz65xl6j)" height="23.9688" id="Mesh" style="stroke: #A80036; stroke-width: 1.5;" width="39" x="1246" y="966"/>
     <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="33" x="1249" y="982.1387">Mesh</text>
     <!--class Scatter-->
-    <rect fill="#FEFECE" filter="url(#fhhin1x4481k0)" height="23.9688" id="Scatter" style="stroke: #A80036; stroke-width: 1.5;" width="52" x="1239.5" y="1025"/>
+    <rect fill="#FEFECE" filter="url(#f1qk6ogz65xl6j)" height="23.9688" id="Scatter" style="stroke: #A80036; stroke-width: 1.5;" width="52" x="1239.5" y="1025"/>
     <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="46" x="1242.5" y="1041.1387">Scatter</text>
     <!--link Transform to RandTransform-->
     <path d="M376.31,650 C408.657,650 457.83,650 494.665,650 " fill="none" id="Transform-RandTransform" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;"/>
@@ -216,9 +216,6 @@
     <!--link SparseDataBunch to BaseDataset-->
     <path d="M366.75,860.888 C409.32,897.558 496.209,972.403 530.311,1001.778 " fill="none" id="SparseDataBunch-BaseDataset" style="stroke: #A80036; stroke-width: 1.0;"/>
     <polygon fill="#A80036" points="356.704,852.235,358.6396,859.1815,365.7962,860.0665,363.8606,853.12,356.704,852.235" style="stroke: #A80036; stroke-width: 1.0;"/>
-    <!--link ItemList to BaseDataset-->
-    <path d="M117.351,280.522 C120.939,394.55 138.158,774.367 210,868 C282.611,962.635 429.311,997.038 501.873,1008.62 " fill="none" id="ItemList-BaseDataset" style="stroke: #A80036; stroke-width: 1.0;"/>
-    <polygon fill="none" points="110.344,280.368,116.772,260.176,124.338,279.969,110.344,280.368" style="stroke: #A80036; stroke-width: 1.0;"/>
     <!--link Dataset to BaseDataset-->
     <path d="M389.563,171.47 C409.839,174.71 431.867,182.26 445,199 C461.437,219.949 458.334,651.626 462,678 C479.946,807.102 526.746,958.759 540.589,1001.971 " fill="none" id="Dataset-BaseDataset" style="stroke: #A80036; stroke-width: 1.0;"/>
     <polygon fill="none" points="388.709,178.42,369.512,169.45,390.113,164.49,388.709,178.42" style="stroke: #A80036; stroke-width: 1.0;"/>
@@ -239,13 +236,13 @@
     <path d="M948.611,832.557 C971.324,827.923 1001.57,822.087 1028.5,818 C1235.91,786.523 1491.1,763.945 1548.96,759.012 " fill="none" id="PointsItem-pts" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;"/>
     <!--link datasets to Data source-->
     <path d="M562.2791,1117.0948 C562.4274,1117.1669 562.5767,1117.2394 562.727,1117.3122 C572.3403,1121.9722 585.6856,1128.0464 601.2809,1134.0742 C632.4715,1146.1298 672.6625,1158 710,1158 C710,1158 710,1158 1266.5,1158 C1332.82,1158 1405.1975,1140.558 1461.6038,1122.8435 C1489.8069,1113.9863 1514.0172,1105.0609 1531.4811,1098.2136 C1533.6641,1097.3576 1535.7417,1096.5342 1537.7084,1095.7474 C1538.6918,1095.354 1539.6475,1094.9698 1540.5749,1094.5953 C1541.0385,1094.408 1541.4951,1094.2232 1541.9445,1094.0408 " fill="none" id="datasets-Data source" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;"/>
-    <path d="M847,1109 L847,1149 L974,1149 L974,1119 L964,1109 L847,1109 " fill="#FBFB77" filter="url(#fhhin1x4481k0)" style="stroke: #A80036; stroke-width: 1.0;"/>
+    <path d="M847,1109 L847,1149 L974,1149 L974,1119 L964,1109 L847,1109 " fill="#FBFB77" filter="url(#f1qk6ogz65xl6j)" style="stroke: #A80036; stroke-width: 1.0;"/>
     <path d="M964,1109 L964,1119 L974,1119 L964,1109 " fill="#FBFB77" style="stroke: #A80036; stroke-width: 1.0;"/>
     <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="106" x="853" y="1126.0669">datasets loading</text>
     <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="106" x="853" y="1141.1997">files from source</text>
     <!--link DataBunch to SparseDataBunch-->
-    <path d="M172.148,201.032 C180.295,205.133 187.709,210.63 193,218 C207.915,238.773 201.05,654.044 210,678 C234.52,743.633 296.82,802.824 325.559,827.645 " fill="none" id="DataBunch-SparseDataBunch" style="stroke: #A80036; stroke-width: 1.0;"/>
-    <polygon fill="none" points="169.383,207.472,153.078,193.939,174.263,194.35,169.383,207.472" style="stroke: #A80036; stroke-width: 1.0;"/>
+    <path d="M118.473,280.564 C124.023,354.62 143.964,539.927 210,678 C240.542,741.858 300.813,802.895 327.388,827.998 " fill="none" id="DataBunch-SparseDataBunch" style="stroke: #A80036; stroke-width: 1.0;"/>
+    <polygon fill="none" points="111.467,280.708,117.117,260.285,125.436,279.773,111.467,280.708" style="stroke: #A80036; stroke-width: 1.0;"/>
     <!--link SparseDataBunch to DataLoader-->
     <path d="M315.143,819.526 C279.161,789.416 217.316,729.262 201.5,660.5 C191.587,617.403 191.587,305.597 201.5,262.5 C210.519,223.287 263.567,220.147 301.697,223.216 " fill="none" id="SparseDataBunch-DataLoader" style="stroke: #A80036; stroke-width: 1.0;"/>
     <polygon fill="#A80036" points="325.4,827.882,323.275,820.9911,316.0968,820.3023,318.2219,827.1932,325.4,827.882" style="stroke: #A80036; stroke-width: 1.0;"/>
