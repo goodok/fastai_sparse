@@ -1,5 +1,5 @@
 !data/
 results/
-#images/
+images/
 *.ply
 clean.sh

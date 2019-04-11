@@ -35,6 +35,7 @@ from torch.utils.data import Dataset
 
 
 from fastai_sparse import utils
+from fastai_sparse.data_items import extract_data
 
 def merge_fn(batch: ItemsList)->Tensor:
     """
@@ -59,8 +60,8 @@ def merge_fn(batch: ItemsList)->Tensor:
     #    fastai.torch_core.data_collate
     #    torch.utils.data.dataloader.default_collate
 
-    # exstract .data property of items in batch list
-    data_batch = to_data(batch)
+    # extract .data property of items in batch list
+    data_batch = extract_data(batch)
 
     # TODO: rename vatiables and dict keys
     xl_ = []
