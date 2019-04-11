@@ -1,0 +1,8 @@
+train_val/
+train_val
+test/
+test
+npy/
+npy
+*.zip
+
