@@ -16,6 +16,8 @@ from IPython.display import FileLink, display, Image
 from . import utils
 # from ..utils import warn_always
 
+__all__ = ['options', 'scatter', 'show_mesh']
+
 
 @dataclass
 class OptionsOfShow:
@@ -189,7 +191,7 @@ def draw_error_points(points, labels, labels_gt):
     if labels_gt is not None:
         # accuracy
         assert len(labels_gt) == len(labels)
-        accuracy = (labels_gt == labels).sum() / len(labels)
+        # accuracy = (labels_gt == labels).sum() / len(labels)
         # print("Accuracy: {}".format(accuracy) )
 
         # draw errors
@@ -211,7 +213,7 @@ def draw_error_points(points, labels, labels_gt):
 def scatter(points, labels=None, labels_gt=None,
             colors=None, cmap=cm.RdBu, reorder_colors=True,
             normals=None,
-            width=800, height=600, 
+            width=800, height=600,
             axeslim='auto', aspect_ratio_preserve=True,
             point_size_value=0.5, vector_size_value=0.5, title=None):
 
@@ -261,7 +263,6 @@ def scatter(points, labels=None, labels_gt=None,
 
     if w_switch_colors is not None:
         widget_list.append(w_switch_colors)
-
 
     # vertex normals
     if normals is not None:
@@ -314,12 +315,12 @@ def show_mesh(verts, triangles,
         for label in face_color_dict.keys():
             triangles_set = triangles[face_labels == label]
             color = face_color_dict[label]
-            surface = ipv.plot_trisurf(
+            _ = ipv.plot_trisurf(
                 x, y, z, triangles=triangles_set, color=color)
     else:
         if face_colors is None:
             face_colors = '#f0f0f0'
-        surface = ipv.plot_trisurf(
+        _ = ipv.plot_trisurf(
             x, y, z, triangles=triangles, color=face_colors)
 
     # vertices

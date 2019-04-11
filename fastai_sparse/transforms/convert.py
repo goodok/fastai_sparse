@@ -3,7 +3,7 @@
 import numpy as np
 
 from .main import Transform, transfer_keys
-from ..data_items import ItemBase, PointsItem, MeshItem, SparseItem
+from ..data_items import PointsItem, MeshItem, SparseItem
 
 from .. import utils
 
@@ -13,7 +13,6 @@ __all__ = ['TfmConvertItem', 'to_points_cloud', 'to_sparse_voxels', 'merge_featu
 class TfmConvertItem(Transform):
     order = 0
     pass
-
 
 
 def _to_points_cloud(x: MeshItem, method='centres', normals=True):
@@ -94,9 +93,9 @@ def _to_sparse_voxels(x: PointsItem):
 
     points = d['points']
 
-
     # TODO: is floor better then simply astype(np.int64) ? For x > 0 there is no differences
-    # Some spreadsheet programs calculate the “floor-towards-zero”, in other words floor(-2.5) == -2. NumPy instead uses the definition of floor where floor(-2.5) == -3.
+    # Some spreadsheet programs calculate the “floor-towards-zero”, in other words floor(-2.5) == -2. NumPy instead uses
+    # the definition of floor where floor(-2.5) == -3.
     # >>> a = np.array([-1.7, -1.5, -0.2, 0.2, 0.5, 0.7, 1.3, 1.5, 1.7, 2.0, 2.5, 2.9])
     # >>> b = np.floor(a)
     # >>> c = a.astype(np.int64)
@@ -104,7 +103,6 @@ def _to_sparse_voxels(x: PointsItem):
     #    	-1.7 	-1.5 	-0.2 	0.2 	0.5 	0.7 	1.3 	1.5 	1.7 	2.0 	2.5 	2.9
     #    	-2.0 	-2.0 	-1.0 	0.0 	0.0 	0.0 	1.0 	1.0 	1.0 	2.0 	2.0 	2.0
     #    	-1.0 	-1.0 	0.0 	0.0 	0.0 	0.0 	1.0 	1.0 	1.0 	2.0 	2.0 	2.0
-
 
     coords = np.floor(points).astype(np.int64)
 

@@ -1,21 +1,20 @@
 "`Learner` support for SparseConvNet"
+
 import math
 from matplotlib import pyplot as plt
 
-import fastai.train as _dummy  # needed to connect lr_find and other methods to Learner
+# from fastai.torch_core import *
 from fastai.basic_train import Learner as LearnerBase
+# from fastai.basic_data import *
+# from .image import *
 from fastai.callback import annealing_exp
+# from fastai.layers import *
 from fastai.callbacks.general_sched import TrainingPhase, GeneralScheduler
 
-from .utils import print_trainable_parameters
 
-
-__all__ = ['Learner', 'SparseModelConfig', '_dummy']
-
-
-# TODO: move to examples (shapenet and scannet)
 class SparseModelConfig():
     def __init__(self,
+                 resolution=50,
                  spatial_size=50 * 8 + 8,
                  dimension=3,
                  num_input_features=1,
@@ -32,6 +31,7 @@ class SparseModelConfig():
         """
         Parameters
         ----------
+        resolution: int
         dimension: int
         reps: int
             Conv block repetition factor
@@ -54,6 +54,7 @@ class SparseModelConfig():
         num_classes_total: int
         """
 
+        self.resolution = resolution  # TODO: For ShapeNet only
         self.spatial_size = spatial_size
         self.dimension = dimension
         self.block_reps = block_reps
@@ -70,7 +71,7 @@ class SparseModelConfig():
         if self.num_planes is None:
             self.num_planes = [self.m * i for i in num_planes_coeffs]
 
-    def check_accordance(self, data_config, equal_keys=['num_classes'], sparse_item=None):
+    def check_accordance(self, data_config, equal_keys=['resolution', 'spatial_size', 'num_classes'], sparse_item=None):
         for key in equal_keys:
             v1 = getattr(self, key)
             v2 = getattr(data_config, key)
@@ -81,9 +82,8 @@ class SparseModelConfig():
 
     def __repr__(self) -> str:
         lines = [f"{self.__class__.__name__};"]
-        for key in ['spatial_size', 'dimension', 'block_reps', 'm',
-                    'num_planes', 'residual_blocks', 'num_classes', 'num_input_features',
-                    'mode', 'downsample', 'bias']:
+        for key in ['resolution', 'spatial_size', 'dimension', 'block_reps', 'm', 'num_planes', 'residual_blocks', 'num_classes',
+                    'num_input_features', 'mode', 'downsample', 'bias']:
             value = getattr(self, key)
             if value is not None:
                 lines.append(f'   {key}: {value}')
@@ -92,7 +92,6 @@ class SparseModelConfig():
 
 
 class Learner(LearnerBase):
-
     def fit_annealing_exp(self, epochs, lr=0.1, lr_decay=4e-2, momentum=0.9, simulate=False):
         lr_end = lr * math.exp((1 - epochs) * lr_decay)
 
@@ -119,6 +118,3 @@ class Learner(LearnerBase):
                 is_matched = isinstance(cb, class_or_name)
             if is_matched:
                 return cb
-
-    def print_trainable_parameters(self, max_rows=200, max_colwidth=100):
-        print_trainable_parameters(self.model, max_rows=max_rows, max_colwidth=max_colwidth)

@@ -11,6 +11,8 @@ import os
 from os.path import join
 from string import Template
 from trimesh import util
+from trimesh.resources import get_resource
+import trimesh
 
 
 # Read/write meshes
@@ -223,14 +225,6 @@ def get_faces_colors(mesh):
 
 # from trimesh
 
-
-try:
-    from trimesh.resources import get_resource
-    import trimesh
-except:
-    pass
-
-
 def load_trimesh_from_obj(fn, subtract_labels=10):
     mesh_wavefront = read_obj(fn)
     mesh = trimesh.Trimesh(
@@ -381,13 +375,10 @@ def export_ply(mesh,
             vstack = mesh.vertices
 
         # add the string formatted vertices and faces
-        export += (util.array_to_string(vstack,
-                                        col_delim=' ',
-                                        row_delim='\n') +
-                   '\n' +
-                   util.array_to_string(fstack,
-                                        col_delim=' ',
-                                        row_delim='\n')).encode('utf-8')
+        _s = util.array_to_string(vstack, col_delim=' ', row_delim='\n')
+        _s += '\n'
+        _s += util.array_to_string(fstack, col_delim=' ', row_delim='\n')
+        export += _s.encode('utf-8')
     else:
         raise ValueError('encoding must be ascii or binary!')
 

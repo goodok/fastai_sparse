@@ -6,6 +6,7 @@ from .main import Transform
 
 __all__ = ['TfmColors', 'colors_noise', 'colors_normalize']
 
+
 class TfmColors(Transform):
     "Transfomation of colors"
     pass
@@ -25,16 +26,17 @@ colors_noise = TfmColors(_colors_noise)
 def _colors_normalize(x, center=127.5, scale=1 / 127.5):
     """
     Normalize colors.
-    
+
     [0..255] ---> [-1.0, 1.0]
     """
     d = x.data
     colors = d['colors']
-    colors = (colors[:, :3] - center) *  scale
+    colors = (colors[:, :3] - center) * scale
     colors = colors.astype(np.float32)
 
     d['colors'] = colors
 
     return x
+
 
 colors_normalize = TfmColors(_colors_normalize)

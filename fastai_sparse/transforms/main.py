@@ -1,22 +1,18 @@
 # -*- coding: utf-8 -*-
 
 import numpy as np
-import warnings
 import functools
-from functools import partial
-import trimesh
-from fastai.basics import copy, dataclass, field, Optional, Collection, List
-from fastai.core import Callable, listify, is_listy
-from fastai.vision.image import _get_default_args
+from typing import List, Optional
+from dataclasses import dataclass, field
+from copy import copy
 
-from .. import utils
 
-from ..data_items import MeshItem, SparseItem, PointsItem, ItemBase
+from ..data_items import PointsItem
+from ..core import listify, _get_default_args
 
 __all__ = ['TRANSFER_KEYS', 'transfer_keys', 'Transform', 'RandTransform', 'log_transforms',
            'sample_points',
            ]
-
 
 
 def rand_bool(p: float, size: Optional[List[int]] = None):
@@ -157,7 +153,6 @@ def log_transforms(tfms):
     return df
 
 
-
 def _sample_points(x: PointsItem, num_points=50000):
 
     d = x.data
@@ -176,6 +171,3 @@ def _sample_points(x: PointsItem, num_points=50000):
 
 
 sample_points = Transform(_sample_points)
-
-
-

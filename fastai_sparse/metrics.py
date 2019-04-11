@@ -2,15 +2,9 @@
 
 import sys
 import numpy as np
-import tracemalloc
 
-from torch import Tensor
-from fastai.torch_core import Rank0Tensor
-from fastai.callback import Callback
 from fastai.basic_train import LearnerCallback
 from fastai.torch_core import add_metrics
-
-from .utils import log
 
 
 class IouMean(LearnerCallback):
