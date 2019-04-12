@@ -6,4 +6,3 @@ images/
 clean.sh
 flake8.sh
 pycodestyle.sh
-
