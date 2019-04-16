@@ -126,6 +126,7 @@ jupyter contrib nbextension install --sys-prefix
 
 jupyter nbextensions_configurator enable --sys-prefix
 
+jupyter nbextension install --py --sys-prefix widgetsnbextension
 jupyter nbextension enable --py --sys-prefix widgetsnbextension
 
 jupyter nbextension install --sys-prefix --py pythreejs
