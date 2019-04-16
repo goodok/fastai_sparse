@@ -375,7 +375,7 @@ class PointsItem(ItemBase):
 
     @property
     def colors(self):
-         return self.data.get('colors', None)
+        return self.data.get('colors', None)
 
     @colors.setter
     def colors(self, v):
