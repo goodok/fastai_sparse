@@ -23,30 +23,20 @@ transform_base.TRANSFER_KEYS = [
     'id', 'random_seed', 'num_classes', 'filtred_mask', 'labels_raw']
 
 
-# TODO: inplace wrapper, global option
-
-
-def _remap_labels(x, remapper, inplace=False):
-    if inplace:
-        d = x.data
-    else:
-        d = x.data.copy()
-
-    d['labels'] = remapper[d['labels']]
-
-    #transfer_keys(d, d2)
-    if inplace:
-        return x
-    else:
-        return PointsItem(d)
+def _remap_labels(x, remapper):
+    x.labels = remapper[x.labels]
+    return x
 
 remap_labels = Transform(_remap_labels)
 
 
 def _specific_translate(x, full_scale=4096):
     # from https://github.com/facebookresearch/SparseConvNet/blob/master/examples/ScanNet/data.py
-    d = x.data
-    points = d['points']
+
+    if isinstance(x, MeshItem):
+        points = x.vertices.astype(np.float32)
+    else:
+        points = x.data['points']
 
     m = points.min(0)   # min corner of cube
     M = points.max(0)   # max corner of cube
@@ -57,6 +47,11 @@ def _specific_translate(x, full_scale=4096):
         np.clip(full_scale - M + m + 0.001, None, 0) * np.random.rand(3)
 
     points += offset
+
+    if isinstance(x, MeshItem):
+        x.vertices = points
+    else:
+        x.data['points'] = points
     return x
 
 specific_translate = Transform(_specific_translate)
