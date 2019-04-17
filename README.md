@@ -34,7 +34,7 @@ See details in [INSTALL.md](INSTALL.md)
 # Notebooks with examples
 - [x] 3D Transformation examples [notebook](https://nbviewer.jupyter.org/github/goodok/fastai_sparse/blob/master/notebooks/transforms/transforms.ipynb)
 - [x] ScanNet 3D indoor scene semantic segmentation [detailed notebook](https://nbviewer.jupyter.org/github/goodok/fastai_sparse/blob/master/examples/scannet/scannet_unet_detailed.ipynb)
-- [x] ScanNet 3D example with surface normals [notebook](https://nbviewer.jupyter.org/github/goodok/fastai_sparse/blob/scannet_normals/examples/scannet_normals/unet_normals_detailed.ipynb)
+- [x] ScanNet 3D example with surface normals [notebook](https://nbviewer.jupyter.org/github/goodok/fastai_sparse/blob/master/examples/scannet_normals/unet_normals_detailed.ipynb)
 - [x] ShapeNet 3D semantic segmentation [detailed notebook](https://nbviewer.jupyter.org/github/goodok/fastai_sparse/blob/master/examples/shapenet_iccv17/unet_24_detailed.ipynb)
 
 # TODO
