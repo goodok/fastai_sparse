@@ -19,13 +19,15 @@ def _normalize_spatial(x, mean=True, std=False):
     """
     Mean points.
     """
-    # TODO: implement mean=True, std=True
     if isinstance(x, MeshItem):
         points = x.vertices
     else:
         points = x.data['points']
 
-    points = points - points.mean(0)
+    if mean:
+        points = points - points.mean(0)
+    if std:
+        points = points / points.std(0)
 
     if isinstance(x, MeshItem):
         x.vertices = points
