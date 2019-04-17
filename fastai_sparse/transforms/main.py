@@ -7,10 +7,10 @@ from dataclasses import dataclass, field
 from copy import copy
 
 
-from ..data_items import PointsItem
+from ..data_items import PointsItem, ItemBase
 from ..core import listify, _get_default_args
 
-__all__ = ['TRANSFER_KEYS', 'transfer_keys', 'Transform', 'RandTransform', 'log_transforms',
+__all__ = ['TRANSFER_KEYS', 'transfer_keys', 'Transform', 'RandTransform', 'Compose', 'log_transforms',
            'sample_points',
            ]
 
@@ -132,6 +132,36 @@ class RandTransform():
             return self.tfm(x, *args, **{**self.resolved, **kwargs})
         else:
             return x
+
+
+class Compose(object):
+    """Composes several transforms together.
+    Args:
+        transforms (list of ``Transform`` objects): list of transforms to compose.
+    """
+
+    def __init__(self, transforms):
+        self.transforms = transforms
+
+    def __call__(self, item):
+        if isinstance(item, ItemBase):
+            # We suppose that the  Item object knows better how to work with transformations.
+            item = item.apply_tfms(self.transforms)
+        else:
+            for t in self.transforms:
+                item = t(item)
+        return item
+
+    def __repr__(self):
+        format_string = self.__class__.__name__ + '('
+        for t in self.transforms:
+            format_string += '\n'
+            format_string += '    {0}'.format(t)
+        format_string += '\n)'
+        return format_string
+
+    def log(self):
+        return log_transforms(self.transforms)
 
 
 def log_transforms(tfms):
