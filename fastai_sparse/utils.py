@@ -67,7 +67,7 @@ def watermark(python=True, virtualenv=True, keras=False, tensorflow=False, nvidi
         if 'PS1' in os.environ:
             r = os.environ['PS1']
         elif 'VIRTUAL_ENV' in os.environ:
-            res = os.environ['VIRTUAL_ENV']
+            r = os.environ['VIRTUAL_ENV']
         lines['virtualenv'] = r
     if python:
         r = sys.version.splitlines()[0]
