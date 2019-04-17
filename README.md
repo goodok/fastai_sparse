@@ -20,7 +20,7 @@ See details in [INSTALL.md](INSTALL.md)
 
 # Features:
 * fast.ai train/inference loop concept (Model + DataBunch --> Learner)
-<a href="https://goodok.github.io/fastai_sparse/docs/overview/classes.svg">Classes overview</a>  
+<a href="https://goodok.github.io/fastai_sparse/overview/classes.svg">Classes overview</a>  
 * model training best practices provided by fast.ai (Learning Rate Finder, One Cycle policy)  
 * 3D transforms for data preprocessing and augmentation:  
   - mesh-level transforms and features extraction (surface normals, triangle area,...)  
