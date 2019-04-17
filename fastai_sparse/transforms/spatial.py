@@ -19,11 +19,20 @@ def _normalize_spatial(x, mean=True, std=False):
     """
     Mean points.
     """
-    # TODO: implement mean=True, std
-    points = x.data['points']
-    points = points - points.mean(0)
-    x.data['points'] = points
+    # TODO: implement mean=True, std=True
+    if isinstance(x, MeshItem):
+        points = x.vertices
+    else:
+        points = x.data['points']
 
+    points = points - points.mean(0)
+
+    if isinstance(x, MeshItem):
+        x.vertices = points
+    else:
+        x.data['points'] = points
+
+    # variant 2
     # x.refresh()  # if already is not refreshed
     # offset = - points.mean(0)
     # m = _translate(offset)
@@ -116,13 +125,12 @@ blur1 = np.ones((1, 3, 1)).astype('float32') / 3
 blur2 = np.ones((1, 1, 3)).astype('float32') / 3
 
 
-def _elastic(o, gran, mag, inplace=False):
+def _elastic(o, gran, mag):
     # from https://github.com/facebookresearch/SparseConvNet/blob/master/examples/ScanNet/data.py
-    if inplace:
-        d = o.data
+    if isinstance(o, MeshItem):
+        x = o.vertices.astype(np.float32)
     else:
-        d = o.data.copy()
-    x = d['points']
+        x = o.data['points']
 
     # original begin
     bb = np.abs(x).max(0).astype(np.int32) // gran + 3
@@ -152,12 +160,12 @@ def _elastic(o, gran, mag, inplace=False):
 
     # original end
 
-    d['points'] = x
-
-    if inplace:
-        return o
+    if isinstance(o, MeshItem):
+        o.vertices = x
     else:
-        return PointsItem(d)
+        o.data['points'] = x
+
+    return o
 
 
 elastic = Transform(_elastic)

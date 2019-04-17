@@ -111,8 +111,8 @@ class ItemBase():
 class MeshItem(ItemBase):
 
     def __init__(self, *args, **kwargs):
-        self.labels = None
-        self.colors = None
+        self._labels = None
+        self._colors = None
         self.is_labels_from_vertices = True
         self.is_colors_from_vertices = True
         super().__init__(*args, **kwargs)
@@ -120,7 +120,7 @@ class MeshItem(ItemBase):
     def copy(self):
         d = self.data.copy()
         o = MeshItem(d)
-        for k in ['is_labels_from_vertices', 'is_colors_from_vertices', 'labels', 'colors']:
+        for k in ['is_labels_from_vertices', 'is_colors_from_vertices', '_labels', '_colors']:
             setattr(o, k, getattr(self, k))
         return o
 
@@ -132,6 +132,35 @@ class MeshItem(ItemBase):
         # num_f = d.faces.shape[0]
         return f"({fn}, vertices:{num_v})"
 
+    @property
+    def colors(self):
+        return self._colors
+
+    @colors.setter
+    def colors(self, v):
+        self._colors = v
+
+    @property
+    def labels(self):
+        return self._labels
+
+    @labels.setter
+    def labels(self, v):
+        self._labels = v
+
+    @property
+    def vertices(self):
+        return self.data.vertices
+
+    @vertices.setter
+    def vertices(self, v):
+        mesh = self.data
+        mesh.vertices = v
+        mesh._cache.clear()
+        mesh._cache.id_set()
+        mesh.face_normals = None
+        mesh.vertex_normals = None
+
     def describe(self):
         d = self.data
         cn = self.__class__.__name__
@@ -139,19 +168,17 @@ class MeshItem(ItemBase):
         print(f"{cn} ({fn})")
         log('vertices:', d.vertices)
         log('faces:', d.faces)
-        colors = getattr(self, 'colors', None)
-        log('colors:', colors)
-        labels = getattr(self, 'labels', None)
-        log('labels:', labels)
+        log('colors:', self.colors)
+        log('labels:', self.labels)
 
-        if colors is not None:
+        if self.colors is not None:
             if self.is_colors_from_vertices:
                 s = "vertices"
             else:
                 s = "faces"
             print(f"Colors from {s}")
 
-        if labels is not None:
+        if self.labels is not None:
             if self.is_labels_from_vertices:
                 s = "vertices"
             else:
@@ -278,7 +305,7 @@ class MeshItem(ItemBase):
             v = np.array(v, dtype=np.float64)
 
             if labels is None:
-                labels = getattr(self, 'labels', None)
+                labels = self.labels
 
             vertex_labels = None
             face_labels = None
@@ -289,14 +316,14 @@ class MeshItem(ItemBase):
 
             vertex_colors = None
             face_colors = None
-            colors = getattr(self, 'colors', None)
+            colors = self.colors
             if self.is_colors_from_vertices:
                 vertex_colors = colors
             else:
                 face_colors = colors
 
             if self.is_colors_from_vertices:
-                vertex_colors = getattr(self, 'colors', None)
+                vertex_colors = self.colors
 
             vertex_normals = None
             if with_normals:
@@ -345,6 +372,22 @@ class PointsItem(ItemBase):
             v = d.get(k, None)
             if v is not None:
                 log(k, v)
+
+    @property
+    def colors(self):
+        return self.data.get('colors', None)
+
+    @colors.setter
+    def colors(self, v):
+        self.data['colors'] = v
+
+    @property
+    def labels(self):
+        return self.data.get('labels', None)
+
+    @labels.setter
+    def labels(self, v):
+        self.data['labels'] = v
 
     def show(self, labels=None, colors=None, with_normals=False, point_size_value=1., normals_size_value=1., **kwargs):
         """Show"""
@@ -427,6 +470,14 @@ class SparseItem(ItemBase):
         # print('points:', n_points)
         print('voxels:', n_voxels)
         print('points / voxels:', n_points / n_voxels)
+
+    @property
+    def labels(self):
+        return self.data.get('labels', None)
+
+    @labels.setter
+    def labels(self, v):
+        self.data['labels'] = v
 
     def num_voxels(self):
         coords = self.data['coords']

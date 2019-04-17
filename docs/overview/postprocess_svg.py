@@ -79,7 +79,7 @@ def rearange_links(root):
     for a in anchors:
         #if a.attrib['href'] == 'https://pytorch.org/docs/stable/index.html':
         #    break
-        
+        a.attrib['style'] = 'cursor: hand;'
         comment = a.getprevious()
         if isinstance(comment, lxml.etree._Comment):
             if comment.text.startswith('cluster '):

@@ -13,9 +13,7 @@ class TfmColors(Transform):
 
 
 def _colors_noise(x, amplitude=0.1):
-    d = x.data
-    # noise
-    d['colors'] = d['colors'] + \
+    x.colors = x.colors + \
         np.random.randn(3).astype(np.float32) * amplitude
     return x
 
@@ -29,12 +27,11 @@ def _colors_normalize(x, center=127.5, scale=1 / 127.5):
 
     [0..255] ---> [-1.0, 1.0]
     """
-    d = x.data
-    colors = d['colors']
+    colors = x.colors
     colors = (colors[:, :3] - center) * scale
     colors = colors.astype(np.float32)
 
-    d['colors'] = colors
+    x.colors = colors
 
     return x
 

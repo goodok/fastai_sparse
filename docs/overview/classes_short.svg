@@ -25,7 +25,7 @@
     <line style="stroke: #000000; stroke-width: 1.5;" x1="218" x2="322" y1="362.2969" y2="362.2969"/>
     <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="91" x="222" y="354.9951">fast_sparse</text>
     <!--cluster 3D augmentation-->
-    <a href="augmentation.svg" target="_top" xlink:actuate="onRequest" xlink:show="new" xlink:title="augmentation.svg" xlink:type="simple">
+    <a href="augmentation.svg" target="_top" xlink:actuate="onRequest" xlink:show="new" xlink:title="augmentation.svg" xlink:type="simple" style="cursor: hand;">
       <rect fill="#FFFFFF" filter="url(#f1qk6ogz65xl6j)" height="343" style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" width="539.5" x="243" y="383"/>
       <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="134" x="445.75" y="397.9951">3D augmentation</text>
     </a>
@@ -52,7 +52,7 @@
     <g>
       <polygon fill="#DDDDDD" filter="url(#f1qk6ogz65xl6j)" points="54,56,108,56,115,78.2969,177,78.2969,177,284,54,284,54,56" style="stroke: #000000; stroke-width: 1.5;"/>
       <line style="stroke: #000000; stroke-width: 1.5;" x1="54" x2="115" y1="78.2969" y2="78.2969"/>
-      <a href="https://docs.fast.ai/index.html" target="_blank" xlink:actuate="onRequest" xlink:show="new" xlink:title="https://docs.fast.ai/index.html" xlink:type="simple">
+      <a href="https://docs.fast.ai/index.html" target="_blank" xlink:actuate="onRequest" xlink:show="new" xlink:title="https://docs.fast.ai/index.html" xlink:type="simple" style="cursor: hand;">
         <text fill="#0000f0" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="48" x="58" y="70.9951">fast.ai</text>
       </a>
     </g>
@@ -60,7 +60,7 @@
     <g>
       <polygon fill="#DDDDDD" filter="url(#f1qk6ogz65xl6j)" points="278,115,326,115,333,137.2969,405,137.2969,405,284,278,284,278,115" style="stroke: #000000; stroke-width: 1.5;"/>
       <line style="stroke: #000000; stroke-width: 1.5;" x1="278" x2="333" y1="137.2969" y2="137.2969"/>
-      <a href="https://pytorch.org/docs/stable/index.html" target="_blank" xlink:actuate="onRequest" xlink:show="new" xlink:title="https://pytorch.org/docs/stable/index.html" xlink:type="simple">
+      <a href="https://pytorch.org/docs/stable/index.html" target="_blank" xlink:actuate="onRequest" xlink:show="new" xlink:title="https://pytorch.org/docs/stable/index.html" xlink:type="simple" style="cursor: hand;">
         <text fill="#0000f0" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="42" x="282" y="129.9951">torch</text>
       </a>
     </g>
@@ -68,7 +68,7 @@
     <g>
       <polygon fill="#DDDDDD" filter="url(#f1qk6ogz65xl6j)" points="1222,816,1288,816,1295,838.2969,1309,838.2969,1309,891,1222,891,1222,816" style="stroke: #000000; stroke-width: 1.5;"/>
       <line style="stroke: #000000; stroke-width: 1.5;" x1="1222" x2="1295" y1="838.2969" y2="838.2969"/>
-      <a href="https://github.com/mikedh/trimesh" target="_blank" xlink:actuate="onRequest" xlink:show="new" xlink:title="https://github.com/mikedh/trimesh" xlink:type="simple">
+      <a href="https://github.com/mikedh/trimesh" target="_blank" xlink:actuate="onRequest" xlink:show="new" xlink:title="https://github.com/mikedh/trimesh" xlink:type="simple" style="cursor: hand;">
         <text fill="#0000f0" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="60" x="1226" y="830.9951">trimesh</text>
       </a>
     </g>
@@ -76,7 +76,7 @@
     <g>
       <polygon fill="#DDDDDD" filter="url(#f1qk6ogz65xl6j)" points="1215.5,923,1301.5,923,1308.5,945.2969,1315.5,945.2969,1315.5,1092,1215.5,1092,1215.5,923" style="stroke: #000000; stroke-width: 1.5;"/>
       <line style="stroke: #000000; stroke-width: 1.5;" x1="1215.5" x2="1308.5" y1="945.2969" y2="945.2969"/>
-      <a href="https://ipyvolume.readthedocs.io/en/latest/#" target="_blank" xlink:actuate="onRequest" xlink:show="new" xlink:title="https://ipyvolume.readthedocs.io/en/latest/#" xlink:type="simple">
+      <a href="https://ipyvolume.readthedocs.io/en/latest/#" target="_blank" xlink:actuate="onRequest" xlink:show="new" xlink:title="https://ipyvolume.readthedocs.io/en/latest/#" xlink:type="simple" style="cursor: hand;">
         <text fill="#0000f0" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="80" x="1219.5" y="937.9951">ipyvolume</text>
       </a>
     </g>
@@ -134,42 +134,42 @@
     <!--class Learner-->
     <g>
       <rect fill="#FEFECE" filter="url(#f1qk6ogz65xl6j)" height="23.9688" id="Learner" style="stroke: #A80036; stroke-width: 1.5;" width="54" x="88.5" y="118"/>
-      <a href="https://docs.fast.ai/basic_train.html#Learner" target="_blank" xlink:actuate="onRequest" xlink:show="new" xlink:title="https://docs.fast.ai/basic_train.html#Learner" xlink:type="simple">
+      <a href="https://docs.fast.ai/basic_train.html#Learner" target="_blank" xlink:actuate="onRequest" xlink:show="new" xlink:title="https://docs.fast.ai/basic_train.html#Learner" xlink:type="simple" style="cursor: hand;">
         <text fill="#0000f0" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="48" x="91.5" y="134.1387">Learner</text>
       </a>
     </g>
     <!--class ItemList-->
     <g>
       <rect fill="#FEFECE" filter="url(#f1qk6ogz65xl6j)" height="23.9688" id="ItemList" style="stroke: #A80036; stroke-width: 1.5;" width="54" x="88.5" y="177"/>
-      <a href="https://docs.fast.ai/data_block.html#ItemList" target="_blank" xlink:actuate="onRequest" xlink:show="new" xlink:title="https://docs.fast.ai/data_block.html#ItemList" xlink:type="simple">
+      <a href="https://docs.fast.ai/data_block.html#ItemList" target="_blank" xlink:actuate="onRequest" xlink:show="new" xlink:title="https://docs.fast.ai/data_block.html#ItemList" xlink:type="simple" style="cursor: hand;">
         <text fill="#0000f0" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="48" x="91.5" y="193.1387">ItemList</text>
       </a>
     </g>
     <!--class DataBunch-->
     <g>
       <rect fill="#FEFECE" filter="url(#f1qk6ogz65xl6j)" height="23.9688" id="DataBunch" style="stroke: #A80036; stroke-width: 1.5;" width="75" x="78" y="236"/>
-      <a href="https://docs.fast.ai/basic_data.html#DataBunch" target="_blank" xlink:actuate="onRequest" xlink:show="new" xlink:title="https://docs.fast.ai/basic_data.html#DataBunch" xlink:type="simple">
+      <a href="https://docs.fast.ai/basic_data.html#DataBunch" target="_blank" xlink:actuate="onRequest" xlink:show="new" xlink:title="https://docs.fast.ai/basic_data.html#DataBunch" xlink:type="simple" style="cursor: hand;">
         <text fill="#0000f0" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="69" x="81" y="252.1387">DataBunch</text>
       </a>
     </g>
     <!--class Dataset-->
     <g>
       <rect fill="#FEFECE" filter="url(#f1qk6ogz65xl6j)" height="23.9688" id="Dataset" style="stroke: #A80036; stroke-width: 1.5;" width="56" x="313.5" y="158"/>
-      <a href="https://pytorch.org/docs/stable/data.html#torch.utils.data.Dataset" target="_blank" xlink:actuate="onRequest" xlink:show="new" xlink:title="https://pytorch.org/docs/stable/data.html#torch.utils.data.Dataset" xlink:type="simple">
+      <a href="https://pytorch.org/docs/stable/data.html#torch.utils.data.Dataset" target="_blank" xlink:actuate="onRequest" xlink:show="new" xlink:title="https://pytorch.org/docs/stable/data.html#torch.utils.data.Dataset" xlink:type="simple" style="cursor: hand;">
         <text fill="#0000f0" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="50" x="316.5" y="174.1387">Dataset</text>
       </a>
     </g>
     <!--class DataLoader-->
     <g>
       <rect fill="#FEFECE" filter="url(#f1qk6ogz65xl6j)" height="23.9688" id="DataLoader" style="stroke: #A80036; stroke-width: 1.5;" width="79" x="302" y="217"/>
-      <a href="https://pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader" target="_blank" xlink:actuate="onRequest" xlink:show="new" xlink:title="https://pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader" xlink:type="simple">
+      <a href="https://pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader" target="_blank" xlink:actuate="onRequest" xlink:show="new" xlink:title="https://pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader" xlink:type="simple" style="cursor: hand;">
         <text fill="#0000f0" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="73" x="305" y="233.1387">DataLoader</text>
       </a>
     </g>
     <!--class Trimesh-->
     <g>
       <rect fill="#FEFECE" filter="url(#f1qk6ogz65xl6j)" height="23.9688" id="Trimesh" style="stroke: #A80036; stroke-width: 1.5;" width="55" x="1238" y="851"/>
-      <a href="https://trimsh.org/trimesh.html#trimesh.base.Trimesh" target="_blank" xlink:actuate="onRequest" xlink:show="new" xlink:title="https://trimsh.org/trimesh.html#trimesh.base.Trimesh" xlink:type="simple">
+      <a href="https://trimsh.org/trimesh.html#trimesh.base.Trimesh" target="_blank" xlink:actuate="onRequest" xlink:show="new" xlink:title="https://trimsh.org/trimesh.html#trimesh.base.Trimesh" xlink:type="simple" style="cursor: hand;">
         <text fill="#0000f0" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="49" x="1241" y="867.1387">Trimesh</text>
       </a>
     </g>
