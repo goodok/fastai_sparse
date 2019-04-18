@@ -1,2 +1,2 @@
-from .csv_logger import *
-
+from .csv_logger import CSVLoggerIouByClass
+__all__ = ['CSVLoggerIouByClass']
