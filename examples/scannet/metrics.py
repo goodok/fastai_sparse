@@ -63,7 +63,7 @@ class IouMeanFiltred(LearnerCallback):
         num_points_actual_cumsum = np.cumsum([0] + xb['num_points'])
 
         # for each example in the batch extract prediction, argmax, fill omitted by 0-label class (bug), and store
-        for k in range(len(xb['ids'])):
+        for k in range(len(xb['id'])):
             # actual number of points
             #num_points = xb['num_points'][k]     # equal len(y)
             
@@ -109,7 +109,7 @@ class IouMeanFiltred(LearnerCallback):
             y_pred = example_y_pred[indexer]
             y_true = labels_raw[indexer]
             if len(y_pred) == 0:
-                warnings.warn(f"Wrong example is found: all `labels_raw` < 0. Id={xb['ids'][k]}")
+                warnings.warn(f"Wrong example is found: all `labels_raw` < 0. Id={xb['id'][k]}")
             else:
                 cm = confusion_matrix(y_pred, y_true, self.n_classes)
                 d['cm'] += cm

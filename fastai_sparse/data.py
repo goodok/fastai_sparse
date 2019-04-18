@@ -153,90 +153,66 @@ class SparseDataBunch(DataBunch):
 
     # TODO: define as parameter of task/experiment
     @staticmethod
-    def merge_fn(batch: Collection) -> Tensor:
+    def merge_fn(batch: Collection,
+                 keys_tensors=['coords', 'features', 'labels'],
+                 keys_lists=['id', 'random_seed', 'num_points'],
+                 separate_labels=True):
         """
-        Convert `batch` items to tensor data (dictionary for SparseConvNet).
+        Convert `batch` items to merged batch with tensor data (dictionary).
 
-        Changes from SparseConvNet examples [1] in function `merge`
-            - batch = [xb, yb]
-            - xb['x'] = [..., ...]  replaced by xb['coords'] and xb['features']
-            - remove `mask`
-            - `category` is just list by examples, not arrays by every points
+        Merge fields of every example to the Tensor or just into the list.
 
-        [1] https://github.com/facebookresearch/SparseConvNet/blob/master/examples/3d_segmentation/data.py
+        Parameters
+        ----------
+        batch: Collection
+            The list of examples, instances if class  `ItemBase` or its inheritors.
+        keys_tensors: list
+            This keys will be converted to the Tensors
+        keys_lists: list
+            This keys will be converted to the lists
+        separate_labels: bool
+            if True then return tuple (batch, labels), otherwise return just batch (possible with 'labels' field)
 
+        See also
+        --------
+            fastai.torch_core.data_collate
+            torch.utils.data.dataloader.default_collate
         """
-        # TODO:
-        #  --- replace 'nPoints' --> n_points
-        #  --- nClasses --> num_classes
-        #  --- xf --> id
-
-        # see
-        #    fastai.torch_core.data_collate
-        #    torch.utils.data.dataloader.default_collate
 
         # extract .data property of items in batch list
         data_batch = extract_data(batch)
 
-        # TODO: rename vatiables and dict keys
-        xl_ = []
-        xf_ = []
-        y_ = []
-        categ_ = []
-        classOffset_ = []
-        nClasses_ = []
-        nPoints_ = []
+        res = {}
+        for k in keys_tensors:
+            # merge to list
+            a = [d[k] for d in data_batch if k in d]
+            # append column with example's index. It is needed for SparseConvNet
+            if k == 'coords':
+                a = [np.hstack([x, idx * np.ones((x.shape[0], 1), dtype='int64')])
+                     for idx, x in enumerate(a)]
+            if a[0].ndim > 1:
+                a = np.vstack(a)
+            else:
+                a = np.hstack(a)
+            a = torch.from_numpy(a)
+            res[k] = a
 
-        seeds = []
+        for k in keys_lists:
+            # merge to list
+            a = [d[k] for d in data_batch if k in d]
+            res[k] = a
 
-        for d in data_batch:
-            xl_.append(d['coords'])
-            xf_.append(d['features'])
-            if 'labels' in d:
-                y = d['labels']
-                y_.append(y)
+        if 'num_points' in keys_lists:
+            num_points = [len(d['coords']) for d in data_batch]
+            res['num_points'] = num_points
 
-            categ_.append(d['categ'])
-            classOffset_.append(d['class_offset'])
-            nClasses_.append(d['num_classes'])
-
-            nPoints_.append(y.shape[0])
-
-            if 'random_seed' in d:
-                seeds.append(d['random_seed'])
-
-        # Transform some keys to tensors
-
-        # coords
-        xl_ = [np.hstack([x, idx * np.ones((x.shape[0], 1), dtype='int64')])
-               for idx, x in enumerate(xl_)]
-        xl_ = np.vstack(xl_)
-        xl_ = torch.from_numpy(xl_)
-        # features
-        xf_ = np.vstack(xf_)
-        xf_ = torch.from_numpy(xf_)
-
-        # labels
-        y_ = torch.from_numpy(np.hstack(y_))
-
-        ids = [d['id'] for d in data_batch]
-
-        batch = {  # 'x':  [xl_, xf_],
-            'coords': xl_,
-            'features': xf_,
-            'categ': categ_,   # TODO: is it needed ?
-            'classOffset': classOffset_,
-            'nClasses': nClasses_,
-            'xf': ids,
-            'nPoints': nPoints_}
-        if seeds:
-            batch['seeds'] = seeds
-
-        y = None
-        if len(y_):
-            y = y_
-
-        return batch, y
+        if separate_labels:
+            y = None
+            if 'labels' in res:
+                y = res.pop('labels')
+            return res, y
+        else:
+            return res
 
     @staticmethod
     def worker_init_fn(worker_id, verbose=0):
