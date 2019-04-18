@@ -13,23 +13,13 @@
 
 import os
 import sys
-import time
-import math
 import numpy as np
 import pandas as pd
-import datetime
 import glob
-from IPython.display import display, HTML, FileLink
 from pathlib import Path
-from os.path import join, exists, basename, splitext
-from matplotlib import pyplot as plt
-from matplotlib import cm
-import shutil
 from tqdm import tqdm
 from joblib import Parallel, delayed, cpu_count
 
-from fastai_sparse import utils
-from fastai_sparse.utils import log
 from fastai_sparse.visualize.utils import export_ply
 from fastai_sparse.data_items import MeshItem
 

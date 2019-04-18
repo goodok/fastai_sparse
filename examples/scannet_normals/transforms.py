@@ -1,22 +1,26 @@
 # -*- coding: utf-8 -*-
 
 import numpy as np
-import math
-import scipy
 
-from fastai_sparse.data_items import MeshItem, SparseItem, PointsItem
-from fastai_sparse.transforms import Transform, transfer_keys
+from fastai_sparse.data_items import MeshItem
+from fastai_sparse.transforms import Transform, Compose, transfer_keys, log_transforms
 
 from fastai_sparse.transforms import (to_points_cloud, sample_points,
-                                     normalize_spatial, colors_normalize, colors_noise,
-                                     rotate, rotate_XY, translate, rand_translate, scale, flip_x,
-                                     noise_affine, 
-                                     elastic, crop_points,
-                                     merge_features, to_sparse_voxels,
-                                     log_transforms)
+                                      normalize_spatial, colors_normalize, colors_noise,
+                                      rotate, rotate_XY, translate, rand_translate, scale, flip_x,
+                                      noise_affine,
+                                      elastic, crop_points,
+                                      merge_features, to_sparse_voxels,
+                                      )
 
+__all__ = ['Transform', 'transfer_keys', 'Compose', 'log_transforms',
+           'to_points_cloud', 'sample_points',
+           'normalize_spatial', 'colors_normalize', 'colors_noise',
+           'rotate', 'rotate_XY', 'translate', 'rand_translate', 'scale', 'flip_x',
+           'noise_affine', 'elastic', 'crop_points', 'merge_features', 'to_sparse_voxels',
+           'remap_labels', 'specific_translate',
+           ]
 
-from fastai_sparse import utils
 
 import fastai_sparse.transforms.main as transform_base
 transform_base.TRANSFER_KEYS = [
@@ -26,6 +30,7 @@ transform_base.TRANSFER_KEYS = [
 def _remap_labels(x, remapper):
     x.labels = remapper[x.labels]
     return x
+
 
 remap_labels = Transform(_remap_labels)
 
@@ -54,25 +59,5 @@ def _specific_translate(x, full_scale=4096):
         x.data['points'] = points
     return x
 
+
 specific_translate = Transform(_specific_translate)
-
-
-#def _sparse(x: SparseItem):
-#    d = x.data.copy()
-
-#    points = d['points']
-
-#    coords = points.astype(np.int64)
-
-#    res = {'coords': coords,
-#           'features': d['features'],
-#           'labels': d['labels'].astype(np.int64),
-#           }
-
-#    transfer_keys(d, res)
-
-#    return SparseItem(res)
-
-
-#sparse = Transform(_sparse)
-

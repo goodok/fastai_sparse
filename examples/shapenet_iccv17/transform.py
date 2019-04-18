@@ -13,6 +13,11 @@ import fastai_sparse.transforms.main as transform_base
 transform_base.TRANSFER_KEYS = ['id', 'random_seed', 'categ', 'class_offset', 'num_classes']
 
 
+__all__ = ['Transform', 'transfer_keys',
+           'rotate', 'flip_x', 'translate', 'scale', 'fit_to_sphere', 'merge_features', 'to_sparse_voxels',
+           'shift_labels']
+
+
 def _shift_labels(x: ItemBase, offset=0):
     x.data['labels'] += offset
     return x

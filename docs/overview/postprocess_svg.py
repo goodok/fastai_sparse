@@ -24,7 +24,7 @@ fn_output = args.output
 if fn_output is None:
     fn_output = fn_input
 
-#links_color = 'blue'
+# links_color = 'blue'
 links_color = args.links_color
 
 ignore_links = args.ignore_links
@@ -33,6 +33,7 @@ if ignore_links is not None:
 else:
     ignore_links = []
 
+
 def Main():
 
     with open(fn_input) as f:
@@ -40,7 +41,7 @@ def Main():
         parser = etree.XMLParser(remove_blank_text=True)
         parser = etree.XMLParser(remove_blank_text=True, resolve_entities=False, strip_cdata=False)
 
-        #etree.parse(f)
+        # etree.parse(f)
         doc = etree.parse(f, parser)
 
     root = doc.getroot()
@@ -48,8 +49,9 @@ def Main():
     rearange_links(root)
 
     # pretify and save
-    #print(etree.tostring(doc, pretty_print=True))
+    # print(etree.tostring(doc, pretty_print=True))
     doc.write(fn_output, pretty_print=True)
+
 
 def rearange_links(root):
     """
@@ -77,8 +79,6 @@ def rearange_links(root):
     anchors = root.findall('.//a', namespaces=root.nsmap)
 
     for a in anchors:
-        #if a.attrib['href'] == 'https://pytorch.org/docs/stable/index.html':
-        #    break
         a.attrib['style'] = 'cursor: hand;'
         comment = a.getprevious()
         if isinstance(comment, lxml.etree._Comment):
@@ -88,7 +88,7 @@ def rearange_links(root):
                     g = etree.Element('g')
                     a.addprevious(g)
                     for c in a.getchildren():
-                        if c.tag != "{"+ ns_svg +"}text":
+                        if c.tag != "{" + ns_svg + "}text":
                             g.append(c)
                         elif links_color is not None:
                             c.attrib['fill'] = links_color
@@ -101,7 +101,7 @@ def rearange_links(root):
                     g = etree.Element('g')
                     a.addprevious(g)
                     for c in a.getchildren():
-                        if c.tag != "{"+ ns_svg +"}text":
+                        if c.tag != "{" + ns_svg + "}text":
                             g.append(c)
                         elif c.text != class_name:
                             g.append(c)
@@ -110,5 +110,6 @@ def rearange_links(root):
 
                     a.attrib['target'] = '_blank'
                     g.append(a)
+
 
 Main()

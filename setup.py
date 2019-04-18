@@ -1,19 +1,25 @@
 # This source code is licensed under the MIT-style license found in the
 # LICENSE file in the root directory of this source tree.
 
-from setuptools import setup, find_packages
+from setuptools import setup
 import re
 
+__version__ = ""
 exec(open('fastai_sparse/version.py').read())
 
 
 # from fastai:
-# helper functions to make it easier to list dependencies not as a python list, but vertically w/ optional built-in comments to why a certain version of the dependency is listed
-def cleanup(x): return re.sub(r' *#.*', '', x.strip()) # comments
-def to_list(buffer): return list(filter(None, map(cleanup, buffer.splitlines())))
+# helper functions to make it easier to list dependencies not as a python list,
+# but vertically w/ optional built-in comments to why a certain version of the dependency is listed
+def cleanup(x):
+    return re.sub(r' *#.*', '', x.strip())  # comments
 
 
-### developer dependencies ###
+def to_list(buffer):
+    return list(filter(None, map(cleanup, buffer.splitlines())))
+
+
+# ## developer dependencies ###
 #
 # anything else that's not required by a user to run the library, but
 # either is an enhancement or a developer-build requirement goes here.
@@ -31,7 +37,7 @@ def to_list(buffer): return list(filter(None, map(cleanup, buffer.splitlines()))
 #
 # some of the listed modules appear in test_requirements as well, as explained below.
 #
-dev_requirements = { 'dev' : to_list("""
+dev_requirements = {'dev': to_list("""
     coverage                     # make coverage
     distro
     ipython
@@ -48,21 +54,21 @@ dev_requirements = { 'dev' : to_list("""
     responses                    # for requests testing
     traitlets
     wheel>=0.30.0
-""") }
+""")}
 
-requirements = ['torch>=1.0.0', 'trimesh', 'humanize', 'ipyvolume', 'pythreejs', 'joblib', 'autopep8', 'jupyter', 'jupyter_contrib_nbextensions', 'PyChromeDevTools',
-                'matplotlib', 'pandas', 'tqdm', 'dataclasses']
+requirements = ['torch>=1.0.0', 'trimesh', 'humanize', 'ipyvolume', 'pythreejs', 'joblib', 'autopep8', 'jupyter', 'jupyter_contrib_nbextensions',
+                'PyChromeDevTools', 'matplotlib', 'pandas', 'tqdm', 'dataclasses']
 
 
 setup(
     name='fastai_sparse',
-    version = __version__,
+    version=__version__,
     description='Fastai extention for sparse 2D-3D like pointclouds and triangle meshes',
     author='Alexey U. Gudchenko',
     author_email='proga@goodok.ru',
     url='https://github.com/goodok/fastai_sparse',
     packages=['fastai_sparse'],
-    python_requires  = '>=3.6',
-    install_requires = requirements,
-    extras_require   = dev_requirements,
+    python_requires='>=3.6',
+    install_requires=requirements,
+    extras_require=dev_requirements,
 )

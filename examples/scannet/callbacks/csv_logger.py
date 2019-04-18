@@ -1,32 +1,27 @@
 "A `Callback` that saves tracked metrics into a persistent file."
-#Contribution from devforfu: https://nbviewer.jupyter.org/gist/devforfu/ea0b3fcfe194dad323c3762492b05cae
+# Contribution from devforfu: https://nbviewer.jupyter.org/gist/devforfu/ea0b3fcfe194dad323c3762492b05cae
 
-from fastprogress.fastprogress import format_time
-
-from fastai.torch_core import *
-from fastai.basic_data import DataBunch
-from fastai.callback import *
+import pandas as pd
 from fastai.basic_train import Learner, LearnerCallback
 
-
-from time import time
+from fastai_sparse.core import Any
 
 __all__ = ['CSVLoggerIouByClass']
 
 
 class CSVLoggerIouByClass(LearnerCallback):
     "A `LearnerCallback` that saves history of IoU by classes into CSV `filename`."
-    def __init__(self, learn:Learner, cb_iou_mean, class_names=None, filename:str='iou_by_class'): 
+    def __init__(self, learn: Learner, cb_iou_mean, class_names=None, filename: str = 'iou_by_class'):
         super().__init__(learn)
         self.filename = filename,
-        self.path = self.learn.path/f'{filename}.csv'
+        self.path = self.learn.path / f'{filename}.csv'
         self.cb_iou_mean = cb_iou_mean
         self.class_names = class_names
 
         if self.class_names is None:
             self.class_names = [str(i) for i in range(cb_iou_mean.n_categories)]
 
-    def read_logged_file(self):  
+    def read_logged_file(self):
         "Read the content of saved file"
         return pd.read_csv(self.path)
 
@@ -42,7 +37,7 @@ class CSVLoggerIouByClass(LearnerCallback):
         "Add a line with `epoch` number, `smooth_loss` and `last_metrics`."
         cb = self.cb_iou_mean
         for datatype in ['train', 'valid']:
-            d =  cb._d[datatype]
+            d = cb._d[datatype]
             stats = [str(epoch), datatype, f"{d['iou']:.6f}"]
 
             iou_per_class = d['iou_per_class']
@@ -52,6 +47,6 @@ class CSVLoggerIouByClass(LearnerCallback):
             self.file.write(str_stats + '\n')
             self.file.flush()
 
-    def on_train_end(self, **kwargs: Any) -> None:  
+    def on_train_end(self, **kwargs: Any) -> None:
         "Close the file."
         self.file.close()
