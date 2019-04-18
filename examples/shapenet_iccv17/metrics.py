@@ -129,19 +129,19 @@ def calc_iou_by_category(xb, yb, output, n_categories, are_tensors=False):
         # categ = categ.detach().cpu().numpy()
         yb = yb.detach().cpu().numpy()
 
-    segments = np.cumsum([0] + xb['nPoints'])
+    segments = np.cumsum([0] + xb['num_points'])
 
     n_examples_by_category = np.zeros(n_categories, dtype='int')
     res = np.zeros(n_categories, dtype=np.float32)
 
-    for i_example in range(len(xb['nPoints'])):
+    for i_example in range(len(xb['num_points'])):
         start = segments[i_example]
         end = segments[i_example + 1]
 
         # class offset of the example
-        class_offset = xb['classOffset'][i_example]
+        class_offset = xb['class_offset'][i_example]
         # number of classes in the example
-        n_classes = xb['nClasses'][i_example]
+        n_classes = xb['num_classes'][i_example]
 
         preds = output[start:end]
         preds = preds[:, class_offset: class_offset + n_classes]
