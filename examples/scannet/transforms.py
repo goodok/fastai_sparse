@@ -1,29 +1,30 @@
 # -*- coding: utf-8 -*-
 
 import numpy as np
-import math
-import scipy
 
-from fastai_sparse.data_items import MeshItem, SparseItem, PointsItem
-from fastai_sparse.transforms import Transform, transfer_keys
+from fastai_sparse.data_items import PointsItem
+from fastai_sparse.transforms import Transform, transfer_keys, Compose, log_transforms
 
 from fastai_sparse.transforms import (to_points_cloud, sample_points,
-                                     normalize_spatial, colors_normalize, colors_noise,
-                                     rotate, rotate_XY, translate, rand_translate, scale, flip_x,
-                                     noise_affine, 
-                                     elastic, crop_points,
-                                     merge_features, to_sparse_voxels,
-                                     log_transforms)
+                                      normalize_spatial, colors_normalize, colors_noise,
+                                      rotate, rotate_XY, translate, rand_translate, scale, flip_x,
+                                      noise_affine,
+                                      elastic, crop_points,
+                                      merge_features, to_sparse_voxels)
 
-
-from fastai_sparse import utils
 
 import fastai_sparse.transforms.main as transform_base
 transform_base.TRANSFER_KEYS = [
     'id', 'random_seed', 'num_classes', 'filtred_mask', 'labels_raw']
 
 
-# TODO: inplace wrapper, global option
+__all__ = ['Transform', 'transfer_keys', 'Compose', 'log_transforms',
+           'to_points_cloud', 'sample_points',
+           'normalize_spatial', 'colors_normalize', 'colors_noise',
+           'rotate', 'rotate_XY', 'translate', 'rand_translate', 'scale', 'flip_x',
+           'noise_affine', 'elastic', 'crop_points', 'merge_features', 'to_sparse_voxels',
+           'remap_labels', 'specific_translate',
+           ]
 
 
 def _remap_labels(x, remapper, inplace=False):
@@ -34,11 +35,12 @@ def _remap_labels(x, remapper, inplace=False):
 
     d['labels'] = remapper[d['labels']]
 
-    #transfer_keys(d, d2)
+    # transfer_keys(d, d2)
     if inplace:
         return x
     else:
         return PointsItem(d)
+
 
 remap_labels = Transform(_remap_labels)
 
@@ -59,10 +61,11 @@ def _specific_translate(x, full_scale=4096):
     points += offset
     return x
 
+
 specific_translate = Transform(_specific_translate)
 
 
-#def _sparse(x: SparseItem):
+# def _sparse(x: SparseItem):
 #    d = x.data.copy()
 
 #    points = d['points']
@@ -79,5 +82,4 @@ specific_translate = Transform(_specific_translate)
 #    return SparseItem(res)
 
 
-#sparse = Transform(_sparse)
-
+# sparse = Transform(_sparse)
