@@ -13,7 +13,7 @@ class DataSourceConfig(DataSourceConfig_Base):
 
     num_classes: int = 10
     categories: Collection = None
-    num_classes_by_category: Collection= None
+    num_classes_by_category: Collection = None
 
     def __post_init__(self):
         super().__post_init__()
