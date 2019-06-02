@@ -15,9 +15,9 @@ class TfmConvertItem(Transform):
     pass
 
 
-def _to_points_cloud(x: MeshItem, method='centres', normals=True):
-    assert method in ['centres', 'vertices']
-    if method == 'centres':
+def _to_points_cloud(x: MeshItem, method='centers', normals=True):
+    assert method in ['centers', 'vertices']
+    if method == 'centers':
         d = _to_points_cloud_by_centers(x, normals=normals)
     elif method == 'vertices':
         d = _to_points_cloud_by_vertices(x, normals=normals)
@@ -53,7 +53,7 @@ def _to_points_cloud_by_centers(x, normals=False):
     faces_xyz = points[faces]
     faces_rgb = colors[faces]
 
-    # calculate centres
+    # calculate centers
     points = np.mean(faces_xyz, axis=1)
     colors = np.mean(faces_rgb, axis=1)
 
