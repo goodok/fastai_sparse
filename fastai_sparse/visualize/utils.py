@@ -276,6 +276,8 @@ def export_ply(mesh,
     if vertex_normal is None:
         vertex_normal = 'vertex_normal' in mesh._cache
 
+    is_multilabels = isinstance(label_field_name, list) or isinstance(label_field_name, tuple)
+
     # custom numpy dtypes for exporting
     dtype_face = [('count', '<u1'),
                   ('index', '<i4', (3))]
@@ -288,8 +290,14 @@ def export_ply(mesh,
         dtype_label = ('label', '<i1')
         dtype_label_numpy = np.int8  # TODO: check it
     elif label_type == 'ushort':
-        dtype_label = ('label', '<u2')
-        dtype_label_numpy = np.uint16
+        if is_multilabels:
+            dtype_label = []
+            for i, lfn in enumerate(label_field_name):
+                dtype_label.append(('label_' + str(i), '<u2'))
+            dtype_label_numpy = np.uint16
+        else:
+            dtype_label = ('label', '<u2')
+            dtype_label_numpy = np.uint16
 
     if faces_labels is not None:
         assert faces_labels.dtype == dtype_label_numpy, faces_labels.dtype
@@ -299,8 +307,13 @@ def export_ply(mesh,
     # get template strings in dict
     templates = json.loads(get_resource('ply.template'))
     # append labels in template
-    templates['label'] = 'property {} {}\n'.format(
-        label_type, label_field_name)
+    if is_multilabels:
+        for i, lfn in enumerate(label_field_name):
+            templates['label_' + str(i)] = 'property {} {}\n'.format(
+                label_type, lfn)
+    else:
+        templates['label'] = 'property {} {}\n'.format(
+            label_type, label_field_name)
 
     # start collecting elements into a string for the header
     header = templates['intro']
@@ -317,8 +330,13 @@ def export_ply(mesh,
         header += templates['color']
         dtype_vertex.append(dtype_color)
     if vertex_labels is not None and encoding != 'ascii':
-        header += templates['label']
-        dtype_vertex.append(dtype_label)
+        if is_multilabels:
+            for i, lfn in enumerate(label_field_name):
+                header += templates['label_' + str(i)]
+                dtype_vertex.append(dtype_label[i])
+        else:
+            header += templates['label']
+            dtype_vertex.append(dtype_label)
 
     # create and populate the custom dtype for vertices
     vertex = np.zeros(len(mesh.vertices),
@@ -329,7 +347,11 @@ def export_ply(mesh,
     if mesh.visual.kind == 'vertex':
         vertex['rgba'] = mesh.visual.vertex_colors
     if vertex_labels is not None and encoding != 'ascii':
-        vertex['label'] = vertex_labels
+        if is_multilabels:
+            for i, lfn in enumerate(label_field_name):
+                vertex['label_' + str(i)] = vertex_labels[:, i]
+        else:
+            vertex['label'] = vertex_labels
 
     header += templates['face']
     if mesh.visual.kind == 'face' and encoding != 'ascii':

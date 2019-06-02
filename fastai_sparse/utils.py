@@ -191,6 +191,10 @@ def log(text, array=None, indent=''):
     if isinstance(text, dict) or isinstance(array, dict):
         log_dict(text, array)
         return
+    if isinstance(array, list):
+        d = dict([(str(i), v) for i, v in enumerate(array)])
+        log_dict(text, d)
+        return
     if array is not None:
         text = indent + text.ljust(log_options['max_name_length'])
         # if scalar

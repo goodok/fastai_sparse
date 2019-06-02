@@ -195,8 +195,20 @@ def _sample_points(x: PointsItem, num_points=50000):
         indices = np.random.randint(num_points_was, size=n)
         for k in ['points', 'normals', 'colors', 'labels']:
             if k in d:
-                assert len(d[k]) == num_points_was
-                d[k] = d[k][indices]
+                if k == 'labels':
+                    is_multilabels = isinstance(d[k], (list, tuple))
+                    if is_multilabels:
+                        sampled = []
+                        for labels in d[k]:
+                            assert len(labels) == num_points_was
+                            sampled.append(labels[indices])
+                        d[k] = sampled
+                    else:
+                        assert len(d[k]) == num_points_was
+                        d[k] = d[k][indices]
+                else:
+                    assert len(d[k]) == num_points_was
+                    d[k] = d[k][indices]
     return x
 
 
