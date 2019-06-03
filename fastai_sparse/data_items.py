@@ -270,8 +270,12 @@ class MeshItem(ItemBase):
         fields = d.dtype.fields
 
         labels = None
-        if label_field in fields:
-            labels = d[label_field]
+        if is_listy(label_field):
+            labels = [d[lf] for lf in label_field]
+            # labels = np.stack(labels).T
+        else:
+            if label_field in fields:
+                labels = d[label_field]
 
         self.labels = labels
         self.colors = colors

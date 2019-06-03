@@ -5,6 +5,7 @@ from __future__ import division
 
 
 from matplotlib import cm
+from matplotlib.colors import Normalize
 import numpy as np
 from pathlib import Path
 from dataclasses import dataclass
@@ -140,14 +141,18 @@ def calc_colors_by_labels(labels, cmap=cm.RdBu, reorder_colors=True):
     """
     if labels is not None:
         # calculate colors by labels and color map
-        u, color_indices, color_indices_reverse = np.unique(
-            labels, return_index=True, return_inverse=True)
-        colors_seg = cmap(np.linspace(0, 1, len(u)))
-        if reorder_colors:
-            colors_seg = reorder_contrast(colors_seg)
-        # assert len(np.unique(labels)) == labels.max() + 1  # expect labels = 0, 1, 2... n
-        colors_by_labels = np.array([colors_seg[ind][:3]
-                                     for ind in color_indices_reverse])
+        if np.issubdtype(labels.dtype, np.integer):
+            u, color_indices, color_indices_reverse = np.unique(
+                labels, return_index=True, return_inverse=True)
+            colors_seg = cmap(np.linspace(0, 1, len(u)))
+            if reorder_colors:
+                colors_seg = reorder_contrast(colors_seg)
+            # assert len(np.unique(labels)) == labels.max() + 1  # expect labels = 0, 1, 2... n
+            colors_by_labels = np.array([colors_seg[ind][:3]
+                                         for ind in color_indices_reverse])
+        else:
+            norm = Normalize(vmin=labels.min(), vmax=labels.max())
+            colors_by_labels = cmap(norm(labels))[:, :3]
     else:
         colors_by_labels = None
     return colors_by_labels
@@ -169,14 +174,26 @@ def calc_colors_dict_by_labels(labels, cmap=cm.RdBu, reorder_colors=True):
 
 def get_color_switch_widget(colors_by_labels, colors_rgb, scatter_widget):
     w = None
-    if colors_rgb is not None and colors_by_labels is not None:
-        w = RadioButtons(options=['labels', 'rgb'],
-                         description='colors', value='rgb')
+    if colors_by_labels is not None:
+        options = ['labels']
+        is_multilabels = isinstance(colors_by_labels, (list, tuple))
+        if is_multilabels:
+            options = ['labels_' + str(i) for i in range(len(colors_by_labels))]
+    if colors_rgb is not None:
+        options += ['rgb']
+    value = options[-1]
+    if len(options) > 1:
+        w = RadioButtons(options=options,
+                         description='colors', value=value)
 
         def on_switch_colors(e):
             value = e['new']
-            if value == 'labels':
-                current_colors = colors_by_labels
+            if value.startswith('labels'):
+                if is_multilabels:
+                    ind = int(value.split('_')[1])
+                    current_colors = colors_by_labels[ind]
+                else:
+                    current_colors = colors_by_labels
             else:
                 current_colors = colors_rgb
 
@@ -232,14 +249,23 @@ def scatter(points, labels=None, labels_gt=None,
     set_axes_lims(points, axeslim=axeslim,
                   aspect_ratio_preserve=aspect_ratio_preserve)
 
-    colors_by_labels = calc_colors_by_labels(
-        labels, cmap=cmap, reorder_colors=reorder_colors)
+    is_multilabels = isinstance(labels, (list, tuple))
+    if is_multilabels:
+        colors_by_labels = []
+        for vl in labels:
+            colors_by_labels.append(calc_colors_by_labels(
+                vl, cmap=cmap, reorder_colors=reorder_colors))
+    else:
+        colors_by_labels = calc_colors_by_labels(
+            labels, cmap=cmap, reorder_colors=reorder_colors)
     colors_rgb = colors
 
     if colors_by_labels is None and colors_rgb is None:
         current_colors = 'red'
     elif colors_rgb is not None:
         current_colors = colors_rgb
+    elif is_multilabels:
+        current_colors = colors_by_labels[0]
     else:
         current_colors = colors_by_labels
 
@@ -324,14 +350,23 @@ def show_mesh(verts, triangles,
             x, y, z, triangles=triangles, color=face_colors)
 
     # vertices
-    vertex_colors_by_labels = calc_colors_by_labels(
-        vertex_labels, cmap=vertex_cmap, reorder_colors=vertex_reorder_colors)
+    is_multilabels = isinstance(vertex_labels, (list, tuple))
+    if is_multilabels:
+        vertex_colors_by_labels = []
+        for vl in vertex_labels:
+            vertex_colors_by_labels.append(calc_colors_by_labels(
+                vl, cmap=vertex_cmap, reorder_colors=vertex_reorder_colors))
+    else:
+        vertex_colors_by_labels = calc_colors_by_labels(
+            vertex_labels, cmap=vertex_cmap, reorder_colors=vertex_reorder_colors)
     vertex_colors_rgb = vertex_colors
 
     if vertex_colors_by_labels is None and vertex_colors_rgb is None:
         vertex_current_colors = 'red'
     elif vertex_colors_rgb is not None:
         vertex_current_colors = vertex_colors_rgb
+    elif is_multilabels:
+        vertex_current_colors = vertex_colors_by_labels[0]
     else:
         vertex_current_colors = vertex_colors_by_labels
 

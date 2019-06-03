@@ -111,7 +111,15 @@ def _crop_points(x, low=0, high=1, debug_simulation=0):
     # filter all linked params
     d['points'] = points[indexer]
     d['colors'] = d['colors'][indexer]
-    d['labels'] = d['labels'][indexer]
+
+    is_multilabels = isinstance(d['labels'], (list, tuple))
+    if is_multilabels:
+        labels = []
+        for l in d['labels']:
+            labels.append(l[indexer])
+        d['labels'] = labels
+    else:
+        d['labels'] = d['labels'][indexer]
 
     # save indexer
     assert 'filtred_mask' not in d

@@ -15,9 +15,9 @@ class TfmConvertItem(Transform):
     pass
 
 
-def _to_points_cloud(x: MeshItem, method='centres', normals=True):
-    assert method in ['centres', 'vertices']
-    if method == 'centres':
+def _to_points_cloud(x: MeshItem, method='centers', normals=True):
+    assert method in ['centers', 'vertices']
+    if method == 'centers':
         d = _to_points_cloud_by_centers(x, normals=normals)
     elif method == 'vertices':
         d = _to_points_cloud_by_vertices(x, normals=normals)
@@ -53,7 +53,7 @@ def _to_points_cloud_by_centers(x, normals=False):
     faces_xyz = points[faces]
     faces_rgb = colors[faces]
 
-    # calculate centres
+    # calculate centers
     points = np.mean(faces_xyz, axis=1)
     colors = np.mean(faces_rgb, axis=1)
 
@@ -76,7 +76,12 @@ def _to_points_cloud_by_vertices(x, normals=False):
     labels = x.labels
 
     assert len(points) == len(colors)
-    assert len(points) == len(labels)
+    is_multilabels = isinstance(labels, (list, tuple))
+    if is_multilabels:
+        for l in labels:
+            assert len(points) == len(l)
+    else:
+        assert len(points) == len(labels)
 
     d = {'points': points, 'colors': colors, 'labels': labels}
 
@@ -108,14 +113,30 @@ def _to_sparse_voxels(x: PointsItem):
 
     # TODO: filter result, coords.min() must be >=0, warn
 
+    labels = d['labels']
+    is_multilabels = isinstance(labels, (list, tuple))
+    if is_multilabels:
+        labels_new = []
+        for l in labels:
+            labels_new.append(_convert_labels_dtype(l))
+    else:
+        labels = _convert_labels_dtype(labels)
+
     res = {'coords': coords,
            'features': d['features'],
-           'labels': d['labels'].astype(np.int64),
+           'labels': labels,
            }
 
     transfer_keys(d, res)
 
     return SparseItem(res)
+
+
+def _convert_labels_dtype(x):
+    if np.issubdtype(x.dtype, np.integer):
+        return x.astype(np.int64)
+    else:
+        return x.astype(np.float32)
 
 
 to_sparse_voxels = TfmConvertItem(_to_sparse_voxels)

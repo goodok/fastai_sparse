@@ -282,6 +282,7 @@ class SparseDeviceDataLoader(DeviceDataLoader):
     def proc_batch(self, b: Tensor) -> Tensor:
         "Proces batch `b` of `TensorImage`."
         # b = to_device(b, self.device)
+        # TODO: parameterize it.
         b = dict_to_device(b, self.device, keys=[
                            'coords', 'features', 'y', 'mask'])
         for f in listify(self.tfms):
