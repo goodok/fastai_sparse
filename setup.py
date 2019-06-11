@@ -1,7 +1,7 @@
 # This source code is licensed under the MIT-style license found in the
 # LICENSE file in the root directory of this source tree.
 
-from setuptools import setup
+from setuptools import setup, find_packages
 import re
 
 __version__ = ""
@@ -67,7 +67,7 @@ setup(
     author='Alexey U. Gudchenko',
     author_email='proga@goodok.ru',
     url='https://github.com/goodok/fastai_sparse',
-    packages=['fastai_sparse'],
+    packages=find_packages(),
     python_requires='>=3.6',
     install_requires=requirements,
     extras_require=dev_requirements,
