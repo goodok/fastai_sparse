@@ -174,6 +174,7 @@ def calc_colors_dict_by_labels(labels, cmap=cm.RdBu, reorder_colors=True):
 
 def get_color_switch_widget(colors_by_labels, colors_rgb, scatter_widget):
     w = None
+    options = []
     if colors_by_labels is not None:
         options = ['labels']
         is_multilabels = isinstance(colors_by_labels, (list, tuple))
@@ -181,8 +182,8 @@ def get_color_switch_widget(colors_by_labels, colors_rgb, scatter_widget):
             options = ['labels_' + str(i) for i in range(len(colors_by_labels))]
     if colors_rgb is not None:
         options += ['rgb']
-    value = options[-1]
     if len(options) > 1:
+        value = options[-1]
         w = RadioButtons(options=options,
                          description='colors', value=value)
 
