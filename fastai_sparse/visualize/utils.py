@@ -11,7 +11,10 @@ import os
 from os.path import join
 from string import Template
 from trimesh import util
-from trimesh.resources import get_resource
+try:
+    from trimesh.resources import get_resource
+except:
+    from trimesh.resources import get as get_resource
 import trimesh
 
 
