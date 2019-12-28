@@ -83,7 +83,7 @@ def watermark(python=True, virtualenv=True, keras=False, tensorflow=False, nvidi
         for line in pip_list:
             if hasattr(line, 'decode'):
                 line = line.decode('utf-8')
-            if package_name in line:
+            if package_name in line and line.startswith(package_name):
                 if remove_name:
                     res = line.split(package_name)[1].strip()
                 else:
