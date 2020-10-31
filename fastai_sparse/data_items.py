@@ -3,6 +3,7 @@
 import numpy as np
 import pandas as pd
 import trimesh
+import lzma
 from pathlib import Path
 from os.path import splitext
 import warnings
@@ -191,11 +192,21 @@ class MeshItem(ItemBase):
                   example_id=None,
                   extract_id=lambda fn: splitext(Path(fn).name)[0],
                   label_field='label', colors_from_vertices=True, labels_from_vertices=True,
-                  pop_metadata=True,
+                  pop_metadata=True, need_lzma=False,
+
                   **kwargs):
         assert Path(fn).exists()
+        print("def from_file need_lzma:", need_lzma)
+        print(f'fn="{str(fn)}"')
 
-        mesh = trimesh.load_mesh(str(fn), file_type='ply', process=False)
+        try:
+            if need_lzma is True:
+                mesh = trimesh.load_mesh(lzma.open(str(fn)), file_type='ply', process=False)
+            else:
+                mesh = trimesh.load_mesh(str(fn), file_type='ply', process=False)
+        except ValueError as ve:
+            raise ValueError(str(ve), f'file name: "{fn}"; need_lzma = {need_lzma})
+        
         o = cls(mesh)
         o.parse_additional_data(label_field=label_field,
                                 colors_from_vertices=colors_from_vertices,
