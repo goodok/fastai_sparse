@@ -93,7 +93,7 @@ def _to_points_cloud_by_vertices(x, normals=False):
 to_points_cloud = TfmConvertItem(_to_points_cloud)
 
 
-def _to_sparse_voxels(x: PointsItem):
+def _to_sparse_voxels(x: PointsItem, add_local_pos=False):
     d = x.data.copy()
 
     points = d['points']
@@ -121,6 +121,10 @@ def _to_sparse_voxels(x: PointsItem):
             labels_new.append(_convert_labels_dtype(l))
     else:
         labels = _convert_labels_dtype(labels)
+    
+    if add_local_pos is True:
+        dxdydz = points - coords - 0.5
+        d["features"] = np.hstack((d["features"], dxdydz))
 
     res = {'coords': coords,
            'features': d['features'],
