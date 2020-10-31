@@ -123,7 +123,7 @@ def _to_sparse_voxels(x: PointsItem, add_local_pos=False):
         labels = _convert_labels_dtype(labels)
     
     if add_local_pos is True:
-        dxdydz = points - coords - 0.5
+        dxdydz = np.array(points - coords - 0.5, dtype=np.float32)
         d["features"] = np.hstack((d["features"], dxdydz))
 
     res = {'coords': coords,
