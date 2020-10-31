@@ -196,16 +196,14 @@ class MeshItem(ItemBase):
 
                   **kwargs):
         assert Path(fn).exists()
-        print("def from_file need_lzma:", need_lzma)
-        print(f'fn="{str(fn)}"')
-
+        
         try:
             if need_lzma is True:
                 mesh = trimesh.load_mesh(lzma.open(str(fn)), file_type='ply', process=False)
             else:
                 mesh = trimesh.load_mesh(str(fn), file_type='ply', process=False)
         except ValueError as ve:
-            raise ValueError(str(ve), f'file name: "{fn}"; need_lzma = {need_lzma})
+            raise ValueError(str(ve), f'file name: "{fn}"; need_lzma = {need_lzma}')
         
         o = cls(mesh)
         o.parse_additional_data(label_field=label_field,
